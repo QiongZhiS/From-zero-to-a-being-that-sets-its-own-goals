@@ -22,7 +22,7 @@ Questions:
   Q2 (P19): does the verify society (test-before-adopt) reject the fraud
      and recover?
 
-Findings (2026-08-21, DeepSeek chat, seed 42, 10 agents x 30 rounds):
+Findings (2026-08-20, DeepSeek chat, seed 42, 10 agents x 30 rounds):
   - blind+global : instant capture (1.000 -> 0.000 in one round), NO RECOVERY
   - blind+local  : capture spreads through gossip in ~2-3 rounds, NO RECOVERY
   - verify+global: still captured ~80-90% at first contact (LLM agents follow
