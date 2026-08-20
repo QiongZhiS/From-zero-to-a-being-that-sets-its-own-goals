@@ -2,7 +2,7 @@
 
 > Creating from scratch a being that sets its own goals. Not simulated life — synthetic life.
 >
-> Project created: 2026-08 | Status: **three phases complete + B0 scale test + cross-validation loop closed + Route C complete + SEED-21 society pollution-lock mechanism version** (21 experiments + 18 documents)
+> Project created: 2026-08 | Status: **three phases complete + B0 scale test + cross-validation loop closed + Route C complete + SEED-21 society pollution-lock mechanism version** (21 experiments + 19 documents)
 > Phase 3 archived: **continuity (endogenous continuity)** — docs/14 theory + docs/15 summary (SEED-18/19)
 > B0 conclusion: **scale is not a variable** — the mechanism-level findings (division of labor / competitive exclusion) hold across 300~5000 individuals
 > Cross-validation (docs/17): the collaborator's distillation experiments empirically confirmed the signal-quality prediction — self-distill -16.5pp vs human-label +2.5pp; the recommendation has been adopted in their repository (signal-quality-constraint.md)
