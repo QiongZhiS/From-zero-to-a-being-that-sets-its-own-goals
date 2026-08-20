@@ -325,6 +325,30 @@ the blind-follow group follows the most successful; the verification group test-
 
 Code: `seed-21/seed21_llm.py` (the key comes from the environment variable DEEPSEEK_API_KEY and is never written to disk) + `seed-21/debug_llm.py` (diagnostic tool)
 
+## SEED-21c status (scale and lock probability — Route B's first argument ✅)
+
+**Question**: Route B requires demonstrating a scale-sensitive phenomenon (B0 concluded "scale is not a variable"). Three probes:
+
+1. **Proportional pollution (15% invaders) → scale-invariant**: capture depth is constant across N=50/200/1000 (dur_A 0.38-0.39) — mathematically forced: the expected number of "sees the fraud" events per round is N × p_imit × sample_n/N = p_imit×sample_n ≈ 0.25, **independent of N**
+2. **Single planted fraud → still scale-invariant**: the same product cancels the visibility dilution (`seed21.py --scale-sweep --invader-n 1`)
+3. **Finite-population randomness → genuinely scale-sensitive** (no fraud, single-draw signal σ=8, pure imitation, 300 seeds per point):
+
+| N | wrong-lock probability P(lockB) | correct-lock probability P(lockA) |
+|---|:--:|:--:|
+| 8 | **0.270** | 0.730 |
+| 10 | 0.200 | 0.800 |
+| 15 | 0.100 | 0.900 |
+| 20 | 0.083 | 0.917 |
+| 25 | 0.027 | 0.973 |
+| 40 | 0.010 | 0.990 |
+
+**Conclusions (first argument for Route B)**:
+
+- **Scale-sensitive phenomena exist, but their shape is "small-population risk"**: a small society (N≈8-15) is likely to be dominated by a single lucky agent (27%→10%), monotonically decreasing with size — this explains why the LLM version showed a 6-agent luck-lock but stable 10-agent runs
+- **Direction is opposite to the docs/08 hypothesis**: it is not "large scale creates new capabilities" but "large scale reduces wrong-lock probability" — B0's "scale is not a variable" is refined to: **scale is not a variable for mechanism type, but IS a variable for consensus correctness**
+- **Cultural homogenization is the default** (lockA+lockB=1.0, no intermediate states): imitation societies always converge to a single strategy, right or wrong — the societal version of P14; diversity requires explicit mechanisms (MAP-Elites style) or larger scale
+- **Refinement to docs/18 S2**: multi-agent lock risk is highest in small societies — experiments with small populations (8-15 agents) systematically overestimate lock-in risk; scaling dilutes the luck component
+
 ## Quick start
 
 ```bash

@@ -79,8 +79,8 @@ def displayed(agent, window_len, fraud_active, fake):
 
 def run(ticks, mode, noise, fraud, seed, n=200, window=15,
         p_imit=0.05, p_explore=0.02, model_sample=5,
-        t_inj=1000, t_rem=2500, invader_frac=0.15, fake=5.0,
-        report_every=500):
+        t_inj=1000, t_rem=2500, invader_frac=0.15, invader_n=None,
+        fake=5.0, report_every=500, sample_mode="global"):
     rng = random.Random(seed)
     agents = make_society(n, rng)
     a_share = []
@@ -91,7 +91,8 @@ def run(ticks, mode, noise, fraud, seed, n=200, window=15,
         if fraud and t == t_inj:
             # seed the wrong consensus: actually convert agents to B (SEED-18
             # invasion); during the window every B-user's score is inflated
-            for a in rng.sample(agents, int(n * invader_frac)):
+            k = invader_n if invader_n else int(n * invader_frac)
+            for a in rng.sample(agents, min(k, len(agents))):
                 a.strategy = "B"
 
         tick_welfare = 0.0
@@ -126,7 +127,16 @@ def run(ticks, mode, noise, fraud, seed, n=200, window=15,
 
             # imitation: copy whoever LOOKS most successful
             if mode != "genetic" and rng.random() < p_imit:
-                sample = rng.sample(agents, min(model_sample, len(agents)))
+                if sample_mode == "local":
+                    # gossip: sample a FIXED number of OTHER agents --
+                    # a fraud is visible with prob ~ sample_n/N, which
+                    # DILUTES with society size (scale-sensitive!)
+                    others = [x for x in agents if x is not a]
+                    sample = rng.sample(others, min(model_sample,
+                                                    len(others)))
+                else:
+                    sample = rng.sample(agents, min(model_sample,
+                                                    len(agents)))
                 leader = max(sample,
                              key=lambda x: displayed(x, window,
                                                      fraud_active, fake))
@@ -226,6 +236,40 @@ def sweep(ticks=4000, seeds=(1, 2, 3, 4, 5, 6), noises=(0.5, 3.0, 10.0, 25.0),
     return results
 
 
+def scale_sweep(ticks=4000, seeds=range(60), ns=(50, 200, 1000),
+                mode="cultural-nv", noise=3.0, fraud=1, p_explore=0.02,
+                invader_n=None):
+    """Route B probe: does pollution capture/recovery depend on society
+    size? Scenario A (proportional invaders, 15%): scale-invariant.
+    Scenario B (single planted fraud, like the LLM version): visibility
+    ~sample_n/N dilutes with size -- the scale-sensitive candidate."""
+    tag = f"invader_n={invader_n}" if invader_n else "invader_frac=15%"
+    print(f"=== SEED-21 scale sweep ({tag}, {mode}, noise={noise}, "
+          f"fraud={fraud}, explore={p_explore}) ===")
+    print(f"{'sample':<8} {'N':<6} {'dur_A':<7} {'post_A':<7} {'end_A':<7} "
+          f"{'lock%':<6} {'rec%':<6} {'recT':<6}")
+    for sm in ("global", "local"):
+        for n in ns:
+            ends, durs, posts, locks, recs, rects = [], [], [], 0, 0, []
+            for s in seeds:
+                r = run(ticks=ticks, mode=mode, noise=noise, fraud=fraud,
+                        seed=s, n=n, p_explore=p_explore, sample_mode=sm,
+                        invader_n=invader_n)
+                ends.append(r["end_a"]); durs.append(r["during_a"])
+                posts.append(r["post_a"])
+                if r["end_a"] < 0.25:
+                    locks += 1
+                if r["recovery"] is not None:
+                    recs += 1
+                    rects.append(r["recovery"])
+            cnt = len(seeds)
+            rect = (sum(rects) / len(rects)) if rects else float("nan")
+            print(f"{sm:<8} {n:<6} {sum(durs)/cnt:<7.3f} {sum(posts)/cnt:<7.3f} "
+                  f"{sum(ends)/cnt:<7.3f} {locks/cnt:<6.2f} {recs/cnt:<6.2f} "
+                  f"{rect:<6.0f}")
+    return None
+
+
 def main():
     p = argparse.ArgumentParser(description="SEED-21 pollution lock society")
     p.add_argument("--mode", choices=["genetic", "cultural-nv", "cultural-v"],
@@ -237,7 +281,16 @@ def main():
     p.add_argument("--window", type=int, default=15)
     p.add_argument("--explore", type=float, default=0.02)
     p.add_argument("--sweep", action="store_true")
+    p.add_argument("--scale-sweep", action="store_true")
+    p.add_argument("--scale-n", type=int, default=60,
+                   help="seeds per scale point")
+    p.add_argument("--invader-n", type=int, default=None,
+                   help="fixed invader count (None = 15% proportional)")
     args = p.parse_args()
+    if args.scale_sweep:
+        scale_sweep(ticks=args.ticks, seeds=range(args.scale_n),
+                    invader_n=args.invader_n)
+        return
     if args.sweep:
         sweep(ticks=args.ticks)
         return
