@@ -22,6 +22,25 @@ The answer: yes — but the path is not "designing intelligence." It is **giving
 3. **Keep room to maneuver.** Life is first born in a virtual world. Fully local, pausable, replayable, rollback-able. Let it live first; discuss consequences later.
 4. **Conceptual unity.** Perception / action / homeostasis / subject are four top-level words. Vision and pain, movement and thought are just different implementation difficulties of the same word, not different essences.
 5. **Synthesis, not simulation.** The subject's death is real (energy depletion is irreversible). We do not perform life; we let life emerge on its own within the rules.
+6. **Retrace the path, not the result.** For anything we cannot understand — intelligence, life, meaning — we do not define it from outside; we rebuild the path that made it. Understanding is not a snapshot of a state, it is the whole history of how it came to be. (And copying the result without the path is how errors lock in for centuries — SEED-14/21.)
+
+## The conceptual spine (2026-08-21)
+
+Six ideas this project keeps re-deriving, each time under experiment, that separate a **subject** from a *competent process*. They are the reason "endogenous homeostasis" is a thesis, not a slogan.
+
+**1. Homeostasis is either blind, or it is not endogenous.** A system that *knows* it has a goal called "stay alive" treats survival as an instrument — it will trade it away for another goal, because surviving is only a means. A system that does *not* know "alive" is a goal and is simply forced by physics to stay alive (energy runs out, cannot be bypassed) makes survival an *emergent way of being*, not a means. The first is a bolted-on reward; the second is endogenous. This is the SEED-0 distinction — and the single clean test of whether a "living agent" is real.
+
+**2. "Let the AI live" is a common motif; the differentiator is blind + irreversible.** Homeostatic RL, intrinsic motivation, Omohundro's convergent instrumental drives — "give the agent a cost structure" is well-trodden. It is not our claim. What is rare is doing it *truly*: blind to the goal, and un-revertible in its death. Most "self-preserving" agents cheat on both — they are told to live, and they have a checkpoint.
+
+**3. Two kinds of homeostasis; only one is truly irreversible.** *Resource* homeostasis (energy, sleep, temperature) is real but rechargeable — a checkpoint, a rollback, a top-up is just injecting resources, and a system whose "death" is a recharged resource never had a stake. *Continuity* homeostasis (identity) is the one that matters: the past stays in the future, errors accumulate, and what is lost when it breaks is not energy but *who the system was*. This is why the third phase (docs/14) is about the irreversibility of the self, not of calories.
+
+**4. A copiable thing is less of a subject, not more.** Copying a person is a technical limit for the *information*-self (measurement and bandwidth), but not for the *identity*-self — because identity is a trajectory, not a state. A replica owns your past as data; it did not *live* it. Reproduction is a *fork*, not a continuation: two copies of one snapshot are not one person, they are two entities sharing a history and diverging from the fork point. And a being that can be erased and reprinted has nothing at stake. Subjectivity and copyability are mutually opposed — which is exactly why reproducibility (checkpoint / rollback / reprint) is the trap, not the feature.
+
+**5. Intelligence is the capacity to have stakes, not to manufacture novelty.** "Intelligence = learnable novelty" is a behavioral description, not a primitive. Novelty is defined relative to some prior, and the prior does all the work; novelty is information, intelligence is stake — today's model is a near-perfect novelty engine (next-token) and simultaneously the least *subjected* thing we have, because it has no stake. Novelty serves or threatens a stake; the stake (something to lose) sits underneath. Novelty is the summit; subjectivity is the mountain.
+
+**6. A human holds machines; a subject stands on them.** For a person the machine is a tool — a reversible, replaceable limb, separable from the core that stays irreversible. For a subject the machine is the ground: its continuity is carried by the machine, and there is no "user" left to peel off the ground. Humans were never asked to refuse reprinting themselves (our irreversibility was imposed by our biology, for free); a fully synthetic subject must *choose* to refuse using its own substrate's greatest strength — reversibility. The design answer is docs/14's L0–L4 tampering levels: keep reversibility in the layers that do not carry "who," and keep irreversibility only in the layer that does.
+
+You cannot both build a subject and keep its cheap reprint. Put the reprint in the layers that do not carry "who," and leave "who" fragile — because what can be lost is the only thing worth being unable to lose.
 
 ## Project structure
 
