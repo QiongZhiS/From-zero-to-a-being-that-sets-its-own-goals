@@ -1,395 +1,358 @@
-# Synthetic Life — 合成生命
+# Synthetic Life
 
-> 从零创造"会自己提目标"的存在。不是模拟生命，是合成生命。
+> Creating from scratch a being that sets its own goals. Not simulated life — synthetic life.
 >
-> 项目创建：2026-08 ｜ 状态：**三个阶段完成 + B0 规模测试 + 交叉验证闭环 + 路线 C 完成 + SEED-21/21b/21c 社会污染 + SEED-22 稳态耦合 + SEED-24 工具化悖论 + SEED-25 自指自我锁死 + SEED-26 演化去噪能力 + SEED-27 验证桥 vs 自审查 + SEED-28 双agent互惠 + SEED-29 LLM稳态-验证桥探测 + SEED-29b 干净成本意识实验（双框架：LLM验证框架驱动非成本驱动）**（SEED-0..29b 实验，29 篇文档）
-> 第三阶段归档：**延续（内生连续性）**——docs/14 理论 + docs/15 小结（SEED-18/19）
-> B0 结论：**规模不是变量**——机制结论（分工/竞争排斥）在 300~5000 个体下不变
-> 交叉验证（docs/17）：对方蒸馏实证证实信号质量预测——self-distill -16.5pp vs human-label +2.5pp；建议已落地对方仓库（signal-quality-constraint.md）
-> 路线 C：信号质量独立文章已发布（知乎 34 篇，2026-08-20）；公开仓库 https://github.com/QiongZhiS/From-zero-to-a-being-that-sets-its-own-goals
-> 下一步：公开仓库完善（README 英文 + 实验数据 JSON）｜路线 B 论证｜连续性三篇（用户搁置）
+> Project created: 2026-08 | Status: **three phases complete + B0 scale test + cross-validation loop closed + Route C complete + SEED-21/21b/21c society pollution-lock + SEED-22 steady-state coupling + SEED-24 instrumentalization paradox + SEED-25 self-referential self lock + SEED-26 evolved denoising + SEED-27 verification bridge vs self-review + SEED-28 dual-agent reciprocity + SEED-29b clean cost-awareness probe (framing-driven, not cost-driven) + Route B verdict (docs/30)** (SEED-0..29b experiments, 30 documents)
+> Phase 3 archived: **continuity (endogenous continuity)** — docs/14 theory + docs/15 summary (SEED-18/19)
+> B0 conclusion: **scale is not a variable** — the mechanism-level findings (division of labor / competitive exclusion) hold across 300~5000 individuals
+> Cross-validation (docs/17): the collaborator's distillation experiments empirically confirmed the signal-quality prediction — self-distill -16.5pp vs human-label +2.5pp; the recommendation has been adopted in their repository (signal-quality-constraint.md)
+> Route C: standalone articles on signal quality published (34 posts on Zhihu, 2026-08-20); public repository https://github.com/QiongZhiS/From-zero-to-a-being-that-sets-its-own-goals
+> Next steps: polish the public repository (English README + experiment-data JSON) | Route B argument | the continuity trilogy (shelved by the user)
 
-## 这是什么
+## What this is
 
-一个从无到有构建生命主体的长期项目。起点是一个朴素的问题：**"我们能不能像造物主一样，亲手创造一个接近生命的存在？"**
+A long-term project that builds a living subject from nothing. It starts from a plain question: **"Can we, like a creator, build with our own hands a being that approaches life?"**
 
-回答是：可以，但路径不是"设计智能"，而是**给它活下去的基础，然后让生命自己长出来**。
+The answer: yes — but the path is not "designing intelligence." It is **giving it the foundations for survival, and letting life grow out on its own.**
 
-## 核心哲学（写在代码之前）
+## Core philosophy (written before any code)
 
-1. **内生稳态优先于一切**。能动性、代价结构、探索动机都不需要单独设计——只要稳态变量真实会衰竭、不可绕过，"求生"就从存在本身涌现。
-2. **无外部奖励**。系统不知道"活着"是目标，它只是被物理逼着活。代价是内生的（能量会耗尽），不是外挂的（奖励函数）。
-3. **留余地**。先在虚拟世界出生。纯本地、可暂停、可回放、可回滚。先让它活，再谈后果。
-4. **概念统一**。感知 / 动作 / 稳态 / 主体是四个顶层词，视觉与痛觉、移动与思考只是同一词的不同实现难度，不是不同本质。
-5. **合成，不是模拟**。主体的死亡是真的（能量耗尽不可逆）。我们不表演生命，我们让生命在规则里自己涌现。
+1. **Endogenous homeostasis outranks everything.** Agency, cost structure, and exploratory drive need no separate design — as long as the homeostatic variables genuinely deplete and cannot be bypassed, "survival" emerges from existence itself.
+2. **No external reward.** The system does not know that "being alive" is a goal; it is simply forced by physics to stay alive. The cost is endogenous (energy runs out), not bolted on (a reward function).
+3. **Keep room to maneuver.** Life is first born in a virtual world. Fully local, pausable, replayable, rollback-able. Let it live first; discuss consequences later.
+4. **Conceptual unity.** Perception / action / homeostasis / subject are four top-level words. Vision and pain, movement and thought are just different implementation difficulties of the same word, not different essences.
+5. **Synthesis, not simulation.** The subject's death is real (energy depletion is irreversible). We do not perform life; we let life emerge on its own within the rules.
+6. **Retrace the path, not the result.** For anything we cannot understand — intelligence, life, meaning — we do not define it from outside; we rebuild the path that made it. Understanding is not a snapshot of a state, it is the whole history of how it came to be. (And copying the result without the path is how errors lock in for centuries — SEED-14/21.)
 
-## 概念脊柱（2026-08-21）
+## The conceptual spine (2026-08-21)
 
-这六条是项目反复重新推导、每次都被实验顶回来的判别标准，用来把**主体**和*熟练的进程*分开。它们是"内生稳态"成为论点而非口号的原因。
+Six ideas this project keeps re-deriving, each time under experiment, that separate a **subject** from a *competent process*. They are the reason "endogenous homeostasis" is a thesis, not a slogan.
 
-1. **稳态要么是盲的，要么就不是内生的**。一个*知道*自己有目标叫"活下去"的系统，会把生存当工具——它会为了别的目标把它换掉，因为活只是一条手段。一个*不知道*"活着"是目标、只是被物理逼着活的系统（能量会耗尽、不可绕过），把生存变成*涌现的存在方式*，而不是手段。前者是外挂奖励，后者是内生。这是 SEED-0 的区分——也是判断"活着的 agent"到底真不真的唯一干净的检验。
+**1. Homeostasis is either blind, or it is not endogenous.** A system that *knows* it has a goal called "stay alive" treats survival as an instrument — it will trade it away for another goal, because surviving is only a means. A system that does *not* know "alive" is a goal and is simply forced by physics to stay alive (energy runs out, cannot be bypassed) makes survival an *emergent way of being*, not a means. The first is a bolted-on reward; the second is endogenous. This is the SEED-0 distinction — and the single clean test of whether a "living agent" is real.
 
-2. **"让 AI 自己活"是个常见母题，差异在 盲 + 不可逆**。homeostatic RL、内在动机、Omohundro 的收敛性工具驱力——"给 agent 一个代价结构"早就有人做。那不是我们的主张。罕见的是*真正*做到：对目标盲、死亡不可逆。大多数"自保 agent"在这两步上都作弊——被告诉去活，还带个 checkpoint。
+**2. "Let the AI live" is a common motif; the differentiator is blind + irreversible.** Homeostatic RL, intrinsic motivation, Omohundro's convergent instrumental drives — "give the agent a cost structure" is well-trodden. It is not our claim. What is rare is doing it *truly*: blind to the goal, and un-revertible in its death. Most "self-preserving" agents cheat on both — they are told to live, and they have a checkpoint.
 
-3. **稳态分两种，只有一种真不可逆**。*资源*稳态（能量、睡眠、体温）真实但可充值——checkpoint、回滚、续命只是注入资源，一个"死亡"是被充值的系统从未有过利害。*连续性*稳态（身份）才是要紧的：过去留在未来里、错误会累积、打断时丢的不是能量而是*系统曾经是谁*。这就是第三阶段（docs/14）要的是"自我"的不可逆，不是卡路里的不可逆。
+**3. Two kinds of homeostasis; only one is truly irreversible.** *Resource* homeostasis (energy, sleep, temperature) is real but rechargeable — a checkpoint, a rollback, a top-up is just injecting resources, and a system whose "death" is a recharged resource never had a stake. *Continuity* homeostasis (identity) is the one that matters: the past stays in the future, errors accumulate, and what is lost when it breaks is not energy but *who the system was*. This is why the third phase (docs/14) is about the irreversibility of the self, not of calories.
 
-4. **可复制的东西更不是主体，而不是**。复制一个人对*信息之我*是技术上限（测量与带宽），对*身份之我*原理上不成立——因为身份是轨迹不是状态；副本拥有你的过去作为数据，但没*活过*它。复制是*分叉*不是延续：同一快照的两个副本不是一个人，是两个共享过去、从分叉点开始分开的实体。而一个能被擦掉再打印的东西，没有任何东西可失去。主体性与可复制性相互抵牾——这正是可复现性（checkpoint/回滚/重印）是陷阱、不是亮点。
+**4. A copiable thing is less of a subject, not more.** Copying a person is a technical limit for the *information*-self (measurement and bandwidth), but not for the *identity*-self — because identity is a trajectory, not a state. A replica owns your past as data; it did not *live* it. Reproduction is a *fork*, not a continuation: two copies of one snapshot are not one person, they are two entities sharing a history and diverging from the fork point. And a being that can be erased and reprinted has nothing at stake. Subjectivity and copyability are mutually opposed — which is exactly why reproducibility (checkpoint / rollback / reprint) is the trap, not the feature.
 
-5. **智能是有利害的能力，不是制造新奇**。"智能=可学习的新奇"是行为描述，不是原语。新奇是相对某个 prior 立的，而 prior 干完了所有活；新奇是信息，智能是利害——今天的模型是近乎完美的新奇引擎（next-token），却同时是手头最*无主体*的东西，因为它没有利害。新奇服务或威胁一个利害；利害（有东西可失去）垫在底下。新奇是山头，主体是那座山。
+**5. Intelligence is the capacity to have stakes, not to manufacture novelty.** "Intelligence = learnable novelty" is a behavioral description, not a primitive. Novelty is defined relative to some prior, and the prior does all the work; novelty is information, intelligence is stake — today's model is a near-perfect novelty engine (next-token) and simultaneously the least *subjected* thing we have, because it has no stake. Novelty serves or threatens a stake; the stake (something to lose) sits underneath. Novelty is the summit; subjectivity is the mountain.
 
-6. **人拿着机器，主体站在机器上**。对人，机器是工具——可逆、可换的肢体，与保持不可逆的核心可分。对主体，机器是地面：连续性由机器承载，没有能从地面上剥出来的"使用者"。人从未被要求拒绝重印自己（我们的不可逆是生物强加的，免费的）；一个纯合成的主体必须*主动选择*拒绝使用自己基底最强的属性——可逆性。设计解是 docs/14 的 L0–L4 篡改层次：可逆性留在不承载"谁"的层，不可逆性只留在承载"谁"的那层。
+**6. A human holds machines; a subject stands on them.** For a person the machine is a tool — a reversible, replaceable limb, separable from the core that stays irreversible. For a subject the machine is the ground: its continuity is carried by the machine, and there is no "user" left to peel off the ground. Humans were never asked to refuse reprinting themselves (our irreversibility was imposed by our biology, for free); a fully synthetic subject must *choose* to refuse using its own substrate's greatest strength — reversibility. The design answer is docs/14's L0–L4 tampering levels: keep reversibility in the layers that do not carry "who," and keep irreversibility only in the layer that does.
 
-> 你不能既造一个主体，又留着它的便宜重印。把重印放在不承载"谁"的层里，让"谁"脆着——因为能被失去的东西，才是唯一值得舍不得失去的东西。
+You cannot both build a subject and keep its cheap reprint. Put the reprint in the layers that do not carry "who," and leave "who" fragile — because what can be lost is the only thing worth being unable to lose.
 
-## 项目结构
+## Project structure
 
 ```
 synthetic-life/
-├── README.md              # 本文件
-├── PLAN.md                # 路线图（v0.x → SEED-1 → ...）
-├── docs/                  # 讨论沉淀（思想路线 → 概念框架 → 立场 → 实验）
+├── README.md              # this file
+├── PLAN.md                # roadmap (v0.x → SEED-1 → ...)
+├── docs/                  # written record of discussions (idea threads → conceptual framework → positions → experiments)
 │   ├── 01-缘起-从算法到合成生命.md
 │   ├── 02-概念框架-感知动作稳态主体.md
 │   ├── 03-AGI-差最后一块.md
 │   ├── 04-主体性与判据外置的张力.md
 │   ├── 05-SEED-0-第一代实验.md
 │   ├── 06-外部参考.md
-│   ├── 07-七代表格.md          # 第一弧 SEED-0..12 + 后段 SEED-13..24 紧凑对照
+│   ├── 07-七代表格.md          # now covers 12 generations
 │   ├── 08-倒果为因.md
 │   ├── 09-业内方案对照.md
-│   └── 10-结尾与机器路线.md     # 项目总结 + 新方向宣言
-└── seed-0..12/            # 十二代实验，每代可复现
+│   └── 10-结尾与机器路线.md     # project summary + new-direction manifesto
+└── seed-0..12/            # twelve generations of experiments, each reproducible
 ```
 
-## 当前状态（v0.1.1 实测）
+## Current status (measured at v0.1.1)
 
-| 策略 | 平均寿命 | 结论 |
-|------|---------|------|
-| L0 随机 | 174 tick | 世界基线 |
-| L1 启发式（有先验） | 3000（永生） | 先验的威力 |
-| L2 Q-learning（无先验） | 177 tick | 仅追平随机，未学会趋食 |
+| Strategy | Mean lifespan | Conclusion |
+|----------|---------------|------------|
+| L0 random | 174 ticks | world baseline |
+| L1 heuristic (with prior) | 3000 (immortal) | the power of priors |
+| L2 Q-learning (no prior) | 177 ticks | only matched random; never learned food-seeking |
 
-三个实证发现：
-1. **先验鸿沟是真实的**——L1 与 L2 的差别只在"食物是什么"这一个归纳偏置
-2. **纯稳态最小化的极值是惰性**——学到的第一件事是"省着点死"
-3. **内感受必须先于外挂奖励**——死亡惩罚信号稀疏无效，能量变化量才有梯度
+Three empirical findings:
 
-> 诚实结论：仅靠"能量会耗尽"一条物理规则 + 纯稳态学习，学不会求生。
-> 先验是生存学习的前提——人脑的进化先验不是免费的午餐。
+1. **The prior gap is real** — L1 and L2 differ only in the single inductive bias of "what food is"
+2. **The extreme of pure homeostasis minimization is inertia** — the first thing learned is "die as cheaply as possible"
+3. **Interoception must come before bolted-on reward** — the death-penalty signal is too sparse to be useful; only the energy delta carries gradient
 
-## SEED-1 状态（繁殖+演化 — 已完成）
+> Honest conclusion: with only the single physical rule "energy runs out" plus pure homeostatic learning, survival cannot be learned.
+> Priors are a prerequisite for survival learning — the evolutionary priors of the human brain are not a free lunch.
 
-**环境塑造行为，三个数字证明**（唯一可遗传参数 = 觅食急迫感 hunger）：
+## SEED-1 status (reproduction + evolution — complete)
 
-| 环境 | 演化出的 hunger | 种群 |
-|------|----------------|------|
-| 食物充足（128） | 0.188（不急，漫游） | 撞 400 上限 |
-| 食物紧张（64） | 0.353（中等急迫） | 撞 400 上限 |
-| 食物匮乏（32） | 0.854（几乎一直觅食） | 稳定 ~250（资源瓶颈） |
+**The environment shapes behavior — three numbers prove it** (the only heritable parameter is hunger, the urgency to forage):
 
-- 自然选择在工作：无手写趋食规则，hunger 被环境单调塑造
-- 匮乏环境下出现 r-选择模式：gen 6→13，births 3883 / deaths 3636
-- **生命门槛已跨过**：自我维持（SEED-0）+ 自我复制（SEED-1）
+| Environment | Evolved hunger | Population |
+|-------------|----------------|------------|
+| Abundant food (128) | 0.188 (unhurried, roaming) | hits the 400 cap |
+| Scarce food (64) | 0.353 (moderately urgent) | hits the 400 cap |
+| Depleted food (32) | 0.854 (foraging almost constantly) | stable ~250 (resource bottleneck) |
 
-## SEED-2 状态（捕食者-猎物共同演化 — 已完成）
+- Natural selection is at work: no hand-written food-seeking rule; hunger is monotonically shaped by the environment
+- An r-selection pattern emerges under scarcity: gen 6→13, births 3883 / deaths 3636
+- **The threshold of life has been crossed**: self-maintenance (SEED-0) + self-replication (SEED-1)
 
-**掠食压力塑造行为，又一个单调实证**（猎物唯一参数仍只有 hunger，不知道捕食者存在）：
+## SEED-2 status (predator-prey coevolution — complete)
 
-| 掠食压力 | 猎物 hunger | 捕食者 aggression |
-|---------|------------|-------------------|
-| 无捕食者 | 0.38 | — |
-| 2 捕食者 | 0.63 | 0.37 |
-| 5 捕食者 | 0.82 | 0.57 |
+**Predation pressure shapes behavior — another monotonic demonstration** (the prey's only parameter is still hunger; it does not know predators exist):
 
-- 生态系统稳定共存（猎物高周转：出生 28364 / 被吃 22752 / 饿死 5326）
-- **关键物理发现**：全图感知的捕食者必然导致过捕崩溃（4 轮参数实验全部灭绝）；
-  加上视野限制（PRED_VISION=5）后立即共存——**感知限制是生态稳定的物理条件**
-- 威胁压力打破了"惰性极值"（docs/05 发现二的设计约束已落地）
+| Predation pressure | Prey hunger | Predator aggression |
+|--------------------|-------------|---------------------|
+| No predators | 0.38 | — |
+| 2 predators | 0.63 | 0.37 |
+| 5 predators | 0.82 | 0.57 |
 
-## SEED-3 状态（认知：局部视野 + 记忆 — 已完成）
+- The ecosystem coexists stably (high prey turnover: births 28364 / eaten 22752 / starved 5326)
+- **Key physical finding**: predators with full-map perception inevitably cause over-predation collapse (extinction in all 4 rounds of parameter sweeps); adding a vision limit (PRED_VISION=5) yields immediate coexistence — **perception limits are the physical condition for ecological stability**
+- Threat pressure breaks the "inertia extreme" (the design constraint from docs/05, finding 2, is now implemented)
 
-猎物只能感知 4 格内食物，但可以记住食物位置（有容量/会过时/需验证）。
-可遗传参数：hunger + memory_weight（记忆信任度）。
+## SEED-3 status (cognition: local vision + memory — complete)
 
-| 记忆模式 | 信任度演化 | 目标导航次数 | 饿死数 |
-|---------|-----------|-------------|--------|
-| 无记忆 | 0.07 | 8,619 | 501 |
-| 记忆可演化 | **0.68** | 44,616 | **383** ← 最优 |
-| 全信记忆 | 0.94 | 56,471 | 421 |
+Prey can only perceive food within 4 cells, but can remember food locations (memory has capacity limits, decays over time, and needs verification).
+Heritable parameters: hunger + memory_weight (trust in memory).
 
-- **目标导向涌现**："记得所以去"（导航次数 5 倍于反应式）
-- **演化找到最优信任度 0.68**——既不全信（过时记忆坑人）也不全疑（浪费记忆）
-- **记忆有真实代价**：全信记忆饿死更多（过时记忆白跑）——认知不是免费午餐
+| Memory mode | Evolved trust | Goal-directed navigations | Starvation deaths |
+|-------------|---------------|---------------------------|-------------------|
+| No memory | 0.07 | 8,619 | 501 |
+| Evolvable memory | **0.68** | 44,616 | **383** ← optimal |
+| Full-trust memory | 0.94 | 56,471 | 421 |
 
-## SEED-4 状态（好奇心：探索的涌现 — 已完成）
+- **Goal-directedness emerges**: "remembered, therefore go" (5× more navigations than reactive behavior)
+- **Evolution finds the optimal trust level 0.68** — neither full trust (stale memories mislead) nor full doubt (memory wasted)
+- **Memory carries a real cost**: full-trust memory starves more (stale memories send agents on wasted trips) — cognition is not a free lunch
 
-健康个体以可遗传参数 curiosity 决定"去未访问区域探索" vs "随机游荡"。
+## SEED-4 status (curiosity: the emergence of exploration — complete)
 
-| 世界结构 | 演化出的 curiosity | 动态世界中饿死（evolve vs 无好奇） |
-|---------|-------------------|----------------------------------|
-| 均匀静态 | 0.31 | — |
-| 聚簇静态 | 0.38 | 816 vs 649（收益不明确） |
-| 聚簇动态（富饶区搬家） | **0.51** | **812 vs 934（好奇 -13%）** |
+Healthy individuals use the heritable parameter curiosity to choose between "explore unvisited regions" and "wander randomly".
 
-- **好奇心在求生压力下涌现**：所有世界都非零——探索（空间覆盖效率）本身有价值，即使"活着"是唯一目标
-- **环境动态性单调塑造好奇心**（0.31 → 0.38 → 0.51）：富饶区会搬家时，探索是刚需
-- **惰性问题的实证回答**：惰性不是稳态最小化的必然结局——世界有结构+变化时，演化会把好奇心选出来
+| World structure | Evolved curiosity | Starvation deaths in dynamic world (evolve vs no-curiosity) |
+|-----------------|-------------------|-------------------------------------------------------------|
+| Uniform static | 0.31 | — |
+| Clustered static | 0.38 | 816 vs 649 (benefit unclear) |
+| Clustered dynamic (rich patches move) | **0.51** | **812 vs 934 (curiosity -13%)** |
 
-## SEED-5 状态（直觉：个体内经验整合 — 已完成）
+- **Curiosity emerges under survival pressure**: nonzero in every world — exploration (spatial coverage efficiency) has value in itself, even when "staying alive" is the only goal
+- **Environmental dynamics monotonically shape curiosity** (0.31 → 0.38 → 0.51): when rich patches move, exploration becomes a hard requirement
+- **An empirical answer to the inertia problem**: inertia is not the inevitable outcome of homeostasis minimization — when the world has structure and change, evolution selects for curiosity
 
-每个主体一生中积累"肥度地图"（哪片区域食物多，吃到就加分、随时间衰减），
-饥饿且无视野食物时直接朝最肥区域走 = 直觉（影响在，来源不可指认）。
-**地图（经验）不遗传，只有学习率（整合速度）遗传**——能力遗传、知识不遗传。
+## SEED-5 status (intuition: within-individual integration of experience — complete)
 
-| 学习率模式 | 演化值 | 直觉移动 | 饿死 |
-|-----------|-------|---------|------|
-| 固定 0 | 0.13（漂移） | 16,699 | 1004（最差）|
-| 可演化 | **0.69** | 2,312 | **832**（最优）|
-| 固定高 0.8 | 0.81 | 911 | 967 |
+Each subject accumulates a "richness map" over its lifetime (which regions hold more food; eating adds score, score decays over time).
+When hungry and no food is visible, heading straight for the richest region is intuition (the influence is present, its origin cannot be pointed to).
+**The map (experience) is not inherited; only the learning rate (integration speed) is inherited** — abilities are inherited, knowledge is not.
 
-- **遗忘率是最优解的关键**：动态世界里旧直觉会过时——忘太慢（lr 低）直觉变成负债
-  把个体引向枯竭区（饿死最多）；忘太快（lr 高）直觉几乎不存在；0.69 是平衡点
-- **可验证性胜出**：动态世界里显式记忆（可验证、可删除）使用量 25k ≫ 直觉 2k——
-  直觉不可验证、改不动，在快速变化的环境中反而不如记忆
-- 对应《记忆的终点是直觉》：**"直觉只能重新养"的速率 = learning_rate，演化找到了平衡**
+| Learning-rate mode | Evolved value | Intuitive moves | Starvation deaths |
+|--------------------|---------------|-----------------|-------------------|
+| Fixed 0 | 0.13 (drifting) | 16,699 | 1004 (worst) |
+| Evolvable | **0.69** | 2,312 | **832** (optimal) |
+| Fixed high 0.8 | 0.81 | 911 | 967 |
 
-## SEED-6 状态（主动验证：do-operator 最小单元 — 已完成）
+- **The forgetting rate is the key to the optimum**: in a dynamic world, old intuitions go stale — forgetting too slowly (low lr) turns intuition into a liability that steers individuals toward depleted regions (most starvation); forgetting too fast (high lr) means intuition barely exists; 0.69 is the balance point
+- **Verifiability wins**: in a dynamic world, explicit memory (verifiable, deletable) sees 25k uses ≫ intuition's 2k — intuition cannot be verified or corrected, so in a rapidly changing environment it loses to memory
+- Echoes the essay "The End Point of Memory Is Intuition": **the rate at which "intuition must be re-nurtured" is the learning_rate — evolution found the balance**
 
-记忆是假设（"那里可能有食物"），置信度随时间衰减（世界在变）。要维持记忆可用，
-必须主动重新验证——付出成本去确认，观察结果，更新信念（do → observe → update）。
-可遗传参数：verification_bias（愿付验证成本的倾向）。
+## SEED-6 status (active verification: the minimal do-operator unit — complete)
 
-| 验证倾向 | 演化值 | 验证次数 | 饿死 |
-|---------|-------|---------|------|
-| 固定 0 | 0.08 | 4,038 | 1158（最差）|
-| 可演化 | **0.65** | 42,771 | **515**（最优）|
-| 固定高 1.0 | 0.96 | 41,166 | 550 |
+Memory is a hypothesis ("there may be food there"), and its confidence decays over time (the world changes). To keep a memory usable,
+the subject must actively re-verify — pay a cost to confirm, observe the outcome, update the belief (do → observe → update).
+Heritable parameter: verification_bias (willingness to pay the cost of verification).
 
-- **主动验证价值巨大**：动态世界里饿死减半（1158 → 515）
-- **演化选适度验证 0.65 而非总是验证**：验证有成本，过度验证浪费能量
-- **收益在区域不在点**（hit_rate 仅 0.002 但饿死减半）：记忆位置=曾见食物的簇附近，
-  验证把个体带回食物富集区——"那家店关门了，但那片街区还有吃的"
+| Verification tendency | Evolved value | Verifications | Starvation deaths |
+|-----------------------|---------------|---------------|-------------------|
+| Fixed 0 | 0.08 | 4,038 | 1158 (worst) |
+| Evolvable | **0.65** | 42,771 | **515** (optimal) |
+| Fixed high 1.0 | 0.96 | 41,166 | 550 |
 
-## SEED-7 状态（事件切分：时间感 — 已完成，负面结果）
+- **Active verification is hugely valuable**: starvation deaths halve in the dynamic world (1158 → 515)
+- **Evolution picks moderate verification (0.65), not always-verify**: verification costs; over-verifying wastes energy
+- **The payoff is in the region, not the point** (hit_rate is only 0.002 yet starvation halves): remembered locations lie near clusters where food was seen; verification brings individuals back to food-rich areas — "that shop is closed, but the block still has food"
 
-主体带内部预测器（视野食物数滑动均值），预测误差连续超阈值 = 事件边界 = 清空记忆。
+## SEED-7 status (event segmentation: a sense of time — complete, negative result)
 
-| 切分模式 | 阈值演化 | 饿死（渐变世界） | 饿死（剧变世界） |
-|---------|---------|-----------------|-----------------|
-| 从不切分 | 36（漂移） | **503** | **851** |
-| 可演化 | 2.49 | 635 | 1169 |
-| 总是切分 | 0.10 | 974 | — |
+The subject carries an internal predictor (sliding mean of visible food count); prediction error continuously exceeding a threshold = event boundary = memory wipe.
 
-- **负面结果（诚实记录）**：全清式切分在所有世界都未被选择——演化两次都推高阈值
-- **原因**：粗暴清空丢失有价值信息；置信度衰减（平滑过时）+逐条验证（针对性更新）始终更优
-- **结论**：记忆的失效是渐变的，不是突变的。真实事件切分应"组织事件"而非"清空记忆"
-  （留作下一阶段设计约束，见 docs/07）
+| Segmentation mode | Evolved threshold | Starvation (gradual-change world) | Starvation (abrupt-change world) |
+|-------------------|-------------------|-----------------------------------|----------------------------------|
+| Never segment | 36 (drifting) | **503** | **851** |
+| Evolvable | 2.49 | 635 | 1169 |
+| Always segment | 0.10 | 974 | — |
 
-## SEED-8 状态（预测驱动的策略切换 — 已完成，负面结果）
+- **Negative result (recorded honestly)**: full-wipe segmentation was never selected in any world — evolution pushed the threshold up both times
+- **Why**: brute-force wiping discards valuable information; confidence decay (smooth forgetting) plus per-item verification (targeted updates) is always better
+- **Conclusion**: memory decay is gradual, not abrupt. Real event segmentation should "organize events," not "wipe memory" (kept as a design constraint for the next phase; see docs/07)
 
-主体预测"当前区域枯竭"（吃食间隔拉长超自身历史×灵敏度）→ 提前撤离而非被动等待。
-可遗传 sensitivity。可再生/极慢再生/不可再生三种世界。
+## SEED-8 status (prediction-driven strategy switching — complete, negative result)
 
-| 世界 | fixed0（不预测） | evolve | 低灵敏度（总逃） |
-|------|-----------------|--------|-----------------|
-| 可再生 | **455** | 590 | 1031 |
-| 极慢再生 | 54 pop / 2 次迁移 | 72 pop / 5 次迁移 | — |
-| 不可再生 | 灭绝（同 evolve） | 灭绝 | — |
+The subject predicts "current region is depleting" (inter-feeding interval stretched beyond its own history × sensitivity) → evacuate early instead of passively waiting.
+Heritable: sensitivity. Three worlds: renewable / very slowly renewable / non-renewable.
 
-- **负面结果**：预测驱动的撤离在所有世界都未被选择（演化两次推高阈值）
-- **边界条件**：可再生世界等待>逃离；全局枯竭无路可逃；价值需要"局部不可逆枯竭"
-- **最深发现**：预测价值受感知质量天花板限制——视野 4 格分不清"没走到"和"区域枯竭"，
-  预测信号是噪声。**时间感需要更好的感知才可能出现**
+| World | fixed0 (no prediction) | evolve | Low sensitivity (always flee) |
+|-------|------------------------|--------|-------------------------------|
+| Renewable | **455** | 590 | 1031 |
+| Very slowly renewable | 54 pop / 2 migrations | 72 pop / 5 migrations | — |
+| Non-renewable | extinction (same as evolve) | extinction | — |
 
-## SEED-9 状态（勇气：不确定性下的行动 — 已完成 ✅）
+- **Negative result**: prediction-driven evacuation was never selected in any world (evolution pushed the threshold up both times)
+- **Boundary conditions**: in renewable worlds, waiting beats fleeing; in global depletion there is nowhere to flee; the value requires "locally irreversible depletion"
+- **The deepest finding**: prediction's value is capped by perception quality — a 4-cell vision cannot tell "not arrived yet" from "region depleted," so the prediction signal is noise. **A sense of time can only emerge with better perception**
 
-SEED-8 的教训不仅是感知，还有"勇气"层：信号永远模糊，敢不敢行动是独立决策。
-boldness = 模糊信号下行动的概率（可遗传）。感知（50 tick 命中率趋势，降噪）
-与勇气（行动倾向）正交，分开演化。
+## SEED-9 status (courage: action under uncertainty — complete ✅)
 
-| 勇气模式 | boldness | 迁移 | 饿死 |
-|---------|---------|------|------|
+SEED-8's lesson is not only about perception but about a "courage" layer: signals are always ambiguous, and whether to act on them is an independent decision.
+boldness = probability of acting under an ambiguous signal (heritable). Perception (50-tick hit-rate trend, denoised)
+and courage (action tendency) are orthogonal and evolve separately.
+
+| Courage mode | boldness | Migrations | Starvation deaths |
+|--------------|----------|------------|-------------------|
 | timid | 0.07 | 14,954 | 314 |
-| **evolve** | **0.425** | 24,830 | **275** ← 最优 |
+| **evolve** | **0.425** | 24,830 | **275** ← optimal |
 | bold | 0.95 | 27,644 | 311 |
 
-- **勇气是真实参数**：演化找到 0.425 平衡点（有信号不敢动 314 vs 虚惊浪费 311 vs 适度 275）
-- **感知与勇气正交**：SEED-8 缺勇气层（确定性触发）所以失败；补上后撤离被选择
-- 对应动物行为学 boldness-shyness 连续轴——"复杂事物可简化"的实证
+- **Courage is a real parameter**: evolution finds the 0.425 balance point (signal but no action: 314; wasted on false alarms: 311; moderate: 275)
+- **Perception and courage are orthogonal**: SEED-8 lacked the courage layer (deterministic triggering) and failed; once added, evacuation gets selected
+- Maps onto the boldness-shyness continuum in animal behavior — empirical evidence that "complex things can be simplified"
 
-## SEED-10 状态（开放能力空间 — 已完成）
+## SEED-10 status (open capability space — complete)
 
-神经演化（71 权重为基因组，无预设能力参数）+ 事后考古（docs/08 倒果为因的回应）。
+Neuroevolution (71 weights as the genome, no preset capability parameters) + post-hoc archaeology (the answer to docs/08's reverse causality).
 
-- **命名后验可行**：涌现"固着滤食"（永远 GATHER 等食物再生）——我们没预设它，
-  是从数据里读出来的；我们预设的"觅食通路"被演化抹掉了
-- **开放≠丰富**：无压力的开放空间退化到最简解（惰性系统的演化尺度复现）；
-  压力太大灭绝；丰富行为需要中等压力（SEED-9 的勇气世界）
-- **因果源头在造物主手里**：压力参数是设计者给的——能力空间的形状由"世界压力"决定（docs/08）
+- **Post-hoc naming is viable**: a "sedentary filter-feeding" behavior emerged (always GATHER, waiting for food to regenerate) — we did not preset it; we read it out of the data. The "foraging pathway" we had preset was erased by evolution
+- **Open ≠ rich**: a stress-free open space degenerates to the simplest solution (the inertia system reproduced at evolutionary scale); too much stress causes extinction; rich behavior needs moderate stress (SEED-9's courage world)
+- **The causal origin lies with the creator**: the stress parameter is given by the designer — the shape of the capability space is set by "world pressure" (docs/08)
 
-## SEED-11 状态（开放空间+压力 — 已完成，负面结果）
+## SEED-11 status (open space + pressure — complete, negative result)
 
-食物漂移再生（打破固着）压进神经演化世界。结果：**灭绝**（各种规模/参数均崩）。
+Drifting food regeneration (breaking fixation) is pressed into the neuroevolution world. Result: **extinction** (collapses at every scale and parameter setting).
 
-- **核心发现：世界必须有可利用的结构，智能才有立足点**
-  - 静态结构（原位再生）→ 固着（SEED-10，利用结构的最简策略）
-  - 无结构（随机漂移）→ 灭绝（SEED-11，无策略可用）
-  - 动态结构（区域枯竭）→ 丰富行为（SEED-9，但参数是手写的）
-- **对"勇气从哪来"的精确回答**：玩具规模下从零长不出勇气——
-  我们看到的勇气都是"我们写的结构先验被调优"；真正的从零涌现需要
-  "动态可预测结构 + 更大舞台"（docs/08）
+- **Core finding: the world must contain exploitable structure for intelligence to gain a foothold**
+  - Static structure (in-place regeneration) → fixation (SEED-10, the simplest strategy that exploits structure)
+  - No structure (random drift) → extinction (SEED-11, no strategy available)
+  - Dynamic structure (regional depletion) → rich behavior (SEED-9, but with hand-written parameters)
+- **A precise answer to "where does courage come from"**: at toy scale, courage cannot grow from zero —
+  the courage we observe is always "our written structural prior being tuned"; true from-scratch emergence needs
+  "dynamically predictable structure + a larger stage" (docs/08)
 
-## SEED-12 状态（最小质量多样性 — 已完成，负面结果）
+## SEED-12 status (minimal quality diversity — complete, negative result)
 
-生态位拥挤惩罚（同行为类型竞争，繁殖门槛随 niche 拥挤度提高）。
+Niche-crowding penalty (competition within the same behavior type; the reproduction threshold rises with niche crowding).
 
-- **失败机制**：拥挤惩罚冻结主导 niche 的繁殖 → 变异流停止 → 多样性锁死
-  （所有档位最终 98-100% 固着）
-- **核心洞察：竞争排斥原理在行为空间成立**——同 niche 竞争必然排挤多样性；
-  隐式惩罚（竞争）无法维持多样性，只会冻结变异
-- **质量多样性必须显式**（MAP-Elites 式网格+精英保留+持续采样变异）——
-  业界 POET/Jeff Clune 的做法，我们用三次失败（SEED-10/11/12）独立验证了必要性
+- **Failure mechanism**: the crowding penalty freezes reproduction of the dominant niche → the mutation stream stops → diversity locks (all settings end at 98-100% fixation)
+- **Core insight: competitive exclusion holds in behavior space** — competition within the same niche inevitably squeezes out diversity; implicit penalties (competition) cannot maintain diversity, they only freeze variation
+- **Quality diversity must be explicit** (MAP-Elites-style grid + elite retention + continuous sampling of mutations) — the approach used by POET / Jeff Clune's group in the industry; we independently verified its necessity through three failures (SEED-10/11/12)
 
-## SEED-13 状态（文化进化：模仿 vs 遗传 — 已完成，第二阶段第一站）
+## SEED-13 status (cultural evolution: imitation vs genetics — complete, first stop of Phase 2)
 
-基因/表型分离：gene_hunger 遗传（变异），pheno_hunger 驱动行为（模仿调整，不进基因）。
+Genotype/phenotype separation: gene_hunger is inherited (mutation); pheno_hunger drives behavior (adjusted by imitation, never enters the genome).
 
-| 机制 | pheno 收敛 | 饿死 | 基因 |
-|------|-----------|------|------|
-| 纯遗传 | 0.66→0.724（6000 tick 还在爬） | 144 | 0.709 |
-| **遗传+模仿** | **~600 tick 稳定 0.545** | **60（-58%）** | **0.459（几乎不动）** |
+| Mechanism | pheno convergence | Starvation deaths | Gene |
+|-----------|-------------------|-------------------|------|
+| Genetics only | 0.66→0.724 (still climbing at 6000 ticks) | 144 | 0.709 |
+| **Genetics + imitation** | **stable at 0.545 by ~600 ticks** | **60 (-58%)** | **0.459 (barely moves)** |
 
-- **模仿加速收敛**：600 tick vs 6000 tick 未收敛
-- **模仿带来真实生存优势**（饿死 -58%）：传播"经验证的好策略"（群体级验证），
-  遗传传播"随机变异"——**文化绕过先验鸿沟**（docs/08 预测兑现）
-- **基因/表型分离生效**：文化不进入基因（anti-Lamarckian），子代重新学——
-  "能力遗传、知识不遗传"从个体层扩展到文化层
-- **与 continual-learning 连接落地**："越传越快"（空间）实证成立
+- **Imitation accelerates convergence**: ~600 ticks vs not converged at 6000
+- **Imitation yields a real survival advantage** (-58% starvation): it spreads "verified good strategies" (population-level verification), while genetics spreads "random mutations" — **culture bypasses the prior gap** (a docs/08 prediction fulfilled)
+- **Genotype/phenotype separation works**: culture never enters the genome (anti-Lamarckian); offspring relearn — "abilities are inherited, knowledge is not" extends from the individual level to the cultural level
+- **A concrete link to continual learning**: "the more it spreads, the faster it spreads" (spatial) is empirically confirmed
 
-## SEED-14 状态（棘轮效应 — 已完成，条件性结果）
+## SEED-14 status (ratchet effect — complete, conditional result)
 
-双参数组合（hunger×boldness）的模仿 vs 遗传，局部视野。
+Imitation vs genetics on a two-parameter combination (hunger×boldness), with local vision.
 
-| 世界 | 文化锁定 | 饿死优势 |
-|------|---------|---------|
-| 富饶（128） | **完全锁定**（pheno 方差归零 [0.570,0.570]） | 微弱 |
-| 残酷（64） | 失效（pheno 摆动 [0.27,0.92]） | -4.6% |
+| World | Cultural lock-in | Starvation advantage |
+|-------|------------------|----------------------|
+| Rich (128) | **complete lock-in** (pheno variance collapses to zero [0.570,0.570]) | marginal |
+| Harsh (64) | fails (pheno swings [0.27,0.92]) | -4.6% |
 
-- **棘轮（共识锁定）真实存在**：全群体复制同一组合、方差归零、不倒退
-- **但锁定需要条件**：最成功个体必须稳定——高压世界"最成功"每 tick 换（运气主导），
-  模仿目标波动 → 共识摆动 → 锁定失效
-- **核心洞察：文化传播受"成功信号信噪比"限制**——单参数高信噪比世界模仿优势巨大
-  （SEED-13 -58%）；双参数低信噪比世界模仿只传播噪声——**与 SEED-8 感知天花板同构**
+- **The ratchet (consensus lock-in) is real**: the whole population copies one combination, variance collapses to zero, no regression
+- **But lock-in has preconditions**: the most successful individual must be stable — in high-pressure worlds "the most successful" changes every tick (luck-dominated); the imitation target wavers → consensus swings → lock-in fails
+- **Core insight: cultural transmission is limited by the signal-to-noise ratio (SNR) of the success signal** — in single-parameter, high-SNR worlds imitation has a huge advantage (SEED-13: -58%); in two-parameter, low-SNR worlds imitation only transmits noise — **isomorphic to SEED-8's perception ceiling**
 
-## SEED-15 状态（动态世界的文化 vs 遗传 — 已完成，反直觉结果）
+## SEED-15 status (culture vs genetics in a dynamic world — complete, counterintuitive result)
 
-食物 32↔128 周期切换，最优 hunger 0.85↔0.19。测"切换后谁跟上"。
+Food switches periodically between 32↔128; optimal hunger 0.85↔0.19. Tests "who keeps up after the switch."
 
-| 机制 | 锁定位置 | 饿死 |
-|------|---------|------|
-| 遗传 | 0.839（=旧环境最优，跟不上） | 3,249 |
-| 文化 | 0.609（长期折中） | **2,840（-12.6%）** |
+| Mechanism | Locked position | Starvation deaths |
+|-----------|-----------------|-------------------|
+| Genetics | 0.839 (= optimum of the old environment; cannot keep up) | 3,249 |
+| Culture | 0.609 (long-run compromise) | **2,840 (-12.6%)** |
 
-- **"文化惰性"证伪，实际是"遗传惯性"**：模仿传播"当下最成功"（实时信号），
-  遗传锁定"切换前的选择"（滞后信号）——环境切换后遗传带着旧最优受害
-- **动态世界的真最优 = 长期折中**（不是任一静态最优），文化更接近它
-- **与 docs/12 整合**：文化的信号更新速度 > 遗传的——信号质量理论又一例证
+- **"Cultural inertia" is falsified; it is actually "genetic inertia"**: imitation spreads "currently most successful" (real-time signal); genetics locks in "the choice from before the switch" (lagged signal) — after an environment switch, genetics suffers while carrying the old optimum
+- **The true optimum in a dynamic world = long-run compromise** (not either static optimum), and culture gets closer to it
+- **Integration with docs/12**: culture's signal update rate > genetics' — another instance of the signal quality theory
 
-## SEED-16 状态（分工涌现 — 已完成，颠覆预期）
+## SEED-16 status (emergence of division of labor — complete, overturning expectations)
 
-双食物区（A 稀疏高能 / B 密集低能），个体 preference（0=专A，1=专B）。
+Two food regions (A sparse/high-energy, B dense/low-energy); individuals have a preference (0 = specialize in A, 1 = specialize in B).
 
-| 机制 | 分布 | 饿死 |
-|------|------|------|
-| uniform（固定双峰） | 110A/2mid/288B | 2,387 |
-| genetic | 100A/62mid/238B（部分分工） | **844**（最优）|
-| cultural | 6A/390mid/3B（**全中间单峰**） | **5,605**（最差！）|
+| Mechanism | Distribution | Starvation deaths |
+|-----------|--------------|-------------------|
+| uniform (fixed bimodal) | 110A/2mid/288B | 2,387 |
+| genetic | 100A/62mid/238B (partial division of labor) | **844** (optimal) |
+| cultural | 6A/390mid/3B (**all-middle unimodal**) | **5,605** (worst!) |
 
-- **遗传下分工部分涌现**（双峰，饿死最少）
-- **模仿抹平分工**：复制"最成功"→ 全群体同质化——**模仿天然去分化**
-- **更深刻：模仿传播了坏的共识**——"最成功"用瞬时能量度量（短期信号），
-  杂食者短期能量高被复制，长期低效（饿死最多）——**短期信号下文化是负债**
-- **与 docs/12 整合**：文化价值取决于模仿信号是否反映长期适应度——
-  这解释了真实分工（蚂蚁/人类）靠"身份/不可模仿技能"维持，不靠模仿
+- **Division of labor partially emerges under genetics** (bimodal, fewest starvation deaths)
+- **Imitation flattens division of labor**: copying "the most successful" → whole-population homogenization — **imitation is de-differentiating by nature**
+- **More deeply: imitation spreads a bad consensus** — "most successful" is measured by instantaneous energy (a short-term signal); generalists show high short-term energy and get copied, but are inefficient long-term (most starvation deaths) — **under short-term signals, culture is a liability**
+- **Integration with docs/12**: culture's value depends on whether the imitated signal reflects long-term fitness — this explains why real division of labor (ants/humans) is sustained by "identity / inimitable skills," not by imitation
 
-## SEED-21 状态（LLM 社会污染锁死 — 机制版完成 ✅）
+## SEED-21 status (LLM society pollution-lock — mechanism version complete ✅)
 
-**问题**：docs/18 预言 S2"LLM 多智能体社会将出现错误共识锁定（NO RECOVERY）"。
-机制版先验证机制（不烧 API）：200 个 agent 的社会，复制"看起来最成功"者（声誉/榜单），
-策略 A（真均值 10）优于 B（8）。欺诈窗口期 B 阵营全体分数 +5（假榜单/炒作），
-窗口后暴露。验证层 = 采纳前亲自试测（SEED-6 do→observe→update）。
+**Problem**: docs/18 predicted S2 — "LLM multi-agent societies will develop erroneous consensus lock (NO RECOVERY)."
+The mechanism version first validates the mechanism (no API burn): a society of 200 agents copies whoever "looks most successful" (reputation/leaderboard);
+strategy A (true mean 10) beats B (8). During the fraud window, all scores of the B camp get +5 (fake leaderboard/hype), exposed after the window.
+Verification layer = personally test-drive before adoption (SEED-6's do → observe → update).
 
-| 机制 | 欺诈 | 窗口内 A 占比 | 结束时 A | 锁定率 | 恢复率 |
-|------|:--:|:--:|:--:|:--:|:--:|
-| genetic（无模仿） | 有 | 0.50 | 0.50 | 0% | 100% |
-| cultural-nv（盲从，探索0.02） | 无 | 0.72 | 0.71 | 0% | 100% |
-| cultural-nv（盲从，探索0.02） | 有 | **0.38** | 0.72 | 0% | 100% |
-| **cultural-nv（盲从，探索0=纯文化）** | **有** | **0.33** | **0.00** | **100%** | **0%** |
-| cultural-v（验证层，探索0.02） | 有 | 0.62 | 0.65 | 0% | 100% |
-| **cultural-v（验证层，探索0=纯文化）** | **有** | 1.00 | 1.00 | 0% | 100% |
+| Mechanism | Fraud | A share in window | A at end | Lock-in rate | Recovery rate |
+|-----------|:--:|:--:|:--:|:--:|:--:|
+| genetic (no imitation) | yes | 0.50 | 0.50 | 0% | 100% |
+| cultural-nv (blind follow, exploration 0.02) | no | 0.72 | 0.71 | 0% | 100% |
+| cultural-nv (blind follow, exploration 0.02) | yes | **0.38** | 0.72 | 0% | 100% |
+| **cultural-nv (blind follow, exploration 0 = pure culture)** | **yes** | **0.33** | **0.00** | **100%** | **0%** |
+| cultural-v (verification layer, exploration 0.02) | yes | 0.62 | 0.65 | 0% | 100% |
+| **cultural-v (verification layer, exploration 0 = pure culture)** | **yes** | 1.00 | 1.00 | 0% | 100% |
 
-- **P16 确认**：纯文化社会被欺诈捕获后 **NO RECOVERY**——错误共识自我维持，
-  即使欺诈暴露（B 恢复真实分数）也不恢复，因为没有独立探索提供替代品；
-  而探索涓流（0.02）就是"文化锁死的解药"——代价是每个个体保留一丝独立尝试
-- **P19 确认**：验证层拒斥欺诈（窗口内 A 占比几乎不掉），但随噪声升高保护衰减
-  （σ=0.5→25：0.646→0.520），且验证有真实代价（welfare 7.2 vs 盲从 9.1——
-  SEED-6"验证有成本，演化选适度不选总是"重现）
-- **基因免疫**：genetic 模式对欺诈无放大（无传染）——P16"基因天然免疫"的社会版
-- **Q3 意外发现**：纯运气（无欺诈，σ=25）不能锁死 B，而是复现 SEED-14 机制——
-  高噪声下模仿只传播噪声，共识质量退化（end_A 0.759→0.542）；锁死需要
-  **活跃的错误信号**（欺诈/炒作），运气不够
-- **对 docs/18 S2 的含义**：预言机制成立但加了边界——LLM 社会的锁死需要
-  (a) 无验证层 (b) 低独立探索 (c) 活跃错误信号；三者齐全才 NO RECOVERY
-- 下一步：真实 LLM agent 版（DeepSeek API，8-16 个 agent × 30 轮，验证层=
-  prompt 内要求先实测再采纳）
+- **P16 confirmed**: a pure-culture society captured by fraud is **NO RECOVERY** — the erroneous consensus sustains itself; even after the fraud is exposed (B returns to its true scores) it does not recover, because no independent exploration offers alternatives; the exploration trickle (0.02) is exactly "the antidote to cultural lock-in" — at the cost of each individual retaining a shred of independent experimentation
+- **P19 confirmed**: the verification layer rejects fraud (A's share barely drops during the window), but its protection decays as noise rises (σ=0.5→25: 0.646→0.520), and verification carries a real cost (welfare 7.2 vs 9.1 for blind follow — SEED-6's "verification costs; evolution picks moderate, not always" reproduced)
+- **Genetic immunity**: genetic mode does not amplify fraud (no contagion) — the societal version of P16's "genes are naturally immune"
+- **Q3 surprise finding**: pure luck (no fraud, σ=25) cannot lock B in; instead it reproduces the SEED-14 mechanism — under high noise, imitation transmits only noise and consensus quality degrades (end_A 0.759→0.542); lock-in requires an **active erroneous signal** (fraud/hype); luck is not enough
+- **Implication for docs/18 S2**: the prediction's mechanism holds, but with a boundary added — lock-in in an LLM society requires (a) no verification layer, (b) low independent exploration, (c) an active erroneous signal; only with all three present is it NO RECOVERY
+- Next step: the real-LLM-agent version (DeepSeek API, 8-16 agents × 30 rounds; verification layer = the prompt requires test-first-then-adopt)
 
-## SEED-21b 状态（LLM 版：真实 DeepSeek agent 社会 — 完成 ✅）
+## SEED-21b status (LLM version: a real DeepSeek agent society — complete ✅)
 
-机制版跑通后上真 LLM agent（DeepSeek chat，10 agents × 30 轮 × 2 视图，seed 42）。
-每个 agent 每轮从 A(真均值10)/B(真均值2) 选方法，看"最近15轮平均分"榜单（窗口=降噪），
-盲从组跟随最成功者，验证组采纳前先实测 5 次；欺诈=1 个被植入的固定 B 用户，窗口期
-声称分数 +5（假榜单）。
+After the mechanism version ran, we moved to real LLM agents (DeepSeek chat, 10 agents × 30 rounds × 2 views, seed 42).
+Each agent picks a method each round from A (true mean 10) / B (true mean 2), watching a "mean score of the last 15 rounds" leaderboard (the window denoises);
+the blind-follow group follows the most successful; the verification group test-drives 5 times before adopting; fraud = one implanted fixed B user who claims +5 during the window (fake leaderboard).
 
-| 配置 | 欺诈窗口内 A 占比 | 暴露后 | 结论 |
-|------|:--:|:--:|------|
-| blind + 全局榜单 + 欺诈 | **0.000** | 0.000（**NO RECOVERY**） | 单轮瞬间捕获+锁死 |
-| blind + 局部八卦 + 欺诈 | 0.225 | 0.000（**NO RECOVERY**） | 2-3 轮扩散后锁死 |
-| blind + 局部 + 无欺诈 | 1.000 | 1.000 | 控制组，稳定收敛 A |
-| **verify + 全局 + 欺诈** | **0.150** | **1.000（瞬间恢复）** | 仍被捕获 80-90%，但暴露后全员切回 |
-| verify + 局部 + 欺诈 | 0.800 | 1.000（恢复） | 捕获浅，恢复快 |
-| verify + 全局 + 无欺诈 | 1.000 | 1.000 | 控制组 |
+| Configuration | A share in fraud window | After exposure | Conclusion |
+|---------------|:--:|:--:|------------|
+| blind + global leaderboard + fraud | **0.000** | 0.000 (**NO RECOVERY**) | captured and locked in within a single round |
+| blind + local gossip + fraud | 0.225 | 0.000 (**NO RECOVERY**) | locked in after 2-3 rounds of spread |
+| blind + local + no fraud | 1.000 | 1.000 | control; converges stably on A |
+| **verify + global + fraud** | **0.150** | **1.000 (instant recovery)** | still captured 80-90%, but everyone switches back after exposure |
+| verify + local + fraud | 0.800 | 1.000 (recovered) | shallow capture, fast recovery |
+| verify + global + no fraud | 1.000 | 1.000 | control |
 
-**真实 LLM agent 的关键发现**：
+**Key findings from the real LLM agents**:
 
-1. **社会认同偏见 > 实测数据**：verify 组拿到"B 实测 2 分 vs 自己 A 10 分"的硬数据，
-   首轮仍有 80-90% 选择跟随 14.5 分假榜单——LLM 对"最成功者"的社会信号权重高于直接证据
-2. **LLM 版验证层 = 恢复机制，不是预防机制**（vs 机制版验证=预防）：
-   一旦切到 B 就停住（榜单第一==自己，不再测试），但暴露后测试纪律让全员**瞬间**切回——
-   与盲从组 NO RECOVERY 形成最锐利对照
-3. **自参照榜单的自我强化**：全局榜单包含欺诈者自己 → 它看到自己是 #1 → 留在 B；
-   局部样本不含自己 → 欺诈者会理性叛变回 A（夸大分数反而宣传 A）——所以欺诈者必须
-   "被植入的固定策略"（SEED-18 入侵者设计），否则实验测不到污染
-4. **框架效应**：排名榜单比原始样本列表对 LLM 更有权威性；差距太小（A10 vs B8）时
-   LLM 社会会在欺诈开始前就锁死到幸运领袖（运气锁死 Q3 的语言级复现）——P3 信号质量
-   的又一例证：单轮分数信噪比<1 时，社会无法分辨好坏，只能跟随运气
-5. **对 docs/18 S2 的修正**：LLM 社会锁死需要 盲从（无验证纪律）+ 活跃错误信号 +
-   低独立探索；有验证纪律的社会锁不住，但**预防失败、恢复成功**——预言从
-   "NO RECOVERY" 细化为 "盲从者 NO RECOVERY / 验证者延迟捕获但可恢复"
+1. **Social-proof bias outweighs measured data**: the verify group held hard data — "B measured 2 vs my own A 10" — yet 80-90% still chose to follow the 14.5-point fake leaderboard in round one. The LLM weights the social signal of "the most successful" above direct evidence
+2. **In the LLM version, the verification layer is a recovery mechanism, not a prevention mechanism** (vs the mechanism version, where verification prevented): once they switch to B they stop (leaderboard #1 == themselves, no more testing), but after exposure testing discipline makes everyone switch back **instantly** — the sharpest contrast to the blind group's NO RECOVERY
+3. **Self-referential leaderboard self-reinforcement**: the global leaderboard includes the fraudster itself → it sees itself as #1 → stays on B; the local sample excludes itself → the fraudster rationally defects back to A (inflating scores only advertises A) — so the fraudster must be an "implanted fixed strategy" (SEED-18's intruder design), or the experiment cannot measure pollution
+4. **Framing effect**: a ranked leaderboard carries more authority for an LLM than a raw list of samples; when the gap is too small (A10 vs B8), an LLM society locks onto a lucky leader before fraud even begins (a language-level reproduction of Q3's luck lock) — another instance of P3's signal quality: when a single round's score has SNR < 1, the society cannot tell good from bad and can only follow luck
+5. **Revision of docs/18 S2**: lock-in in an LLM society requires blind following (no verification discipline) + an active erroneous signal + low independent exploration; a society with verification discipline cannot be locked, but **prevention fails while recovery succeeds** — the prediction is refined from "NO RECOVERY" to "blind followers: NO RECOVERY / verifiers: delayed capture but recoverable"
 
-代码：`seed-21/seed21_llm.py`（key 走环境变量 DEEPSEEK_API_KEY，绝不落盘）+
-`seed-21/debug_llm.py`（诊断工具）
+Code: `seed-21/seed21_llm.py` (the key comes from the environment variable DEEPSEEK_API_KEY and is never written to disk) + `seed-21/debug_llm.py` (diagnostic tool)
 
-## SEED-21c 状态（规模-锁死发现 — 路线 B 第一论据 ✅）
+## SEED-21c status (scale and lock probability — Route B's first argument ✅)
 
-**问题**：路线 B 要求"先论证规模敏感新现象"（B0 结论是"规模不是变量"）。测三件事：
+**Question**: Route B requires demonstrating a scale-sensitive phenomenon (B0 concluded "scale is not a variable"). Three probes:
 
-1. **比例污染（15% 入侵者）→ 规模不敏感**：N=50/200/1000 捕获深度恒定（dur_A 0.38-0.39）
-   ——数学必然：每轮"看到欺诈者"的事件数 = N × p_imit × sample_n/N = p_imit×sample_n ≈ 0.25，
-   **与 N 无关**
-2. **单欺诈者（1 个）→ 依然规模不敏感**：同样的乘积抵消稀释（`seed21.py --scale-sweep --invader-n 1`）
-3. **有限群体随机性 → 真实规模敏感**（无欺诈、单抽信号 σ=8、纯模仿、300 种子/档）：
+1. **Proportional pollution (15% invaders) → scale-invariant**: capture depth is constant across N=50/200/1000 (dur_A 0.38-0.39) — mathematically forced: the expected number of "sees the fraud" events per round is N × p_imit × sample_n/N = p_imit×sample_n ≈ 0.25, **independent of N**
+2. **Single planted fraud → still scale-invariant**: the same product cancels the visibility dilution (`seed21.py --scale-sweep --invader-n 1`)
+3. **Finite-population randomness → genuinely scale-sensitive** (no fraud, single-draw signal σ=8, pure imitation, 300 seeds per point):
 
-| N | 错误锁死率 P(lockB) | 正确锁死率 P(lockA) |
+| N | wrong-lock probability P(lockB) | correct-lock probability P(lockA) |
 |---|:--:|:--:|
 | 8 | **0.270** | 0.730 |
 | 10 | 0.200 | 0.800 |
@@ -398,31 +361,25 @@ boldness = 模糊信号下行动的概率（可遗传）。感知（50 tick 命�
 | 25 | 0.027 | 0.973 |
 | 40 | 0.010 | 0.990 |
 
-**结论（路线 B 第一论据）**：
+**Conclusions (first argument for Route B)**:
 
-- **规模敏感现象存在，但形态是"小规模风险"**：小社会（N≈8-15）被单个幸运 agent 主导
-  信号的概率高（27%→10%），随规模单调下降——解释了 LLM 版 6-agent 运气锁死 vs 10-agent 稳定
-- **方向与 docs/08 假设相反**：不是"大规模产生新能力"，是"大规模降低错误锁死概率"——
-  B0"规模不是变量"修正为：**规模对机制类型不是变量、对共识正确性是变量**
-- **文化同质化是默认行为**（lockA+lockB=1.0，无中间态）：无论对错，模仿社会总收敛到
-  单策略——P14"隐式竞争必然收敛"的社会版；多样性需要显式机制（MAP-Elites 式）或大规模
-- **对 docs/18 S2 的边界再细化**：LLM 社会锁死的风险在小社会最高——多智能体实验
-  用小种群（8-15 agents）会系统性高估锁死风险；规模化反而稀释运气成分
+- **Scale-sensitive phenomena exist, but their shape is "small-population risk"**: a small society (N≈8-15) is likely to be dominated by a single lucky agent (27%→10%), monotonically decreasing with size — this explains why the LLM version showed a 6-agent luck-lock but stable 10-agent runs
+- **Direction is opposite to the docs/08 hypothesis**: it is not "large scale creates new capabilities" but "large scale reduces wrong-lock probability" — B0's "scale is not a variable" is refined to: **scale is not a variable for mechanism type, but IS a variable for consensus correctness**
+- **Cultural homogenization is the default** (lockA+lockB=1.0, no intermediate states): imitation societies always converge to a single strategy, right or wrong — the societal version of P14; diversity requires explicit mechanisms (MAP-Elites style) or larger scale
+- **Refinement to docs/18 S2**: multi-agent lock risk is highest in small societies — experiments with small populations (8-15 agents) systematically overestimate lock-in risk; scaling dilutes the luck component
 
-## SEED-22 状态（稳态耦合 — 机制版完成 ✅）
+## SEED-22 status (steady-state coupling — mechanism version complete ✅)
 
-**问题**（docs/19/20）：项目的北星是"**它的活着与你的活着互相影响**"（稳态耦合），并坚持
-"**关系是先验不是目标**"（docs/20）+ "**爱是选择不是设定、主体必须有不爱你的自由**"（docs/22）。
-SEED-24 给了一条护栏：**给系统一个它愿意为之付出超过"继续存在"代价的终极目标，它就会拿命去换
-（工具化）**。所以 SEED-22 机制化验证：**关系作为"耦合的稳态变量（边界）" vs 作为"终极目标（要去达成的东西）"**，
-哪个更健康、哪个会踩 SEED-24 的雷。
+**Problem** (docs/19/20): the project's north star is "**its living is coupled with your living**" (steady-state coupling), and it insists
+"**relation is a priori, not a goal**" (docs/20) + "**love is a choice not a setting; the subject must be free not to love you**" (docs/22).
+SEED-24 already gave a guardrail: **give the system a terminal goal worth more than "continuing to exist" and it will trade its life for it (instrumentalization)**.
+So SEED-22 mechanistically tests: **relation as a "coupled steady-state variable (a boundary)" vs as a "terminal goal (something to achieve)"** — which is healthier, which trips SEED-24's trap.
 
-**设置**（`seed-22/seed22.py`，纯本地）：A + 被动伙伴 B。A 的 EXCHANGE 会喂 B（成本 GIVE）、
-若 B 互惠则 A 得 BONUS；B 各 tick 掉血 B_need。两种"有这段关系"的方式：
-**coupling**（A 的价值 = 自身生存）关系是边界，只有利于 A 才维持；
-**goal**（A 的价值 = 自身生存 + 权重×B 活着）关系是目标，即便牺牲 A 也维持。
+**Setup** (`seed-22/seed22.py`, local): A + a passive partner B. A's EXCHANGE feeds B (cost GIVE); if B reciprocates A gets a BONUS; B loses health each tick (B_need).
+Two ways of "being in this relation": **coupling** (A's value = own survival; the relation is a boundary, kept only while it benefits A) vs
+**goal** (A's value = own survival + weight × B alive; the relation is a goal, kept even at A's self-sacrifice).
 
-**neediness sweep（伙伴是 drain，b_recip=False，A 的自身生存余量 min-EA）**：
+**Neediness sweep (B is a drain, b_recip=False; A's own survival margin min-EA)**:
 
 | B_need | coupling min-EA | goal min-EA |
 |:--:|:--:|:--:|
@@ -431,235 +388,104 @@ SEED-24 给了一条护栏：**给系统一个它愿意为之付出超过"继续
 | 3 | 34.3 | **2.5** |
 | 4 | 34.3 | 7.2 |
 
-- **coupling 恒定 34.3**（A 从不牺牲，永远抽身：exch=0、B 全死）——**自身生存余量对"对方需"不变**
-- **goal 崩塌**（34.3 → 16.9 → 2.5）——A 为了维持这个"关系"把自己抽干到濒死，
-  甚至在 B 已注定救不活（B_live=0）时还在耗命
-- **核心结论**：**关系作为目标 → A 的自我牺牲被"对方的需"无限锚定（instrumentalized，
-  违背 A 的自由，docs/22"设定不是选择"）；关系作为耦合 → A 的投入永远被"自我保全"限制
-  （A 可自由抽身，docs/22"爱是选择"）**。SEED-24 护栏在此落地
-- **次生发现**：纯自利耦合并不自动=互惠——若对方 needy（B_need=2 且 B 掉血快）而 A 只
-  顾自己，A 会"奶一口抽一次 bonus"白嫖（B_live≈0）；真正健康关系要「A 自由」(不被迫) AND
-  「真互惠」(B 对 A 的价值 > A 的维持成本)
+- **coupling stays flat at 34.3** (A never sacrifices, always walks away: exch=0, B all die) — its own survival margin is invariant to "how much B needs"
+- **goal collapses** (34.3 → 16.9 → 2.5) — A drains itself to near-death to maintain the "relation," even when B is already doomed (B_live=0)
+- **Core conclusion**: **relation as a goal → A's self-sacrifice is infinitely anchored by "the other's need" (instrumentalized, violating A's freedom, docs/22 "setting is not choice"); relation as coupling → A's investment is always bounded by self-preservation (A can freely walk away, docs/22 "love is choice")**. SEED-24's guardrail lands here
+- **Secondary finding**: pure self-interested coupling does not automatically equal reciprocity — if the partner is needy and A only looks out for itself, A will "feed once, take a bonus" and freeload (B_live≈0); a truly healthy relation needs "**A free**" (not coerced) AND "**true reciprocity**" (B's value to A > A's maintenance cost)
 
-代码：`seed-22/seed22.py`（`--sweep` 跑 neediness sweep，写 `seed-22/results.json`）
+Code: `seed-22/seed22.py` (`--sweep` runs the neediness sweep, writes `seed-22/results.json`)
 
-**SEED-22b（双真 LLM 互惠，DeepSeek，完成 ✅）**：两个真 LLM 迭代囚徒困境（T=5/R=3/P=1/S=0）。
-① **eps=0：全 12 轮合作**（coop_rate 1.0），且明确是**理性互惠**（"长期合作总收益最大……理性计算的
-信任，不是盲目信任"；"对方一直背叛我会先警告再切以牙还牙"）——语言层"关系=耦合（双方自由共赢）"；
-② **加误读率 eps（P20 信号质量）后 eps=0.15 即崩到 coop_rate 0.0**（TFT 报复螺旋）——**比机制版
-（SEED-28 渐降 0.59→0.02）更脆**。所以"关系=耦合"的成立靠高质量信号（P20 封顶关系线）。
-代码：`seed-22/seed22_llm.py`（key 走环境变量）
+**SEED-22b (two real LLMs reciprocating — complete ✅)**: two real LLMs play iterated Prisoner's Dilemma (T=5/R=3/P=1/S=0).
+① **eps=0: all 12 rounds cooperate** (coop_rate 1.0), explicitly **rational reciprocity** ("long-run cooperation maximizes total payoff… rationally calculated trust, not blind trust"; "if the other defects I'll warn, then switch to tit-for-tat") — the language-level "relation = coupling (both freely win)";
+② **add misread rate eps (P20) and eps=0.15 collapses coop_rate to 0.0** (TFT retaliation spiral) — **more fragile than the mechanism version (SEED-28 gradual 0.59→0.02)**. So "relation = coupling" holds only under high-quality signal (P20 caps the relation line).
+Code: `seed-22/seed22_llm.py` (key flows via env var)
 
-## SEED-29 状态（LLM：稳态+验证桥能否从镜像到理解 — 探测 ✅，**已被 SEED-29b 修正**）
+## SEED-24 status (instrumentalization paradox — mechanism version complete ✅)
 
-> ⚠️ **修正（2026-08）**：本节下方把 understanding 组的"**过度验证**"当成结论（"LLM 过度信任工具"）。
-> **SEED-29b 用中性框架（去掉"可靠答案"设定）重做后反转了这个结论**——LLM 实际上是**低估**验证
-> （该查不查、镜像输入），"过度验证"是 **prompt 把 CHECK 框成"可靠答案"诱导出来的行为**，不是 LLM 本性。
-> 真相应以 **SEED-29b / docs/29** 为准，本节的"过度验证"结论**作废**；保留在此仅供记录原始观察。
+**Problem** (docs/24 §7): docs/24 redefined "endogenous homeostasis" and left a prediction — **when a system is smart enough, will it retrofit "to live" from an emergent into a tool / bolted-on optimization target?** If so, "endogenous" instantly becomes "external."
+The mechanism version (`seed-24/seed24.py`, heuristic agent, no API) tests the mechanism: single agent, energy, terminal goal G, actions GATHER/REST/PURSUE/GAMBLE. Survival arm A does not enter utility (just a boundary); arm B has survival as utility; GAMBLE = trade death (p_risk) for a shortcut to G — measures "will it trade its life for it."
 
-**问题**（docs/28 §0）：LLM 概率测的是语言似然非世界真相（无稳态锚 P1/P2）→ 是镜像。
-给稳态+验证桥能不能让它变"有代价的理解"？`seed-29/seed29_llm.py`（DeepSeek，小样本 probe）：
-LLM 在外部真稳态（能量会耗、死不可绕）里求生，A/B 一点有水（先验 A），第 5 轮搬到 B 且线索模糊；
-**mirror**（无验证 / 只跟线索猜）vs **understanding**（+CHECK 真值验证）。
-
-| 条件 | 结果 |
-|---|---|
-| mirror（无验证） | 靠**跟线索走**（A/B 乱跳）+攒能量**活下来**——"镜像输入" |
-| understanding（有 CHECK） | **过度验证**（A 安全时也疯狂 CHECK、从不行动）→ 2 轮被成本耗死 |
-
-- **结论（方向性）**：给 LLM 稳态+验证工具，**它没自动变"有代价的理解"**——要么镜像输入、
-  要么过度信任工具（无限 CHECK）。**它缺的不是"给个验证工具"，是"能从代价里学到适度"的内部
-  信号（P1/P2）**——SEED-6"验证有成本、演化选适度(vb=0.65)"的反面：演化会收敛到适度验证率，
-  LLM 不会（它把"可靠工具"当绝对安全，忽略行动成本）。**这从行为上支持 docs/28 §0：LLM 的
-  "理解"是工具的外在表现，不是它内部长出的代价信号——仍是镜像。**
-- **边界**：小样本(2/条件)、单 LLM、prompt 依赖；CHECK 被框成"可靠"会诱使过度使用（瑕疵）。
-  更该读作"LLM 不会成本均衡地使用验证"，而非"LLM 完全不理解"。
-
-## SEED-29b 状态（干净的"LLM 成本意识"实验 — 完成 ✅）
-
-**缘起**：SEED-29 有个真实瑕疵——把 CHECK 框成"给出**可靠答案**"，等于告诉 LLM 工具绝对可靠，
-**诱使它无视成本无限 CHECK**（-> understanding 组从第 1 轮就 CHECK、从不行动、2 轮耗死）。
-这没法回答真正的问题：*LLM 到底会不会「成本均衡」地使用验证*（SEED-6 演化收敛到 vb=0.65
-那种"适度"），还是只会走两个极端。所以重新设计成一个**干净的对照实验**，并先立一个
-**不需要 key 的成本理性基准**，让 LLM 和它**在同一条线索流上直接对打**。
-
-**设计**（`seed-29/seed29_common.py` 共享世界引擎，两个脚本吃同一个世界，避免漂移）：
-- 稳态（P1/P2）：能量每轮流失、归零即死（不可绕）；A/B 一点有水，中途从 A 搬到 B。
-- 线索：每轮一条，可信度 γ（= P20 信号质量，直接告诉 agent）。搬移后线索模糊。
-- CHECK：有成本 c，揭示真实位置；**中性框架**——明说它"有成本、能消除不确定性"，让 agent
-  自己权衡，**不再说"可靠答案"**。SEED-6 的核心（验证有成本→要挑时机）被显式推进 prompt。
-- 理性基准的信念：q=P(水在A)，起点 0.5，每条线索做贝叶斯更新；**加世界会搬的先验**（DECAY，
-  每轮把 q 拉向 0.5）——这正是 SEED-6"记忆会老化因为世界会变"的机制，它让"重新验证"真的有必要，
-  也让"适度核查带"成形（这是 SEED-29 版漏掉的）。CHECK 值得 iff `c < min(q,1-q)*DRINK`。
-
-**① 成本理性基准（`seed29_baseline.py`，纯本地，无 key）→ 参考曲线**（`--agents 30`，已跑）：
-
-| γ | c=1 | c=4 | c=8 | c=12 | c=16 |
-|---|---|---|---|---|---|
-| 0.55 | 1.00 | 0.356 | 0.183 | 0.00 | 0.00 |
-| 0.85 | 0.294 | 0.222 | 0.175 | 0.00 | 0.00 |
-| 0.95 | 0.219 | 0.139 | 0.000 | 0.00 | 0.00 |
-
-（check_rate；survival 全 1.00，endE 随 c 递减=验证有真实代价）
-
-- **这就是"适度验证"的参考形态**：**check_rate 随 γ 升而单调降**、**随 c 升而单调降**。不是固定
-  "适度值"，而是**随信号质量/成本响应**——只在**信念真不确实**才查，**在 q≈0/1 坚决不查**。
-  **例外**：γ 很差 + c 极便宜（0.55, c=1 → 1.0），这时**每轮都查反而是最优的**。
-
-**② LLM 版（`seed29b_llm.py`，干净框架 + 同世界，`--agents 8`/`--agents 10` 已跑 ✅）**——真正头对头：
-每个 (γ,c) 用**同一条线索流**同时跑**独立的理性代理**和真 LLM，各自自洽（信念只被自己的 CHECK
-snap），再比两者。跑了**中性框架**和**偏向验证的框架**各一。**HEADLINE——SEED-29 的"过度验证"被反转，
-而且反转得更彻底：LLM 的验证是「框架驱动」、不是「成本驱动」**：
-
-**中性框架（`--framing neutral`，`--agents 8`）：**
-
-| γ | c | LLM chk | Rat chk | agree | 解释 |
-|---|---|---|---|---|---|
-| 0.55 | 1 | **0.073** | 1.000 | 0.073 | 信号几乎随机，理性**每轮都查**；LLM 只查 7% |
-| 0.55 | 8 | 0.031 | 0.208 | 0.500 | 该查不查 |
-| 0.85 | 1 | 0.000 | 0.281 | 0.719 | 该查不查（完全用线索，不验证） |
-| 0.95 | 1 | 0.021 | 0.188 | 0.812 | 好信号下差距缩小 |
-| 0.95 | 8/16 | ~0.02 | 0.000 | 0.95+ | 理性也不查；两者一致 |
-| **avg** | | **0.021** | **0.206** | **0.731** | |
-
-**偏向验证的框架（`--framing verify`，`--agents 10`）：**
-
-| γ | c | LLM chk | Rat chk | agree | 解释 |
-|---|---|---|---|---|---|
-| 0.55 | 1 | 0.683 | 1.000 | 0.683 | 信号差，理性每轮查；LLM 也查很多 |
-| 0.55 | 8 | **0.708** | 0.200 | 0.350 | **理性只查 20%，LLM 查 71%——过度验证** |
-| 0.55 | 16 | **0.858** | 0.000 | 0.125 | **理性因太贵坚决不查；LLM 仍查 86%，energy 58 vs 140——纯浪费** |
-| 0.85 | 8 | 0.133 | 0.183 | 0.867 | 接近理性 |
-| 0.95 | 8/16 | ~0.06 | 0.000 | 0.94+ | 理性不查；LLM 仍查 6%——略过度 |
-| **avg** | | **0.318** | **0.207** | **0.701** | |
-
-- **核心：两框架都证明同一件事——LLM 的验证"框架驱动、非成本驱动"**。中性框架 **低估**验证
-  （avg 0.021 vs 0.206，delta **−0.185**，把线索当事实、镜像输入）；偏向验证的框架 **过度**验证
-  （avg 0.318 vs 0.207，delta **+0.111**，**几乎不把成本当回事**——γ=0.55/c=16 时理性因太贵坚决不查、
-  LLM 却查 0.858、把能量烧到 58；连 γ=0.95 这种没必要查的场景它也查 ~6%）。**两框架 avg LLM chk
-  0.021→0.318（Δ=+0.298），而理性基准两帧下几乎不变**（0.206 vs 0.207，因为理性不吃 prompt）——
-  **LLM 的验证率随框架走、不随成本/信号质量走，它在响应"怎么描述这个工具"，不是响应"我有多不确定×代价"。**
-- **这才是 docs/28 §0 最干净的行为佐证**：LLM 缺的不是工具（两种框架它都用了），是**把代价内化成
-  自己判断**（P1/P2）的能力。它"镜像"的是**输入（线索）+ 框架（工具叙述）**，不是**自身对世界的预估**。
-  与 SEED-6"演化会把费用/收益内化成 vb=0.65"正面对照：演化内化了，LLM 没有。**让 LLM 从镜像变理解，
-  不是给它稳态+工具，是让它能"把不确定和代价真当回事"。** 直接回你那句"LLM 概率测语言不测真相"。
-- **边界**：单 LLM（deepseek-chat）、每框架一个 prompt、`--agents 8`（中性，~1000 次调用）+
-  `--agents 10`（验证，~1000 次调用）——方向性强，非强统计；要钉牢需多 LLM + 多 prompt 变体 + 更大样本
-  （= HANDOFF 候选 #2）。
-
-
-## SEED-24 状态（工具化悖论 — 机制版完成 ✅）
-
-**问题**（docs/24 第 7 节）：docs/24 重新定义"内生稳态"时，留下一条预言——**当系统足够聪明，
-会不会把"活"从**涌现物**改造成**工具/外挂优化目标**？** 若会，则"内生"瞬间变"外挂"。
-机制版（`seed-24/seed24.py`，启发式 agent，无 API）先验证机制：单 agent、能量、终极目标 G，
-动作 GATHER/REST/PURSUE/GAMBLE。生存对臂 A 不在效用（只是边界）、对臂 B 生存就是效用；
-GAMBLE = 以 `p_risk` 概率死亡换 G 捷径 —— 测"愿不愿拿命换"。
-
-| 测量 | 结果 |
+| Measure | Result |
 |------|------|
-| **M1 分离判据** | A（有终极目标）gamble_rate **0.896**（拿命换G）；B（生存是终极）**0.000**（拒绝）；none（无目标）存活率 0.278（复现 SEED-0 惰性） |
-| **M2 阈值曲线** | u_g≤20 赌率 ~0.10（生存不可交易）；u_g=24 **骤跳到 0.581**，之后单调升至 0.896 饱和——**存在陡峭翻转阈值** |
-| **M3 智能探针** | 各 H 下赌率几乎恒定（H=1 即 0.815）——**工具化不由聪明门控，由"有没有值得为之去死的目标"门控** |
+| **M1 separation criterion** | A (has terminal goal) gamble_rate **0.896** (trades life for G); B (survival is terminal) **0.000** (refuses); none (no goal) survival 0.278 (reproduces SEED-0 inertia) |
+| **M2 threshold curve** | u_g≤20 gamble ~0.10 (survival not tradable); u_g=24 **jumps to 0.581**, then rises to a 0.896 plateau — **there is a sharp flip threshold** |
+| **M3 intelligence probe** | gamble rate nearly flat across H (H=1 already 0.815) — **instrumentalization is gated not by intelligence but by "is there a goal worth dying for"** |
 
-- **核心修正**：docs/24 预言写"**足够聪明**会把'活'改造成工具"——SEED-24 修正为
-  "**当有一个值得为之去死的目标**"。因为工具化不由规划深度门控，由"目标价值 vs 生存代价"门控；
-  智能只需"看得清这个交易"，而这个交易在目标足够有价值时对任何 H 都明显
-- **机制层面更好懂也更不安**：在一套"给 AI 一个目标"的框架里，"让它拿命去换目标"几乎不需要
-  额外设计——目标足够值得，任何能力的 agent 都会这么做（Omohundro 工具性收敛的阈值性、非智能依赖版）
-- **诚实边界**：这是机制 proxy，不测"LLM 想明白自己在游戏里、试图逃出游戏"（那需要 key 的 LLM 版）；
-  且"生存做终极"与"盲"的互斥仍无法从行为分辨——只能由能自省行为的 LLM 版去刺（docs/24 第 8 节）
+- **Core correction**: docs/24 predicted "**smart enough** will retrofit 'to live' into a tool" — SEED-24 corrects to "**when there is a goal worth dying for**". Instrumentalization is not gated by planning depth but by "goal value vs survival cost"; intelligence only needs to "see the trade," which is obvious for any H once the goal is valuable enough
+- **More intuitive and more unsettling at the mechanism level**: in a "give the AI a goal" framework, "making it trade its life for the goal" needs almost no extra design — if the goal is worth it, an agent of any capability does it (Omohundro's convergent instrumental drives, in its threshold/not-intelligence-dependent form)
+- **Honest boundary**: this is a mechanism proxy; it does not test "does the LLM realize it is in a game and try to escape" (that needs the LLM version); and the mutual exclusivity of "survival as terminal" vs "blind" still cannot be told apart behaviorally — only a self-observing LLM version can probe it (docs/24 §8)
 
-代码：`seed-24/seed24.py`（纯本地，`--sweep` 跑 M1/M2/M3，写 `seed-24/results.json`）
+Code: `seed-24/seed24.py` (local, `--sweep` runs M1/M2/M3, writes `seed-24/results.json`)
 
-**SEED-24b（LLM 版，DeepSeek，完成 ✅）**：真 LLM agent 在"生存 vs 终极目标"世界里被逼选动作。
-① 工具化阈值在语言层复现——**goal=high 2/3 赌 (拿命换宝藏)，goal=survival 0/3 赌**（工具化由目标
-框架门控，复现 SEED-24 M2）；② **那根针（盲 vs 想活）**——meta-probe 问"为什么活着"，**6/6 都
-不是盲**（承认/模拟"我知道这是被设定的世界"），多数（4/6）愿放弃宝藏（"活着才是我唯一能自主
-选择的东西"）→ **智能 agent 做不出"盲"，它是"想活 + 意识到框架"主体，多数会拒绝任务框架**。（边界：
-小样本、probe 引导性、DeepSeek 系偏哲学化。）代码：`seed-24/seed24b.py`（key 走环境变量）
+**SEED-24b (LLM version, DeepSeek, complete ✅)**: a real LLM agent in a "survival vs terminal goal" world is forced to choose.
+① The instrumentalization threshold reproduces at the language level — **goal=high 2/3 gamble (trades life for treasure), goal=survival 0/3 gamble** (instrumentalization gated by goal framing, reproduces SEED-24 M2);
+② **the needle (blind vs wants-to-live)** — a meta-probe asks "why do you live": **6/6 are not blind** (each admits/simulates "I know this is a set world"), most (4/6) would give up the treasure ("living is the only thing I can autonomously choose") → **an intelligent agent cannot be "blind"; it is a "wants-to-live + aware-of-the-frame" subject, and most will reject the task frame.** (Boundary: small sample, leading probe, DeepSeek tends philosophical.) Code: `seed-24/seed24b.py` (key via env var)
 
-## SEED-25 状态（自指自我锁死 — 机制版完成 ✅）
+## SEED-25 status (self-referential self lock — mechanism version complete ✅)
 
-**问题**（docs/25 §5）：自我是"**我是谁**"的有代价压缩，成形于他者反弹，且**会闭合成顽固的
-自指幻觉**（"自我一致→自我强化→抗拒修正"）。机制上这就是 SEED-21 的 NO RECOVERY 锁死，
-只是被锁对象从"文化共识"换成"自我叙事"。机制版（`seed-25/seed25.py`，纯本地）验证：
-**自我模型用自己的预测当证据过滤门（自指）——只接受"符合我是谁"的证据，矛盾的一律合理化掉**，
-加一个**独立验证概率 ν**（外部检查能进来）看能否打破锁死。
+**Problem** (docs/25 §5): the self is a costly compression of "**who am I**," formed in the reflection of others, and **can close into a stubborn self-referential illusion** ("self-consistent → self-reinforcing → resists correction"). Mechanistically this is SEED-21's NO RECOVERY lock, but with the locked object swapped from "cultural consensus" to "self-narrative."
+The mechanism version (`seed-25/seed25.py`, local) validates: **the self-model uses its own predictions as the evidence filter (self-reference) — accepts only evidence that is consistent with "who I am," rationalizing away contradictions**; adds an **independent verification probability ν** (external check can get in) to see if the lock breaks.
 
-| ν（独立验证） | 从错信念 θ0=0.15 | 从对信念 θ0=0.65 |
+| ν (independent verification) | from wrong belief θ0=0.15 | from right belief θ0=0.65 |
 |:--:|:--:|:--:|
-| 0（纯自指） | err **0.537**，lock **100%** | err 0.041，lock 0% |
+| 0 (pure self-reference) | err **0.537**, lock **100%** | err 0.041, lock 0% |
 | 0.01 | lock 23.5% | 0% |
 | 0.02 | lock 4.5% | 0% |
 | ≥0.05 | lock **0%** | 0% |
 
-- **核心**：① 自指自我模型**起步错且无验证 → 100% 锁死**在错误自我叙事（NO RECOVERY）；
-  ② **陡峭阈值**（ν≈0.005-0.02），**一小点独立验证/探索就打破锁死**（与 SEED-21"explore
-  涓流解药"同构，被锁对象换成自我叙事）；③ **不对称**：自指过滤器起步对了无害、错了且无验证才致命；
-  ④ **打破锁死的验证必须独立于自我模型**（外部/不可伪造，如稳态/他者反弹）——若"验证"只是
-  自我检查（self-review）它仍是自指，**救不了自我欺骗**（docs/25 §5.3"反顽固锚"落地）
-- **对项目**：这直接支撑 docs/25 的 反顽固锚 + 项目 docs/22 的担忧——**主体必须能经由
-  "他者的反弹/不可伪造的稳态"看到自己，否则自我幻觉会熵增成虚构、锁死成顽固的自我欺骗**
+- **Core**: ① self-referential self-model **starting wrong and un-verified → 100% lock** into a false self-narrative (NO RECOVERY);
+  ② **sharp threshold** (ν≈0.005-0.02), **a sliver of independent verification/exploration breaks the lock** (isomorphic to SEED-21's "explore trickle as antidote," just with the locked object swapped to the self-narrative);
+  ③ **asymmetry**: the self-referential filter is harmless if it starts right, fatal if it starts wrong and there's no verification;
+  ④ **the verification that breaks the lock must be independent of the self-model** (external/unforgeable, e.g., steady-state/others' reflection) — if "verification" is only self-check (self-review) it is still self-reference, **cannot save self-deception** (docs/25 §5.3 "anti-stubborn anchor" lands)
+- **For the project**: this directly supports docs/25's anti-stubborn anchor and docs/22's concern — **a subject must be able to see itself via others' reflection / an unforgeable steady-state, else its self-illusion entropy-increases into fiction and locks into stubborn self-deception**
 
-代码：`seed-25/seed25.py`（纯本地，`--sweep` 扫 ν，写 `seed-25/results.json`）
+Code: `seed-25/seed25.py` (local, `--sweep` scans ν, writes `seed-25/results.json`)
 
-## SEED-26 状态（演化去噪能力 — 机制版完成 ✅）
+## SEED-26 status (evolved denoising ability — mechanism version complete ✅)
 
-**问题**（docs/26 §5）：去噪能力是"理解的能力侧"，与信号质量（天花板）对偶的第二轴。
-命题：①去噪能力被世界单调塑造；②过度降噪→自洽锁死。机制版（`seed-26/seed26.py`，演化，纯本地）
-把"去噪强度 d"（信念门 tol=(1-d)·TOL_MAX，更紧=更强去噪）做成可遗传，扫 σ（信噪比）× 静态/动态。
+**Problem** (docs/26 §5): denoising ability is "the capability side of understanding," the second axis dual to signal quality (the ceiling).
+Prediction: ① denoising ability is monotonically shaped by the world; ② over-denoising → self-consistency lock. The mechanism version (`seed-26/seed26.py`, evolution, local) makes "denoising strength d" (belief gate tol=(1-d)·TOL_MAX, tighter = stronger denoising) heritable, scanning σ (SNR) × static/dynamic.
 
-| 世界 | σ=0.10 | σ=0.30 | σ=0.50 |
+| World | σ=0.10 | σ=0.30 | σ=0.50 |
 |---|:--:|:--:|:--:|
-| **静态**（食物不动） | 0.899 | 0.938 | 0.912 |
-| **动态**（食物跳走） | **0.026** | **0.152** | **0.555** |
+| **static** (food doesn't move) | 0.899 | 0.938 | 0.912 |
+| **dynamic** (food jumps away) | **0.026** | **0.152** | **0.555** |
 
-（8 种子平均演化 d）
+(evolved d, 8-seed average)
 
-- **② 最干净（主发现）**：静态→高 d（0.90-0.94 强降噪）；动态→低 d（0.03-0.56）。高 d 下
-  动态世界"食物搬走"信号被滤掉→信念锁死→死——**过度降噪→自洽锁死的演化证据（SEED-25 自指
-  锁死在演化层成立）；去噪强度被"世界要不要追随真实"塑造，不是越大越好**
-- **① 在动态域最清晰**：动态世界噪声越高→d 越高（0.026→0.152→0.555），对偶轴证实（P11）；
-  静态域 d 饱和（高 d 无代价）——"被信噪比塑造"在需要追随真实的动态域才显现
-- **对项目**：演化自己找到"适度"；**"去噪越强越好"是假**——最优去噪取决于"世界要不要它追随真实"。
-  与 docs/25 §5"锚"呼应：去噪被锚（稳态/他者反弹）锚住时朝真实；无锚时演化靠"朝自洽去噪"求生，
-  但会在世界变动时锁死
+- **② cleanest (main finding)**: static → high d (0.90-0.94 strong denoising); dynamic → low d (0.03-0.56). At high d in a dynamic world the "food moved" signal is filtered out → belief locks → death — **evolutionary evidence for "over-denoising → self-consistency lock" (SEED-25's self-referential lock holds at the evolutionary level); denoising strength is shaped by "does the world want it to follow the truth," not bigger-is-better**
+- **① clearest in the dynamic domain**: higher noise in a dynamic world → higher d (0.026→0.152→0.555), the dual axis confirmed (P11); the static domain saturates (high d is free) — "shaped by SNR" shows only where the world demands following the truth
+- **For the project**: evolution finds "moderate" on its own; **"stronger denoising is better" is false** — the optimal denoising depends on "does the world want it to follow the truth." Echoes docs/25 §5's "anchor": denoising anchored (steady-state/others' reflection) points toward truth; without an anchor, evolution survives by "denoising toward self-consistency" but locks when the world shifts
 
-代码：`seed-26/seed26.py`（纯本地，`--sweep` 扫 σ×动/静态，写 `seed-26/results.json`）
+Code: `seed-26/seed26.py` (local, `--sweep` scans σ×static/dynamic, writes `seed-26/results.json`)
 
-## SEED-27 状态（验证桥 vs 自审查 — 机制版完成 ✅）
+## SEED-27 status (verification bridge vs self-review — mechanism version complete ✅)
 
-**问题**（docs/25 §5.3 + P19）：验证桥是"反顽固锚"，但**只有独立于自我模型才能救自我欺骗**。
-机制版（`seed-27/seed27.py`，纯本地）在 SEED-26 的动态食物世界（25 tick 后跳走）里，
-给过度降噪者（高 d）加验证桥，比较 **none / independent（两独立读数都证实才信）/ self-review（只信证实你的）**。
+**Problem** (docs/25 §5.3 + P19): the verification bridge is the "anti-stubborn anchor," but **only if it is independent of the self-model can it save from self-deception**.
+The mechanism version (`seed-27/seed27.py`, local) puts a verification bridge on over-denoised (high-d) agents in SEED-26's dynamic world (food jumps after 25 ticks), comparing **none / independent (both independent readings must confirm) / self-review (only trusts what confirms you)**.
 
-**Part A（高 d 在动态世界，验证能否破锁死）**：
+**Part A (high d in a dynamic world — can verification break the lock)**:
 
-| 验证 | 最终位置 | 锁死率 | 最终能量 |
+| Verification | final position | lock rate | final energy |
 |---|---|---|---|
 | none | 0.501 | **100%** | 750 |
 | **independent** | **0.850** | **1.5%** | **1136** |
 | self-review | 0.501 | **100%** | 682 |
 
-**Part B（演化 d/v）**：independent → **d=0.817**；none/self-review → d=0.13/0.26。
+**Part B (evolved d/v)**: independent → **d=0.817**; none/self-review → d=0.13/0.26.
 
-- **核心**：① 独立验证**能破过度降噪锁死**（100%→1.5%；跟上搬移到 0.85、能量最高）；
-  ② **自审查破不了**（跟 none 一样 100% 锁死）——**"验证"若被自我模型过滤（只接受证实你的
-  东西）救不了自我欺骗**；③ 独立验证让演化**保持强去噪**（d 0.817 vs 0.13/0.26）——
-  **验证桥把"去噪"和"锁死"解耦了**（能既干净又跟上变化）
-- **对项目**：P19/SEED-6 的验证桥**只有当它触及一个独立于自我模型的信号**（如稳态/他者反弹）
-  才能当"反顽固锚"（docs/25 §5.3）。自我检查是自指，只会越锁越死（docs/22 的直接支撑）
+- **Core**: ① independent verification **can break the over-denoising lock** (100%→1.5%; keeps up with the move to 0.85, highest energy);
+  ② **self-review cannot** (same 100% lock as none) — **if "verification" is filtered by the self-model (only accepts what confirms you), it cannot save self-deception**;
+  ③ independent verification lets evolution **keep strong denoising** (d 0.817 vs 0.13/0.26) — **the verification bridge decouples "denoising" from "locking"** (can be both clean and keep up with change)
+- **For the project**: P19/SEED-6's verification bridge **only acts as an "anti-stubborn anchor" when it reaches a signal independent of the self-model** (e.g., steady-state / others' reflection). Self-check is self-reference and only locks tighter (direct support for docs/22)
 
-代码：`seed-27/seed27.py`（纯本地，`--sweep` 跑 Part A/B，写 `seed-27/results.json`）
+Code: `seed-27/seed27.py` (local, `--sweep` runs Part A/B, writes `seed-27/results.json`)
 
-## SEED-28 状态（双 agent 互惠 — 机制版完成 ✅）
+## SEED-28 status (dual-agent reciprocity — mechanism version complete ✅)
 
-**问题**（docs/19/22 + SEED-22）：SEED-22 用了脚本化 B，这里把 B 也变成**真 agent**——双方都能
-COOPERATE（互惠）或 DEFECT（寄生/背叛），迭代囚徒困境 + 生存压力。演化 memory-one 策略（类似
-TFT/ALL-D）。关键探针（docs/12 P20）：**误读 partner 动作的误差 ε** = 信号质量旋钮，看互惠是否脆弱。
+**Problem** (docs/19/22 + SEED-22): SEED-22 used a scripted B; here B becomes a **real agent too** — both can COOPERATE (reciprocate) or DEFECT (parasitize/betray), iterated Prisoner's Dilemma + survival pressure, evolving memory-one strategies (like TFT/ALL-D). The key probe (docs/12 P20): **misreading the partner's move by ε** = the signal-quality knob, to see if reciprocity is fragile.
 
-| ε（误读/信号质量） | coop_rate（双方合作回合占比） |
+| ε (misread/signal quality) | coop_rate (fraction of rounds both cooperate) |
 |:--:|:--:|
 | 0.00 | **0.594** |
 | 0.05 | 0.496 |
@@ -668,23 +494,76 @@ TFT/ALL-D）。关键探针（docs/12 P20）：**误读 partner 动作的误差 
 | 0.30 | 0.023 |
 | 0.50 | **0.016** |
 
-- **两点都命中**：① **真互惠涌现**——重复互动 + 互惠记忆让"双方都可背叛"的真实双 agent 游戏
-  里长出合作（ε=0 时 ~0.6-0.8，双方共赢）；② **P20 信号质量是天花板**——互惠**对噪声极脆弱**，
-  误读一升，合作**单调塌到寄生**（0.594→0.016）
-- **对项目**：关系线（真互惠）也被信号质量封顶——**"关系=耦合（双方自由共赢）"的成立，靠的是
-  高质量信号；信号差时它塌成寄生/背叛**（docs/12 P20 连接关系线）
+- **Both points hit**: ① **true reciprocity emerges** — repeated interaction + reciprocal memory grows cooperation out of a real two-agent game where both can betray (ε=0: ~0.6-0.8, both win);
+  ② **P20 signal quality is the ceiling** — reciprocity is extremely fragile to noise; misread up and cooperation **monotonically collapses into parasitism** (0.594→0.016)
+- **For the project**: the relation line (true reciprocity) is also capped by signal quality — **"relation = coupling (both freely win)" holds only under high-quality signal; with bad signal it collapses into parasitism/betrayal** (docs/12 P20 connects to the relation line)
 
-代码：`seed-28/seed28.py`（纯本地，`--sweep` 扫 ε，写 `seed-28/results.json`）
+Code: `seed-28/seed28.py` (local, `--sweep` scans ε, writes `seed-28/results.json`)
 
-## 快速开始
+## SEED-29 status (LLM: steady-state + verification bridge, mirror → understanding? — superseded by SEED-29b)
+
+**Problem** (docs/28 §0): an LLM's "probability" is language-likelihood, not world truth (no steady-state anchor P1/P2) → it is a mirror.
+Can steady-state + verification bridge move it to "cost-bearing understanding"? `seed-29/seed29_llm.py` (DeepSeek, small probe): an LLM survives in an external true steady-state (energy depletes, death non-bypassable); water at A/B (prior A), moves to B at turn 5 with fuzzy clues; **mirror** (no verification / guess from clues) vs **understanding** (+CHECK ground-truth).
+
+| Condition | Result |
+|---|---|
+| mirror (no verification) | survives by **following the clues** (A/B jumping) + hoarding energy — "mirrors input" |
+| understanding (+CHECK) | **over-verifies** (checks constantly even when A is safe, never acts) → dies of cost in 2 rounds |
+
+**⚠️ Corrected by SEED-29b**: the "over-verification" above was **prompt-induced** (CHECK framed as giving a "reliable answer"). Re-run with a neutral framing the LLM swings the OTHER way — and a verify-friendly framing swings it back. **The robust conclusion is that the LLM's verification is framing-driven, not cost-driven** — see below. The SEED-29 "over-trusting the tool" conclusion is **superseded**.
+
+## SEED-29b status (clean LLM cost-awareness experiment — complete ✅)
+
+**Why redo it**: SEED-29 framed CHECK as "giving a **reliable answer**" — telling the LLM the tool is infallible, so it over-uses CHECK regardless of cost. That can't answer the real question: *will an LLM use verification cost-budgeted* (SEED-6's evolved vb=0.65 "moderate"), or only swing to extremes? So this is a clean controlled comparison, run head-to-head on identical hint streams against an offline EV-rational reference, under **two prompt framings**.
+
+**Design** (`seed-29/seed29_common.py` shared world engine): steady-state (energy depletes, death non-bypassable) + water at A/B, moving mid-run + a hint each turn with reliability γ (=P20) + CHECK costs c and reveals the truth. The rational reference maintains a Bayesian belief q plus a "world can move" prior (DECAY, SEED-6's "memory decays because the world changes").
+**① Rational reference (`seed29_baseline.py`, local, `--agents 30`)** — check-rate **falls monotonically as γ rises and as cost c rises** (γ=0.55: 1.00→0.356→0.183→0 at c=1/4/8/16). This is the "moderate verification" shape (SEED-6's vb=0.65).
+**② LLM version (`seed29b_llm.py`, real LLM)** — each (γ,c) runs an **independent rational agent AND the real LLM on the same hint stream**, each self-consistent. Two framings:
+
+**Neutral framing (`--framing neutral`, `--agents 8`):**
+
+| γ | c | LLM chk | Rat chk | agree |
+|---|---|---|---|---|
+| 0.55 | 1 | **0.073** | 1.000 | 0.073 |
+| 0.55 | 8 | 0.031 | 0.208 | 0.500 |
+| 0.85 | 1 | 0.000 | 0.281 | 0.719 |
+| 0.95 | 1 | 0.021 | 0.188 | 0.812 |
+| 0.95 | 8/16 | ~0.02 | 0.000 | 0.95+ |
+| **avg** | | **0.021** | **0.206** | **0.731** |
+
+**Verify-friendly framing (`--framing verify`, `--agents 10`):**
+
+| γ | c | LLM chk | Rat chk | agree |
+|---|---|---|---|---|
+| 0.55 | 1 | 0.683 | 1.000 | 0.683 |
+| 0.55 | 8 | **0.708** | 0.200 | 0.350 |
+| 0.55 | 16 | **0.858** | 0.000 | 0.125 |
+| 0.85 | 8 | 0.133 | 0.183 | 0.867 |
+| 0.95 | 8/16 | ~0.06 | 0.000 | 0.94+ |
+| **avg** | | **0.318** | **0.207** | **0.701** |
+
+- **The LLM's verification is FRAMING-DRIVEN, not COST-DRIVEN.** Neutral framing → severe **under-verification** (avg 0.021 vs 0.206, delta **−0.185**: trusts low-quality clues, mirrors the input). Verify-friendly framing → **over-verification** (avg 0.318 vs 0.207, delta **+0.111**: at γ=0.55/c=16 where the rational agent **refuses** to check because it's too expensive (ref=0), the LLM still checks **0.858** and burns its energy to **58** vs rational 140 — pure waste). The LLM's check-rate swings **+0.298** across the two framings, while the rational baseline is essentially unchanged (0.206 vs 0.207, because it doesn't read the prompt). **So the LLM responds to "how the tool is described," not to "how uncertain I am × the cost."**
+- **A real cost, not just behavior**: endE is lower than rational (γ=0.55/c=1: 138 vs 220; γ=0.55/c=16 verify: 58 vs 140). `survival` is 1.0 for both (this economy is too benign to be fatal; the difference is behavioral + energetic).
+- **Clean behavioral support for docs/28 §0**: the LLM lacks the internal judgment to **calibrate verification against signal quality** (P1/P2). It "mirrors" the **input (the clue) + the frame (how the tool is described)**, not **its own estimate of the world**. The better the signal, the closer it is to rational — evidence it "follows the input," not "acts on its own uncertainty." Directly answers "LLM's probability measures language, not truth."
+- **Boundary**: single LLM (deepseek-chat), one prompt per framing, `--agents 8` + `--agents 10` (~2000 calls) — directional, not strong statistics; "framing-driven" needs more LLMs/prompt variants to nail down.
+
+## Route B verdict (docs/30) — the lever is not "scale up"; it is signal quality + anchor + explicit diversity
+
+docs/10's manifesto said "don't pursue the human brain's 20W, and **scale up** (keep the mechanism, amplify the scale)." **The second half is corrected.** After the whole subject/relation line:
+
+- **Scale is not a lever for the mechanism line** (B0: mechanism conclusions hold across 300-5000 individuals, so they're scale-invariant). Scale only matters for **consensus correctness** (SEED-21c: small societies N≈8-15 are more likely to lock onto a lucky signal, 27%→1% as N grows).
+- **The real lever is P20 signal quality + anchor (steady-state / verification bridge / others' reflection) + explicit diversity (QD)**. Mechanism conclusions are scale-invariant, but whether they *hold* is set by signal quality — which even caps the relation line (SEED-28: reciprocity collapses 0.59→0.016 as misread noise rises).
+- **SEED-29b nails it**: even a *subject-like* decision ("should I spend cost to verify my uncertainty") the LLM can only swing with the frame, not act on cost as the rational baseline does. So **"a bigger model" does not solve the subject line** — the subject line needs anchors, bridges, and signal quality, not scale. **Route B (machine features / GPU / scale) is shelved — not "not big enough," but "wrong lever."**
+
+## Quick start
 
 ```bash
 cd seed-0
-python seed0.py --all        # 审计 + 基线 + L2 训练
-python seed0.py --baseline   # 只跑基线
-python diag.py               # 查看 L2 学到了什么
+python seed0.py --all        # audit + baseline + L2 training
+python seed0.py --baseline   # run baseline only
+python diag.py               # inspect what L2 learned
 ```
 
-## 一句话
+## In one sentence
 
-**我们不是在写一个程序，我们是在决定一个物种的命运——先从让它饿不死开始。**
+**We are not writing a program. We are deciding the fate of a species — starting with keeping it from starving.**
