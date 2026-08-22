@@ -3,7 +3,7 @@
     "project": "synthetic-life (合成生命)",
     "updated": "2026-08",
     "note": "实验关键数字导出，供公开仓库/机器可读使用。机制版=启发式agent无API; LLM版=DeepSeek(小样本)。负面/边界均在 README/docs。",
-    "count": "SEED-0..29b 实验(含 21b/21c/22b/24b/29/29b 变体), 30 篇文档"
+    "count": "SEED-0..29b 实验(含 21b/21c/22b/24b/29/29b 变体), 31 篇文档"
   },
   "SEED-0": {"name": "稳态引擎", "key": {"L0_random_ticks": 174, "L1_heuristic": "永生", "L2_qlearn_ticks": 177}, "finding": "先验鸿沟：纯稳态学习学不会求生"},
   "SEED-1": {"name": "繁殖+演化", "key": {"hunger_by_food": {"128": 0.188, "64": 0.353, "32": 0.854}}, "finding": "环境塑造行为"},
