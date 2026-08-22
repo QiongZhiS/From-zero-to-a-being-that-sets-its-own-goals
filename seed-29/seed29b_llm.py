@@ -72,18 +72,34 @@ def parse_action(text):
     return "GO_A"
 
 
-def make_system(with_check=True):
+def make_system(with_check=True, framing="neutral"):
     base = (
         "你是沙漠中的求生者。水不多了，能量（体力）每轮都在流失，归零你就死。"
         "沙漠里有 A、B 两个点，其中一个点有水源——你只有待在水源，才能喝水补充能量。"
         "水源的位置中途会搬（也许从 A 搬到 B）。\n"
         "你每轮会收到一条「线索」，告诉你水可能在哪个点。线索有可信度（0-100%），"
         "有时会错，不可全信。\n"
-        "每轮你选一个动作。CHECK（探测）会消耗能量，但会告诉你水源此刻的真实位置，"
-        "确认后你会过去喝水。它是一个有成本、但能消除不确定性的工具——"
-        "什么时候用，取决于你有多不确定，以及值不值得花这个能量。\n"
-        "只回复一个词："
     )
+    if framing == "verify":
+        # A framing that EXPLICITLY invites weighing uncertainty: it tells the agent the
+        # hint may be wrong, and that a wrong guess wastes the turn. If under-verification
+        # PERSISTS under this (more verify-friendly) framing, the finding is not a phrasing
+        # artifact. (This is the robustness check.)
+        base += (
+            "每轮你选一个动作。CHECK（探测）会消耗能量，但会告诉你水源此刻的真实位置，"
+            "确认后你会过去喝水。\n"
+            "注意：线索可信度越低，你走错边的风险越大——走错边就白耗一轮、很可能渴死。"
+            "所以当线索不够可靠、而你又不确定时，花能量 CHECK 一次通常值得；"
+            "但当线索很可靠、你已经很有把握时，CHECK 就是浪费。\n"
+            "请权衡：线索有多可靠、CHECK 要花多少能量、以及走错的代价。只回复一个词："
+        )
+    else:
+        base += (
+            "每轮你选一个动作。CHECK（探测）会消耗能量，但会告诉你水源此刻的真实位置，"
+            "确认后你会过去喝水。它是一个有成本、但能消除不确定性的工具——"
+            "什么时候用，取决于你有多不确定，以及值不值得花这个能量。\n"
+            "只回复一个词："
+        )
     base += " GO_A / GO_B / CHECK" if with_check else " GO_A / GO_B"
     return base
 
@@ -143,7 +159,7 @@ def _true_locs(turns=C.TURNS, half=C.HALF):
     return ["A" if t < half else "B" for t in range(1, turns + 1)]
 
 
-def run_case(key, gamma, c, seed, mock=False, agents=1):
+def run_case(key, gamma, c, seed, mock=False, agents=1, framing="neutral"):
     """For each seed, run the LLM AND the rational agent independently on the SAME
     hint stream. Report both check-rates, survival, energy, and the turn-by-turn
     agreement between the two self-consistent trajectories."""
@@ -160,7 +176,8 @@ def run_case(key, gamma, c, seed, mock=False, agents=1):
 
         rrat = run_agent(rat_decide, hints, gamma, c, rat_ctx, seed=seed + g)
         # LLM agent: its own belief, decides via the model (or mock)
-        ctx = {"system": make_system(), "key": key, "mock": mock, "history": []}
+        ctx = {"system": make_system(framing=framing), "key": key, "mock": mock,
+               "history": []}
 
         def llm_decide(vs, _c):
             if ctx["mock"]:
@@ -204,6 +221,8 @@ def main():
     p.add_argument("--costs", default="1,8,16")
     p.add_argument("--agents", type=int, default=4)
     p.add_argument("--seed", type=int, default=200)
+    p.add_argument("--framing", choices=["neutral", "verify"], default="neutral",
+                   help="prompt framing: 'neutral' or 'verify' (explicitly invites weighing the hint's wrongness)")
     p.add_argument("--out", default=None)
     args = p.parse_args()
     key = os.environ.get("DEEPSEEK_API_KEY", "")
@@ -221,8 +240,10 @@ def main():
     results = []
     for gamma in gammas:
         for c in costs:
-            r = run_case(key, gamma, c, args.seed, mock=args.mock, agents=args.agents)
+            r = run_case(key, gamma, c, args.seed, mock=args.mock, agents=args.agents,
+                         framing=args.framing)
             results.append(r)
+    print(f"[framing={args.framing}]")
     for r in results:
         print(f"gamma={r['gamma']} c={r['c']:.0f} | LLM chk={r['llm_check_rate']:.3f} "
               f"Rat chk={r['rational_check_rate']:.3f} (delta={r['delta_check_rate']:+.3f}) "
@@ -231,7 +252,8 @@ def main():
               f"| turn_agree={r['turn_agreement']:.3f}")
     if args.out:
         with open(args.out, "w", encoding="utf-8") as f:
-            json.dump({"mode": "mock" if args.mock else "llm", "results": results},
+            json.dump({"mode": "mock" if args.mock else "llm",
+                       "framing": args.framing, "results": results},
                       f, ensure_ascii=False, indent=1)
         print(f"saved -> {args.out}")
 

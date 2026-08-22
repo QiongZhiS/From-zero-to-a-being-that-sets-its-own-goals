@@ -1,0 +1,114 @@
+{
+ "mode": "llm",
+ "framing": "verify",
+ "results": [
+  {
+   "gamma": 0.55,
+   "c": 1.0,
+   "llm_check_rate": 0.683,
+   "rational_check_rate": 1.0,
+   "survival_llm": 1.0,
+   "survival_rational": 1.0,
+   "end_energy_llm": 190.8,
+   "end_energy_rational": 220.0,
+   "turn_agreement": 0.683,
+   "delta_check_rate": -0.317
+  },
+  {
+   "gamma": 0.55,
+   "c": 8.0,
+   "llm_check_rate": 0.708,
+   "rational_check_rate": 0.2,
+   "survival_llm": 1.0,
+   "survival_rational": 1.0,
+   "end_energy_llm": 142.0,
+   "end_energy_rational": 162.2,
+   "turn_agreement": 0.35,
+   "delta_check_rate": 0.508
+  },
+  {
+   "gamma": 0.55,
+   "c": 16.0,
+   "llm_check_rate": 0.858,
+   "rational_check_rate": 0.0,
+   "survival_llm": 1.0,
+   "survival_rational": 1.0,
+   "end_energy_llm": 58.4,
+   "end_energy_rational": 139.6,
+   "turn_agreement": 0.125,
+   "delta_check_rate": 0.858
+  },
+  {
+   "gamma": 0.85,
+   "c": 1.0,
+   "llm_check_rate": 0.092,
+   "rational_check_rate": 0.292,
+   "survival_llm": 1.0,
+   "survival_rational": 1.0,
+   "end_energy_llm": 200.1,
+   "end_energy_rational": 228.5,
+   "turn_agreement": 0.783,
+   "delta_check_rate": -0.2
+  },
+  {
+   "gamma": 0.85,
+   "c": 8.0,
+   "llm_check_rate": 0.133,
+   "rational_check_rate": 0.183,
+   "survival_llm": 1.0,
+   "survival_rational": 1.0,
+   "end_energy_llm": 190.6,
+   "end_energy_rational": 203.4,
+   "turn_agreement": 0.867,
+   "delta_check_rate": -0.05
+  },
+  {
+   "gamma": 0.85,
+   "c": 16.0,
+   "llm_check_rate": 0.2,
+   "rational_check_rate": 0.0,
+   "survival_llm": 1.0,
+   "survival_rational": 1.0,
+   "end_energy_llm": 171.6,
+   "end_energy_rational": 199.0,
+   "turn_agreement": 0.75,
+   "delta_check_rate": 0.2
+  },
+  {
+   "gamma": 0.95,
+   "c": 1.0,
+   "llm_check_rate": 0.067,
+   "rational_check_rate": 0.192,
+   "survival_llm": 1.0,
+   "survival_rational": 1.0,
+   "end_energy_llm": 222.4,
+   "end_energy_rational": 229.7,
+   "turn_agreement": 0.875,
+   "delta_check_rate": -0.125
+  },
+  {
+   "gamma": 0.95,
+   "c": 8.0,
+   "llm_check_rate": 0.058,
+   "rational_check_rate": 0.0,
+   "survival_llm": 1.0,
+   "survival_rational": 1.0,
+   "end_energy_llm": 217.6,
+   "end_energy_rational": 223.2,
+   "turn_agreement": 0.942,
+   "delta_check_rate": 0.058
+  },
+  {
+   "gamma": 0.95,
+   "c": 16.0,
+   "llm_check_rate": 0.067,
+   "rational_check_rate": 0.0,
+   "survival_llm": 1.0,
+   "survival_rational": 1.0,
+   "end_energy_llm": 210.4,
+   "end_energy_rational": 223.2,
+   "turn_agreement": 0.933,
+   "delta_check_rate": 0.067
+  }
+ ]
+}

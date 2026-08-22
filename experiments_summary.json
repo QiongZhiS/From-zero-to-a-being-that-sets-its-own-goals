@@ -36,6 +36,6 @@
   "SEED-24b": {"name": "LLM工具化", "key": {"goal_high_gamble": "2/3", "goal_survival_gamble": "0/3", "not_blind": "6/6"}, "finding": "工具化阈值语言层复现；LLM不做盲(想活+会拒任务框架)；小样本"},
   "SEED-22b": {"name": "LLM互惠", "key": {"coop_eps0": 1.0, "coop_eps015": 0.0}, "finding": "LLM理性互惠但比机制版更脆被信号质量击穿；小样本"},
   "SEED-29": {"name": "LLM稳态+验证桥(原探测，已被SEED-29b修正)", "key": {"mirror": "跟线索走+攒能量活(镜像输入)", "understanding": "过度验证->2轮耗死(被'可靠答案'prompt诱导，非本性)"}, "finding": "原判'LLM过度信任工具'是prompt瑕疵；真相应见SEED-29b/docs/29——LLM是镜像、低估验证"},
-  "SEED-29b": {"name": "干净LLM验证成本意识", "key": {"llm_check_avg": 0.021, "rational_check_avg": 0.206, "agreement_avg": 0.731, "gamma055_c1_llm": 0.073, "gamma055_c1_rational": 1.0}, "finding": "中性框架(去掉'可靠答案')下LLM严重低估验证(该查不查)，'过度验证'是框架瑕疵；LLM跟着输入走(镜像)，非按不确定性行动；docs/28§0行为佐证；n=8单LLM方向性"},
+  "SEED-29b": {"name": "干净LLM验证成本意识(双框架)", "key": {"llm_check_avg_neutral": 0.021, "rational_check_avg": 0.206, "llm_check_avg_verify": 0.318, "gamma055_c16_verify_llm": 0.858, "turn_agree_avg": 0.72}, "finding": "两框架证明LLM验证是框架驱动、非成本驱动——中性框架低估(0.021 vs 0.206)、偏向验证框架过度(0.318,连γ0.55/c16理性因贵不查LLM仍查0.858烧到energy58)；LLM随框架横跳、不随成本/信号走——docs/28§0最干净行为佐证；单LLM、方向性"},
   "_route_b_verdict": "docs/27: 机器特性路线(搜索/并行/QD)的杠杆不是规模(B0尺度无关)，是信号质量+锚+显式多样性；规模只在共识正确性(SEED-21c)有用。『放大规模』修正为『保持机制、用好信号』。"
 }
