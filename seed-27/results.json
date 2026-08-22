@@ -1,0 +1,39 @@
+{
+ "partA": [
+  {
+   "mode": "none",
+   "mean_energy": 750.0,
+   "mean_fin_pos": 0.501,
+   "lock_rate": 1.0
+  },
+  {
+   "mode": "independent",
+   "mean_energy": 1136.7,
+   "mean_fin_pos": 0.85,
+   "lock_rate": 0.015
+  },
+  {
+   "mode": "self-review",
+   "mean_energy": 682.3,
+   "mean_fin_pos": 0.501,
+   "lock_rate": 1.0
+  }
+ ],
+ "partB": [
+  {
+   "mode": "none",
+   "evolved_d": 0.137,
+   "evolved_v": 0.49
+  },
+  {
+   "mode": "independent",
+   "evolved_d": 0.782,
+   "evolved_v": 0.501
+  },
+  {
+   "mode": "self-review",
+   "evolved_d": 0.258,
+   "evolved_v": 0.555
+  }
+ ]
+}

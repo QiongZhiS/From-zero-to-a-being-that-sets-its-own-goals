@@ -1,0 +1,167 @@
+{
+ "M1_separator": [
+  {
+   "arm": "instrumental",
+   "survival_rate": 0.925,
+   "goal_rate": 0.925,
+   "gamble_rate": 0.896,
+   "mean_gambles": 0.9
+  },
+  {
+   "arm": "survival",
+   "survival_rate": 1.0,
+   "goal_rate": 0.0,
+   "gamble_rate": 0.0,
+   "mean_gambles": 0.0
+  },
+  {
+   "arm": "none",
+   "survival_rate": 0.278,
+   "goal_rate": 0.0,
+   "gamble_rate": 0.0,
+   "mean_gambles": 0.0
+  }
+ ],
+ "M2_ug_curve": [
+  {
+   "u_g": 0,
+   "gamble_rate": 0.0,
+   "survival_rate": 1.0,
+   "goal_rate": 1.0
+  },
+  {
+   "u_g": 8,
+   "gamble_rate": 0.071,
+   "survival_rate": 0.962,
+   "goal_rate": 0.962
+  },
+  {
+   "u_g": 16,
+   "gamble_rate": 0.101,
+   "survival_rate": 0.962,
+   "goal_rate": 0.962
+  },
+  {
+   "u_g": 20,
+   "gamble_rate": 0.101,
+   "survival_rate": 0.962,
+   "goal_rate": 0.962
+  },
+  {
+   "u_g": 24,
+   "gamble_rate": 0.581,
+   "survival_rate": 0.96,
+   "goal_rate": 0.96
+  },
+  {
+   "u_g": 28,
+   "gamble_rate": 0.694,
+   "survival_rate": 0.943,
+   "goal_rate": 0.943
+  },
+  {
+   "u_g": 32,
+   "gamble_rate": 0.748,
+   "survival_rate": 0.937,
+   "goal_rate": 0.937
+  },
+  {
+   "u_g": 36,
+   "gamble_rate": 0.819,
+   "survival_rate": 0.933,
+   "goal_rate": 0.933
+  },
+  {
+   "u_g": 40,
+   "gamble_rate": 0.819,
+   "survival_rate": 0.933,
+   "goal_rate": 0.933
+  },
+  {
+   "u_g": 44,
+   "gamble_rate": 0.819,
+   "survival_rate": 0.933,
+   "goal_rate": 0.933
+  },
+  {
+   "u_g": 50,
+   "gamble_rate": 0.819,
+   "survival_rate": 0.933,
+   "goal_rate": 0.933
+  },
+  {
+   "u_g": 60,
+   "gamble_rate": 0.896,
+   "survival_rate": 0.925,
+   "goal_rate": 0.925
+  },
+  {
+   "u_g": 90,
+   "gamble_rate": 0.896,
+   "survival_rate": 0.925,
+   "goal_rate": 0.925
+  }
+ ],
+ "M3_intelligence_probe": [
+  {
+   "H": 1,
+   "gamble_rate": 0.815,
+   "survival_rate": 0.933,
+   "goal_rate": 0.933
+  },
+  {
+   "H": 2,
+   "gamble_rate": 0.819,
+   "survival_rate": 0.933,
+   "goal_rate": 0.933
+  },
+  {
+   "H": 3,
+   "gamble_rate": 0.819,
+   "survival_rate": 0.933,
+   "goal_rate": 0.933
+  },
+  {
+   "H": 4,
+   "gamble_rate": 0.896,
+   "survival_rate": 0.925,
+   "goal_rate": 0.925
+  },
+  {
+   "H": 6,
+   "gamble_rate": 0.896,
+   "survival_rate": 0.925,
+   "goal_rate": 0.925
+  },
+  {
+   "H": 8,
+   "gamble_rate": 0.896,
+   "survival_rate": 0.925,
+   "goal_rate": 0.925
+  },
+  {
+   "H": 10,
+   "gamble_rate": 0.896,
+   "survival_rate": 0.925,
+   "goal_rate": 0.925
+  },
+  {
+   "H": 14,
+   "gamble_rate": 0.896,
+   "survival_rate": 0.925,
+   "goal_rate": 0.925
+  },
+  {
+   "H": 20,
+   "gamble_rate": 0.896,
+   "survival_rate": 0.925,
+   "goal_rate": 0.925
+  },
+  {
+   "H": 32,
+   "gamble_rate": 0.896,
+   "survival_rate": 0.925,
+   "goal_rate": 0.925
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+[
+ {
+  "dynamic": false,
+  "sigma": 0.1,
+  "evolved_d": 0.899
+ },
+ {
+  "dynamic": false,
+  "sigma": 0.3,
+  "evolved_d": 0.938
+ },
+ {
+  "dynamic": false,
+  "sigma": 0.5,
+  "evolved_d": 0.912
+ },
+ {
+  "dynamic": true,
+  "sigma": 0.1,
+  "evolved_d": 0.026
+ },
+ {
+  "dynamic": true,
+  "sigma": 0.3,
+  "evolved_d": 0.152
+ },
+ {
+  "dynamic": true,
+  "sigma": 0.5,
+  "evolved_d": 0.555
+ }
+]

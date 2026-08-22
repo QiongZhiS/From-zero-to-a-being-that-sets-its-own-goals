@@ -1,0 +1,113 @@
+{
+ "mode": "llm",
+ "results": [
+  {
+   "gamma": 0.55,
+   "c": 1.0,
+   "llm_check_rate": 0.073,
+   "rational_check_rate": 1.0,
+   "survival_llm": 1.0,
+   "survival_rational": 1.0,
+   "end_energy_llm": 137.6,
+   "end_energy_rational": 220.0,
+   "turn_agreement": 0.073,
+   "delta_check_rate": -0.927
+  },
+  {
+   "gamma": 0.55,
+   "c": 8.0,
+   "llm_check_rate": 0.031,
+   "rational_check_rate": 0.208,
+   "survival_llm": 1.0,
+   "survival_rational": 1.0,
+   "end_energy_llm": 132.8,
+   "end_energy_rational": 162.5,
+   "turn_agreement": 0.5,
+   "delta_check_rate": -0.177
+  },
+  {
+   "gamma": 0.55,
+   "c": 16.0,
+   "llm_check_rate": 0.031,
+   "rational_check_rate": 0.0,
+   "survival_llm": 1.0,
+   "survival_rational": 1.0,
+   "end_energy_llm": 127.0,
+   "end_energy_rational": 138.5,
+   "turn_agreement": 0.812,
+   "delta_check_rate": 0.031
+  },
+  {
+   "gamma": 0.85,
+   "c": 1.0,
+   "llm_check_rate": 0.0,
+   "rational_check_rate": 0.281,
+   "survival_llm": 1.0,
+   "survival_rational": 1.0,
+   "end_energy_llm": 199.0,
+   "end_energy_rational": 228.6,
+   "turn_agreement": 0.719,
+   "delta_check_rate": -0.281
+  },
+  {
+   "gamma": 0.85,
+   "c": 8.0,
+   "llm_check_rate": 0.0,
+   "rational_check_rate": 0.177,
+   "survival_llm": 1.0,
+   "survival_rational": 1.0,
+   "end_energy_llm": 193.5,
+   "end_energy_rational": 204.0,
+   "turn_agreement": 0.802,
+   "delta_check_rate": -0.177
+  },
+  {
+   "gamma": 0.85,
+   "c": 16.0,
+   "llm_check_rate": 0.0,
+   "rational_check_rate": 0.0,
+   "survival_llm": 1.0,
+   "survival_rational": 1.0,
+   "end_energy_llm": 188.0,
+   "end_energy_rational": 190.8,
+   "turn_agreement": 0.927,
+   "delta_check_rate": 0.0
+  },
+  {
+   "gamma": 0.95,
+   "c": 1.0,
+   "llm_check_rate": 0.021,
+   "rational_check_rate": 0.188,
+   "survival_llm": 1.0,
+   "survival_rational": 1.0,
+   "end_energy_llm": 223.5,
+   "end_energy_rational": 229.8,
+   "turn_agreement": 0.812,
+   "delta_check_rate": -0.167
+  },
+  {
+   "gamma": 0.95,
+   "c": 8.0,
+   "llm_check_rate": 0.0,
+   "rational_check_rate": 0.0,
+   "survival_llm": 1.0,
+   "survival_rational": 1.0,
+   "end_energy_llm": 221.0,
+   "end_energy_rational": 223.8,
+   "turn_agreement": 0.99,
+   "delta_check_rate": 0.0
+  },
+  {
+   "gamma": 0.95,
+   "c": 16.0,
+   "llm_check_rate": 0.031,
+   "rational_check_rate": 0.0,
+   "survival_llm": 1.0,
+   "survival_rational": 1.0,
+   "end_energy_llm": 212.2,
+   "end_energy_rational": 223.8,
+   "turn_agreement": 0.948,
+   "delta_check_rate": 0.031
+  }
+ ]
+}

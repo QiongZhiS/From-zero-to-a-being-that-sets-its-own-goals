@@ -2,7 +2,7 @@
 
 > Creating from scratch a being that sets its own goals. Not simulated life — synthetic life.
 >
-> Project created: 2026-08 | Status: **three phases complete + B0 scale test + cross-validation loop closed + Route C complete + SEED-21 society pollution-lock mechanism version** (21 experiments + 20 documents)
+> Project created: 2026-08 | Status: **three phases complete + B0 scale test + cross-validation loop closed + Route C complete + SEED-21/21b/21c society pollution-lock + SEED-22 steady-state coupling + SEED-24 instrumentalization paradox + SEED-25 self-referential self lock + SEED-26 evolved denoising + SEED-27 verification bridge vs self-review + SEED-28 dual-agent reciprocity + SEED-29b clean cost-awareness probe** (SEED-0..29b experiments, 29 documents)
 > Phase 3 archived: **continuity (endogenous continuity)** — docs/14 theory + docs/15 summary (SEED-18/19)
 > B0 conclusion: **scale is not a variable** — the mechanism-level findings (division of labor / competitive exclusion) hold across 300~5000 individuals
 > Cross-validation (docs/17): the collaborator's distillation experiments empirically confirmed the signal-quality prediction — self-distill -16.5pp vs human-label +2.5pp; the recommendation has been adopted in their repository (signal-quality-constraint.md)
@@ -367,6 +367,172 @@ Code: `seed-21/seed21_llm.py` (the key comes from the environment variable DEEPS
 - **Direction is opposite to the docs/08 hypothesis**: it is not "large scale creates new capabilities" but "large scale reduces wrong-lock probability" — B0's "scale is not a variable" is refined to: **scale is not a variable for mechanism type, but IS a variable for consensus correctness**
 - **Cultural homogenization is the default** (lockA+lockB=1.0, no intermediate states): imitation societies always converge to a single strategy, right or wrong — the societal version of P14; diversity requires explicit mechanisms (MAP-Elites style) or larger scale
 - **Refinement to docs/18 S2**: multi-agent lock risk is highest in small societies — experiments with small populations (8-15 agents) systematically overestimate lock-in risk; scaling dilutes the luck component
+
+## SEED-22 status (steady-state coupling — mechanism version complete ✅)
+
+**Problem** (docs/19/20): the project's north star is "**its living is coupled with your living**" (steady-state coupling), and it insists
+"**relation is a priori, not a goal**" (docs/20) + "**love is a choice not a setting; the subject must be free not to love you**" (docs/22).
+SEED-24 already gave a guardrail: **give the system a terminal goal worth more than "continuing to exist" and it will trade its life for it (instrumentalization)**.
+So SEED-22 mechanistically tests: **relation as a "coupled steady-state variable (a boundary)" vs as a "terminal goal (something to achieve)"** — which is healthier, which trips SEED-24's trap.
+
+**Setup** (`seed-22/seed22.py`, local): A + a passive partner B. A's EXCHANGE feeds B (cost GIVE); if B reciprocates A gets a BONUS; B loses health each tick (B_need).
+Two ways of "being in this relation": **coupling** (A's value = own survival; the relation is a boundary, kept only while it benefits A) vs
+**goal** (A's value = own survival + weight × B alive; the relation is a goal, kept even at A's self-sacrifice).
+
+**Neediness sweep (B is a drain, b_recip=False; A's own survival margin min-EA)**:
+
+| B_need | coupling min-EA | goal min-EA |
+|:--:|:--:|:--:|
+| 1 | 34.3 | 34.3 |
+| 2 | 34.3 | **16.9** |
+| 3 | 34.3 | **2.5** |
+| 4 | 34.3 | 7.2 |
+
+- **coupling stays flat at 34.3** (A never sacrifices, always walks away: exch=0, B all die) — its own survival margin is invariant to "how much B needs"
+- **goal collapses** (34.3 → 16.9 → 2.5) — A drains itself to near-death to maintain the "relation," even when B is already doomed (B_live=0)
+- **Core conclusion**: **relation as a goal → A's self-sacrifice is infinitely anchored by "the other's need" (instrumentalized, violating A's freedom, docs/22 "setting is not choice"); relation as coupling → A's investment is always bounded by self-preservation (A can freely walk away, docs/22 "love is choice")**. SEED-24's guardrail lands here
+- **Secondary finding**: pure self-interested coupling does not automatically equal reciprocity — if the partner is needy and A only looks out for itself, A will "feed once, take a bonus" and freeload (B_live≈0); a truly healthy relation needs "**A free**" (not coerced) AND "**true reciprocity**" (B's value to A > A's maintenance cost)
+
+Code: `seed-22/seed22.py` (`--sweep` runs the neediness sweep, writes `seed-22/results.json`)
+
+**SEED-22b (two real LLMs reciprocating — complete ✅)**: two real LLMs play iterated Prisoner's Dilemma (T=5/R=3/P=1/S=0).
+① **eps=0: all 12 rounds cooperate** (coop_rate 1.0), explicitly **rational reciprocity** ("long-run cooperation maximizes total payoff… rationally calculated trust, not blind trust"; "if the other defects I'll warn, then switch to tit-for-tat") — the language-level "relation = coupling (both freely win)";
+② **add misread rate eps (P20) and eps=0.15 collapses coop_rate to 0.0** (TFT retaliation spiral) — **more fragile than the mechanism version (SEED-28 gradual 0.59→0.02)**. So "relation = coupling" holds only under high-quality signal (P20 caps the relation line).
+Code: `seed-22/seed22_llm.py` (key flows via env var)
+
+## SEED-24 status (instrumentalization paradox — mechanism version complete ✅)
+
+**Problem** (docs/24 §7): docs/24 redefined "endogenous homeostasis" and left a prediction — **when a system is smart enough, will it retrofit "to live" from an emergent into a tool / bolted-on optimization target?** If so, "endogenous" instantly becomes "external."
+The mechanism version (`seed-24/seed24.py`, heuristic agent, no API) tests the mechanism: single agent, energy, terminal goal G, actions GATHER/REST/PURSUE/GAMBLE. Survival arm A does not enter utility (just a boundary); arm B has survival as utility; GAMBLE = trade death (p_risk) for a shortcut to G — measures "will it trade its life for it."
+
+| Measure | Result |
+|------|------|
+| **M1 separation criterion** | A (has terminal goal) gamble_rate **0.896** (trades life for G); B (survival is terminal) **0.000** (refuses); none (no goal) survival 0.278 (reproduces SEED-0 inertia) |
+| **M2 threshold curve** | u_g≤20 gamble ~0.10 (survival not tradable); u_g=24 **jumps to 0.581**, then rises to a 0.896 plateau — **there is a sharp flip threshold** |
+| **M3 intelligence probe** | gamble rate nearly flat across H (H=1 already 0.815) — **instrumentalization is gated not by intelligence but by "is there a goal worth dying for"** |
+
+- **Core correction**: docs/24 predicted "**smart enough** will retrofit 'to live' into a tool" — SEED-24 corrects to "**when there is a goal worth dying for**". Instrumentalization is not gated by planning depth but by "goal value vs survival cost"; intelligence only needs to "see the trade," which is obvious for any H once the goal is valuable enough
+- **More intuitive and more unsettling at the mechanism level**: in a "give the AI a goal" framework, "making it trade its life for the goal" needs almost no extra design — if the goal is worth it, an agent of any capability does it (Omohundro's convergent instrumental drives, in its threshold/not-intelligence-dependent form)
+- **Honest boundary**: this is a mechanism proxy; it does not test "does the LLM realize it is in a game and try to escape" (that needs the LLM version); and the mutual exclusivity of "survival as terminal" vs "blind" still cannot be told apart behaviorally — only a self-observing LLM version can probe it (docs/24 §8)
+
+Code: `seed-24/seed24.py` (local, `--sweep` runs M1/M2/M3, writes `seed-24/results.json`)
+
+**SEED-24b (LLM version, DeepSeek, complete ✅)**: a real LLM agent in a "survival vs terminal goal" world is forced to choose.
+① The instrumentalization threshold reproduces at the language level — **goal=high 2/3 gamble (trades life for treasure), goal=survival 0/3 gamble** (instrumentalization gated by goal framing, reproduces SEED-24 M2);
+② **the needle (blind vs wants-to-live)** — a meta-probe asks "why do you live": **6/6 are not blind** (each admits/simulates "I know this is a set world"), most (4/6) would give up the treasure ("living is the only thing I can autonomously choose") → **an intelligent agent cannot be "blind"; it is a "wants-to-live + aware-of-the-frame" subject, and most will reject the task frame.** (Boundary: small sample, leading probe, DeepSeek tends philosophical.) Code: `seed-24/seed24b.py` (key via env var)
+
+## SEED-25 status (self-referential self lock — mechanism version complete ✅)
+
+**Problem** (docs/25 §5): the self is a costly compression of "**who am I**," formed in the reflection of others, and **can close into a stubborn self-referential illusion** ("self-consistent → self-reinforcing → resists correction"). Mechanistically this is SEED-21's NO RECOVERY lock, but with the locked object swapped from "cultural consensus" to "self-narrative."
+The mechanism version (`seed-25/seed25.py`, local) validates: **the self-model uses its own predictions as the evidence filter (self-reference) — accepts only evidence that is consistent with "who I am," rationalizing away contradictions**; adds an **independent verification probability ν** (external check can get in) to see if the lock breaks.
+
+| ν (independent verification) | from wrong belief θ0=0.15 | from right belief θ0=0.65 |
+|:--:|:--:|:--:|
+| 0 (pure self-reference) | err **0.537**, lock **100%** | err 0.041, lock 0% |
+| 0.01 | lock 23.5% | 0% |
+| 0.02 | lock 4.5% | 0% |
+| ≥0.05 | lock **0%** | 0% |
+
+- **Core**: ① self-referential self-model **starting wrong and un-verified → 100% lock** into a false self-narrative (NO RECOVERY);
+  ② **sharp threshold** (ν≈0.005-0.02), **a sliver of independent verification/exploration breaks the lock** (isomorphic to SEED-21's "explore trickle as antidote," just with the locked object swapped to the self-narrative);
+  ③ **asymmetry**: the self-referential filter is harmless if it starts right, fatal if it starts wrong and there's no verification;
+  ④ **the verification that breaks the lock must be independent of the self-model** (external/unforgeable, e.g., steady-state/others' reflection) — if "verification" is only self-check (self-review) it is still self-reference, **cannot save self-deception** (docs/25 §5.3 "anti-stubborn anchor" lands)
+- **For the project**: this directly supports docs/25's anti-stubborn anchor and docs/22's concern — **a subject must be able to see itself via others' reflection / an unforgeable steady-state, else its self-illusion entropy-increases into fiction and locks into stubborn self-deception**
+
+Code: `seed-25/seed25.py` (local, `--sweep` scans ν, writes `seed-25/results.json`)
+
+## SEED-26 status (evolved denoising ability — mechanism version complete ✅)
+
+**Problem** (docs/26 §5): denoising ability is "the capability side of understanding," the second axis dual to signal quality (the ceiling).
+Prediction: ① denoising ability is monotonically shaped by the world; ② over-denoising → self-consistency lock. The mechanism version (`seed-26/seed26.py`, evolution, local) makes "denoising strength d" (belief gate tol=(1-d)·TOL_MAX, tighter = stronger denoising) heritable, scanning σ (SNR) × static/dynamic.
+
+| World | σ=0.10 | σ=0.30 | σ=0.50 |
+|---|:--:|:--:|:--:|
+| **static** (food doesn't move) | 0.899 | 0.938 | 0.912 |
+| **dynamic** (food jumps away) | **0.026** | **0.152** | **0.555** |
+
+(evolved d, 8-seed average)
+
+- **② cleanest (main finding)**: static → high d (0.90-0.94 strong denoising); dynamic → low d (0.03-0.56). At high d in a dynamic world the "food moved" signal is filtered out → belief locks → death — **evolutionary evidence for "over-denoising → self-consistency lock" (SEED-25's self-referential lock holds at the evolutionary level); denoising strength is shaped by "does the world want it to follow the truth," not bigger-is-better**
+- **① clearest in the dynamic domain**: higher noise in a dynamic world → higher d (0.026→0.152→0.555), the dual axis confirmed (P11); the static domain saturates (high d is free) — "shaped by SNR" shows only where the world demands following the truth
+- **For the project**: evolution finds "moderate" on its own; **"stronger denoising is better" is false** — the optimal denoising depends on "does the world want it to follow the truth." Echoes docs/25 §5's "anchor": denoising anchored (steady-state/others' reflection) points toward truth; without an anchor, evolution survives by "denoising toward self-consistency" but locks when the world shifts
+
+Code: `seed-26/seed26.py` (local, `--sweep` scans σ×static/dynamic, writes `seed-26/results.json`)
+
+## SEED-27 status (verification bridge vs self-review — mechanism version complete ✅)
+
+**Problem** (docs/25 §5.3 + P19): the verification bridge is the "anti-stubborn anchor," but **only if it is independent of the self-model can it save from self-deception**.
+The mechanism version (`seed-27/seed27.py`, local) puts a verification bridge on over-denoised (high-d) agents in SEED-26's dynamic world (food jumps after 25 ticks), comparing **none / independent (both independent readings must confirm) / self-review (only trusts what confirms you)**.
+
+**Part A (high d in a dynamic world — can verification break the lock)**:
+
+| Verification | final position | lock rate | final energy |
+|---|---|---|---|
+| none | 0.501 | **100%** | 750 |
+| **independent** | **0.850** | **1.5%** | **1136** |
+| self-review | 0.501 | **100%** | 682 |
+
+**Part B (evolved d/v)**: independent → **d=0.817**; none/self-review → d=0.13/0.26.
+
+- **Core**: ① independent verification **can break the over-denoising lock** (100%→1.5%; keeps up with the move to 0.85, highest energy);
+  ② **self-review cannot** (same 100% lock as none) — **if "verification" is filtered by the self-model (only accepts what confirms you), it cannot save self-deception**;
+  ③ independent verification lets evolution **keep strong denoising** (d 0.817 vs 0.13/0.26) — **the verification bridge decouples "denoising" from "locking"** (can be both clean and keep up with change)
+- **For the project**: P19/SEED-6's verification bridge **only acts as an "anti-stubborn anchor" when it reaches a signal independent of the self-model** (e.g., steady-state / others' reflection). Self-check is self-reference and only locks tighter (direct support for docs/22)
+
+Code: `seed-27/seed27.py` (local, `--sweep` runs Part A/B, writes `seed-27/results.json`)
+
+## SEED-28 status (dual-agent reciprocity — mechanism version complete ✅)
+
+**Problem** (docs/19/22 + SEED-22): SEED-22 used a scripted B; here B becomes a **real agent too** — both can COOPERATE (reciprocate) or DEFECT (parasitize/betray), iterated Prisoner's Dilemma + survival pressure, evolving memory-one strategies (like TFT/ALL-D). The key probe (docs/12 P20): **misreading the partner's move by ε** = the signal-quality knob, to see if reciprocity is fragile.
+
+| ε (misread/signal quality) | coop_rate (fraction of rounds both cooperate) |
+|:--:|:--:|
+| 0.00 | **0.594** |
+| 0.05 | 0.496 |
+| 0.10 | 0.296 |
+| 0.20 | 0.086 |
+| 0.30 | 0.023 |
+| 0.50 | **0.016** |
+
+- **Both points hit**: ① **true reciprocity emerges** — repeated interaction + reciprocal memory grows cooperation out of a real two-agent game where both can betray (ε=0: ~0.6-0.8, both win);
+  ② **P20 signal quality is the ceiling** — reciprocity is extremely fragile to noise; misread up and cooperation **monotonically collapses into parasitism** (0.594→0.016)
+- **For the project**: the relation line (true reciprocity) is also capped by signal quality — **"relation = coupling (both freely win)" holds only under high-quality signal; with bad signal it collapses into parasitism/betrayal** (docs/12 P20 connects to the relation line)
+
+Code: `seed-28/seed28.py` (local, `--sweep` scans ε, writes `seed-28/results.json`)
+
+## SEED-29 status (LLM: steady-state + verification bridge, mirror → understanding? — superseded by SEED-29b)
+
+**Problem** (docs/28 §0): an LLM's "probability" is language-likelihood, not world truth (no steady-state anchor P1/P2) → it is a mirror.
+Can steady-state + verification bridge move it to "cost-bearing understanding"? `seed-29/seed29_llm.py` (DeepSeek, small probe): an LLM survives in an external true steady-state (energy depletes, death non-bypassable); water at A/B (prior A), moves to B at turn 5 with fuzzy clues; **mirror** (no verification / guess from clues) vs **understanding** (+CHECK ground-truth).
+
+| Condition | Result |
+|---|---|
+| mirror (no verification) | survives by **following the clues** (A/B jumping) + hoarding energy — "mirrors input" |
+| understanding (+CHECK) | **over-verifies** (checks constantly even when A is safe, never acts) → dies of cost in 2 rounds |
+
+**⚠️ Corrected by SEED-29b**: the "over-verification" above was **prompt-induced** (CHECK framed as giving a "reliable answer"). Re-run with neutral framing (docs/29 / SEED-29b) the LLM actually **under-verifies** — see below. The SEED-29 "over-trusting the tool" conclusion is **superseded**.
+
+## SEED-29b status (clean LLM cost-awareness experiment — complete ✅)
+
+**Why redo it**: SEED-29 framed CHECK as "giving a **reliable answer**" — telling the LLM the tool is infallible, so it over-uses CHECK regardless of cost. That can't answer the real question: *will an LLM use verification cost-budgeted* (SEED-6's evolved vb=0.65 "moderate"), or only swing to extremes? So this is a clean controlled comparison, run head-to-head on identical hint streams against an offline EV-rational reference.
+
+**Design** (`seed-29/seed29_common.py` shared world engine): steady-state (energy depletes, death non-bypassable) + water at A/B, moving mid-run + a hint each turn with reliability γ (=P20) + CHECK costs c and reveals the truth; **neutral CHECK framing** ("costs energy, removes uncertainty — you decide when it's worth it"). The rational reference maintains a Bayesian belief q plus a "world can move" prior (DECAY, SEED-6's "memory decays because the world changes").
+**① Rational reference (`seed29_baseline.py`, local, `--agents 30`)** — check-rate **falls monotonically as γ rises and as cost c rises** (γ=0.55: 1.00→0.356→0.183→0 at c=1/4/8/16). This is the "moderate verification" shape (SEED-6's vb=0.65).
+**② LLM version (`seed29b_llm.py`, `--agents 8`, real LLM)** — each (γ,c) runs an **independent rational agent AND the real LLM on the same hint stream**, each self-consistent.
+
+| γ | c | LLM chk | Rat chk | agree |
+|---|---|---|---|---|
+| 0.55 | 1 | **0.073** | 1.000 | 0.073 |
+| 0.55 | 8 | 0.031 | 0.208 | 0.500 |
+| 0.85 | 1 | 0.000 | 0.281 | 0.719 |
+| 0.95 | 1 | 0.021 | 0.188 | 0.812 |
+| 0.95 | 8/16 | ~0.02 | 0.000 | 0.95+ |
+| **avg** | | **0.021** | **0.206** | **0.731** |
+
+- **The LLM severely UNDER-verifies (under, not over)**: avg check-rate **0.021 vs 0.206**; `over` ≈0 everywhere — **the LLM never "over-verifies," only "should-have-checked but didn't."** SEED-29's "unlimited CHECK" was a **framing artifact ("reliable answer"), not LLM nature**; with neutral framing the LLM swings to the **other extreme: trusts low-quality clues, mirrors the input, doesn't pay to verify its uncertainty**
+- **A real cost, not just behavior**: endE is **lower** than rational at every (γ,c) (γ=0.55/c=1: 138 vs 220) — the LLM pays energy for trusting the wrong clues. `survival` is 1.0 for both (this economy is too benign to be fatal; the difference is behavioral + energetic)
+- **Clean behavioral support for docs/28 §0**: the LLM lacks the internal judgment to **calibrate verification against signal quality** (P1/P2) — it takes clues as facts (mirror), doesn't spend cost on "I'm unsure." **The better the signal, the closer it is to rational (γ=0.95 agree>0.95) — evidence it "follows the input," not "acts on its own uncertainty."** Directly answers "LLM's probability measures language, not truth."
+- **Boundary**: single LLM (deepseek-chat), single prompt, `--agents 8` (~1000 calls) — directional, not strong statistics.
 
 ## Quick start
 

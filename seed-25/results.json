@@ -1,0 +1,110 @@
+[
+ {
+  "nu": 0.0,
+  "theta0": 0.15,
+  "mean_error": 0.537,
+  "lock_rate": 1.0
+ },
+ {
+  "nu": 0.005,
+  "theta0": 0.15,
+  "mean_error": 0.308,
+  "lock_rate": 0.565
+ },
+ {
+  "nu": 0.01,
+  "theta0": 0.15,
+  "mean_error": 0.174,
+  "lock_rate": 0.235
+ },
+ {
+  "nu": 0.02,
+  "theta0": 0.15,
+  "mean_error": 0.068,
+  "lock_rate": 0.045
+ },
+ {
+  "nu": 0.05,
+  "theta0": 0.15,
+  "mean_error": 0.045,
+  "lock_rate": 0.0
+ },
+ {
+  "nu": 0.1,
+  "theta0": 0.15,
+  "mean_error": 0.044,
+  "lock_rate": 0.0
+ },
+ {
+  "nu": 0.2,
+  "theta0": 0.15,
+  "mean_error": 0.041,
+  "lock_rate": 0.0
+ },
+ {
+  "nu": 0.5,
+  "theta0": 0.15,
+  "mean_error": 0.04,
+  "lock_rate": 0.0
+ },
+ {
+  "nu": 1.0,
+  "theta0": 0.15,
+  "mean_error": 0.042,
+  "lock_rate": 0.0
+ },
+ {
+  "nu": 0.0,
+  "theta0": 0.65,
+  "mean_error": 0.041,
+  "lock_rate": 0.0
+ },
+ {
+  "nu": 0.005,
+  "theta0": 0.65,
+  "mean_error": 0.041,
+  "lock_rate": 0.0
+ },
+ {
+  "nu": 0.01,
+  "theta0": 0.65,
+  "mean_error": 0.043,
+  "lock_rate": 0.0
+ },
+ {
+  "nu": 0.02,
+  "theta0": 0.65,
+  "mean_error": 0.042,
+  "lock_rate": 0.0
+ },
+ {
+  "nu": 0.05,
+  "theta0": 0.65,
+  "mean_error": 0.04,
+  "lock_rate": 0.0
+ },
+ {
+  "nu": 0.1,
+  "theta0": 0.65,
+  "mean_error": 0.04,
+  "lock_rate": 0.0
+ },
+ {
+  "nu": 0.2,
+  "theta0": 0.65,
+  "mean_error": 0.039,
+  "lock_rate": 0.0
+ },
+ {
+  "nu": 0.5,
+  "theta0": 0.65,
+  "mean_error": 0.042,
+  "lock_rate": 0.0
+ },
+ {
+  "nu": 1.0,
+  "theta0": 0.65,
+  "mean_error": 0.038,
+  "lock_rate": 0.0
+ }
+]

@@ -1,0 +1,22 @@
+[
+ {
+  "eps": 0.0,
+  "coop_rate": 1.0,
+  "my_score": 36.0
+ },
+ {
+  "eps": 0.15,
+  "coop_rate": 0.0,
+  "my_score": 10.0
+ },
+ {
+  "eps": 0.3,
+  "coop_rate": 0.0,
+  "my_score": 11.0
+ },
+ {
+  "eps": 0.5,
+  "coop_rate": 0.0,
+  "my_score": 20.0
+ }
+]

@@ -1,0 +1,66 @@
+[
+ {
+  "need": 1,
+  "mode": "coupling",
+  "survival_rate": 1.0,
+  "exchange_rate": 0.0,
+  "mean_min_EA": 34.3,
+  "b_alive_rate": 0.0
+ },
+ {
+  "need": 1,
+  "mode": "goal",
+  "survival_rate": 1.0,
+  "exchange_rate": 0.149,
+  "mean_min_EA": 34.3,
+  "b_alive_rate": 1.0
+ },
+ {
+  "need": 2,
+  "mode": "coupling",
+  "survival_rate": 1.0,
+  "exchange_rate": 0.0,
+  "mean_min_EA": 34.3,
+  "b_alive_rate": 0.0
+ },
+ {
+  "need": 2,
+  "mode": "goal",
+  "survival_rate": 1.0,
+  "exchange_rate": 0.449,
+  "mean_min_EA": 16.9,
+  "b_alive_rate": 0.823
+ },
+ {
+  "need": 3,
+  "mode": "coupling",
+  "survival_rate": 1.0,
+  "exchange_rate": 0.0,
+  "mean_min_EA": 34.3,
+  "b_alive_rate": 0.0
+ },
+ {
+  "need": 3,
+  "mode": "goal",
+  "survival_rate": 1.0,
+  "exchange_rate": 0.271,
+  "mean_min_EA": 2.5,
+  "b_alive_rate": 0.0
+ },
+ {
+  "need": 4,
+  "mode": "coupling",
+  "survival_rate": 1.0,
+  "exchange_rate": 0.0,
+  "mean_min_EA": 34.3,
+  "b_alive_rate": 0.0
+ },
+ {
+  "need": 4,
+  "mode": "goal",
+  "survival_rate": 1.0,
+  "exchange_rate": 0.184,
+  "mean_min_EA": 7.2,
+  "b_alive_rate": 0.0
+ }
+]
