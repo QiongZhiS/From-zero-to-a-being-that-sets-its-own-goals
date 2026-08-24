@@ -7,7 +7,6 @@
 > B0 conclusion: **scale is not a variable** — the mechanism-level findings (division of labor / competitive exclusion) hold across 300~5000 individuals
 > Cross-validation (docs/17): the collaborator's distillation experiments empirically confirmed the signal-quality prediction — self-distill -16.5pp vs human-label +2.5pp; the recommendation has been adopted in their repository (signal-quality-constraint.md)
 > Route C: standalone articles on signal quality published (34 posts on Zhihu, 2026-08-20); public repository https://github.com/QiongZhiS/From-zero-to-a-being-that-sets-its-own-goals
-> Next steps: polish the public repository (English README + experiment-data JSON) | Route B argument | the continuity trilogy (shelved by the user)
 
 ## What this is
 
@@ -319,7 +318,7 @@ Verification layer = personally test-drive before adoption (SEED-6's do → obse
 - **Genetic immunity**: genetic mode does not amplify fraud (no contagion) — the societal version of P16's "genes are naturally immune"
 - **Q3 surprise finding**: pure luck (no fraud, σ=25) cannot lock B in; instead it reproduces the SEED-14 mechanism — under high noise, imitation transmits only noise and consensus quality degrades (end_A 0.759→0.542); lock-in requires an **active erroneous signal** (fraud/hype); luck is not enough
 - **Implication for docs/18 S2**: the prediction's mechanism holds, but with a boundary added — lock-in in an LLM society requires (a) no verification layer, (b) low independent exploration, (c) an active erroneous signal; only with all three present is it NO RECOVERY
-- Next step: the real-LLM-agent version (DeepSeek API, 8-16 agents × 30 rounds; verification layer = the prompt requires test-first-then-adopt)
+- The mechanism version was followed by the real-LLM-agent version (SEED-21b, below: DeepSeek API, 10 agents × 30 rounds × 2 views; verification layer = the prompt requires test-first-then-adopt)
 
 ## SEED-21b status (LLM version: a real DeepSeek agent society — complete ✅)
 
