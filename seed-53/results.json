@@ -1,0 +1,362 @@
+{
+ "U0.5_p0.0": {
+  "freeze": {
+   "alive_rate": 0.97,
+   "avg_R": 280.1,
+   "avg_E": 69.1,
+   "avg_hit": 0.989,
+   "avg_updates": 15.0
+  },
+  "always": {
+   "alive_rate": 0.0,
+   "avg_R": 216.8,
+   "avg_E": -0.2,
+   "avg_hit": 1.006,
+   "avg_updates": 166.0
+  },
+  "surprise": {
+   "alive_rate": 1.0,
+   "avg_R": 290.0,
+   "avg_E": 76.0,
+   "avg_hit": 1.0,
+   "avg_updates": 0.0
+  },
+  "random": {
+   "alive_rate": 1.0,
+   "avg_R": 288.3,
+   "avg_E": 40.3,
+   "avg_hit": 0.999,
+   "avg_updates": 71.5
+  }
+ },
+ "U0.5_p0.002": {
+  "freeze": {
+   "alive_rate": 0.87,
+   "avg_R": 225.5,
+   "avg_E": 69.5,
+   "avg_hit": 0.943,
+   "avg_updates": 15.0
+  },
+  "always": {
+   "alive_rate": 0.0,
+   "avg_R": 215.3,
+   "avg_E": -0.2,
+   "avg_hit": 1.004,
+   "avg_updates": 166.0
+  },
+  "surprise": {
+   "alive_rate": 1.0,
+   "avg_R": 283.7,
+   "avg_E": 75.8,
+   "avg_hit": 0.995,
+   "avg_updates": 0.5
+  },
+  "random": {
+   "alive_rate": 1.0,
+   "avg_R": 277.7,
+   "avg_E": 40.3,
+   "avg_hit": 0.99,
+   "avg_updates": 71.5
+  }
+ },
+ "U0.5_p0.01": {
+  "freeze": {
+   "alive_rate": 0.53,
+   "avg_R": 86.5,
+   "avg_E": 73.4,
+   "avg_hit": 0.814,
+   "avg_updates": 15.0
+  },
+  "always": {
+   "alive_rate": 0.0,
+   "avg_R": 208.7,
+   "avg_E": -0.2,
+   "avg_hit": 0.996,
+   "avg_updates": 166.0
+  },
+  "surprise": {
+   "alive_rate": 0.97,
+   "avg_R": 227.3,
+   "avg_E": 74.6,
+   "avg_hit": 0.947,
+   "avg_updates": 3.5
+  },
+  "random": {
+   "alive_rate": 1.0,
+   "avg_R": 237.0,
+   "avg_E": 40.3,
+   "avg_hit": 0.956,
+   "avg_updates": 71.5
+  }
+ },
+ "U0.5_p0.05": {
+  "freeze": {
+   "alive_rate": 0.5,
+   "avg_R": 42.2,
+   "avg_E": 74.1,
+   "avg_hit": 0.772,
+   "avg_updates": 15.0
+  },
+  "always": {
+   "alive_rate": 0.0,
+   "avg_R": 165.5,
+   "avg_E": 0.8,
+   "avg_hit": 0.943,
+   "avg_updates": 164.4
+  },
+  "surprise": {
+   "alive_rate": 0.77,
+   "avg_R": 72.8,
+   "avg_E": 73.8,
+   "avg_hit": 0.808,
+   "avg_updates": 10.1
+  },
+  "random": {
+   "alive_rate": 0.93,
+   "avg_R": 137.8,
+   "avg_E": 42.2,
+   "avg_hit": 0.869,
+   "avg_updates": 69.1
+  }
+ },
+ "U2.0_p0.0": {
+  "freeze": {
+   "alive_rate": 0.97,
+   "avg_R": 280.1,
+   "avg_E": 46.6,
+   "avg_hit": 0.989,
+   "avg_updates": 15.0
+  },
+  "always": {
+   "alive_rate": 0.0,
+   "avg_R": 97.8,
+   "avg_E": -0.8,
+   "avg_hit": 1.021,
+   "avg_updates": 47.0
+  },
+  "surprise": {
+   "alive_rate": 1.0,
+   "avg_R": 290.0,
+   "avg_E": 76.0,
+   "avg_hit": 1.0,
+   "avg_updates": 0.0
+  },
+  "random": {
+   "alive_rate": 0.0,
+   "avg_R": 192.1,
+   "avg_E": -0.9,
+   "avg_hit": 1.004,
+   "avg_updates": 42.4
+  }
+ },
+ "U2.0_p0.002": {
+  "freeze": {
+   "alive_rate": 0.87,
+   "avg_R": 225.5,
+   "avg_E": 47.0,
+   "avg_hit": 0.943,
+   "avg_updates": 15.0
+  },
+  "always": {
+   "alive_rate": 0.0,
+   "avg_R": 97.5,
+   "avg_E": -0.8,
+   "avg_hit": 1.019,
+   "avg_updates": 47.0
+  },
+  "surprise": {
+   "alive_rate": 1.0,
+   "avg_R": 283.7,
+   "avg_E": 75.1,
+   "avg_hit": 0.995,
+   "avg_updates": 0.5
+  },
+  "random": {
+   "alive_rate": 0.0,
+   "avg_R": 185.5,
+   "avg_E": -0.9,
+   "avg_hit": 0.995,
+   "avg_updates": 42.4
+  }
+ },
+ "U2.0_p0.01": {
+  "freeze": {
+   "alive_rate": 0.53,
+   "avg_R": 86.5,
+   "avg_E": 50.9,
+   "avg_hit": 0.814,
+   "avg_updates": 15.0
+  },
+  "always": {
+   "alive_rate": 0.0,
+   "avg_R": 96.3,
+   "avg_E": -0.8,
+   "avg_hit": 1.014,
+   "avg_updates": 47.0
+  },
+  "surprise": {
+   "alive_rate": 0.97,
+   "avg_R": 227.3,
+   "avg_E": 69.3,
+   "avg_hit": 0.947,
+   "avg_updates": 3.5
+  },
+  "random": {
+   "alive_rate": 0.0,
+   "avg_R": 163.3,
+   "avg_E": -0.9,
+   "avg_hit": 0.964,
+   "avg_updates": 42.4
+  }
+ },
+ "U2.0_p0.05": {
+  "freeze": {
+   "alive_rate": 0.5,
+   "avg_R": 42.2,
+   "avg_E": 51.6,
+   "avg_hit": 0.772,
+   "avg_updates": 15.0
+  },
+  "always": {
+   "alive_rate": 0.0,
+   "avg_R": 83.3,
+   "avg_E": -0.8,
+   "avg_hit": 0.959,
+   "avg_updates": 47.0
+  },
+  "surprise": {
+   "alive_rate": 0.77,
+   "avg_R": 72.8,
+   "avg_E": 58.6,
+   "avg_hit": 0.808,
+   "avg_updates": 10.1
+  },
+  "random": {
+   "alive_rate": 0.0,
+   "avg_R": 104.5,
+   "avg_E": 1.2,
+   "avg_hit": 0.878,
+   "avg_updates": 41.5
+  }
+ },
+ "U4.0_p0.0": {
+  "freeze": {
+   "alive_rate": 0.97,
+   "avg_R": 280.1,
+   "avg_E": 16.6,
+   "avg_hit": 0.989,
+   "avg_updates": 15.0
+  },
+  "always": {
+   "alive_rate": 0.0,
+   "avg_R": 74.8,
+   "avg_E": -2.5,
+   "avg_hit": 1.04,
+   "avg_updates": 24.0
+  },
+  "surprise": {
+   "alive_rate": 1.0,
+   "avg_R": 290.0,
+   "avg_E": 76.0,
+   "avg_hit": 1.0,
+   "avg_updates": 0.0
+  },
+  "random": {
+   "alive_rate": 0.0,
+   "avg_R": 126.6,
+   "avg_E": -2.0,
+   "avg_hit": 1.007,
+   "avg_updates": 22.7
+  }
+ },
+ "U4.0_p0.002": {
+  "freeze": {
+   "alive_rate": 0.87,
+   "avg_R": 225.5,
+   "avg_E": 17.0,
+   "avg_hit": 0.943,
+   "avg_updates": 15.0
+  },
+  "always": {
+   "alive_rate": 0.0,
+   "avg_R": 74.8,
+   "avg_E": -2.5,
+   "avg_hit": 1.04,
+   "avg_updates": 24.0
+  },
+  "surprise": {
+   "alive_rate": 1.0,
+   "avg_R": 283.7,
+   "avg_E": 74.1,
+   "avg_hit": 0.995,
+   "avg_updates": 0.5
+  },
+  "random": {
+   "alive_rate": 0.0,
+   "avg_R": 124.0,
+   "avg_E": -2.0,
+   "avg_hit": 1.0,
+   "avg_updates": 22.7
+  }
+ },
+ "U4.0_p0.01": {
+  "freeze": {
+   "alive_rate": 0.53,
+   "avg_R": 86.5,
+   "avg_E": 20.9,
+   "avg_hit": 0.814,
+   "avg_updates": 15.0
+  },
+  "always": {
+   "alive_rate": 0.0,
+   "avg_R": 74.3,
+   "avg_E": -2.5,
+   "avg_hit": 1.036,
+   "avg_updates": 24.0
+  },
+  "surprise": {
+   "alive_rate": 0.97,
+   "avg_R": 227.3,
+   "avg_E": 62.3,
+   "avg_hit": 0.947,
+   "avg_updates": 3.5
+  },
+  "random": {
+   "alive_rate": 0.0,
+   "avg_R": 112.6,
+   "avg_E": -2.0,
+   "avg_hit": 0.972,
+   "avg_updates": 22.7
+  }
+ },
+ "U4.0_p0.05": {
+  "freeze": {
+   "alive_rate": 0.5,
+   "avg_R": 42.2,
+   "avg_E": 21.6,
+   "avg_hit": 0.772,
+   "avg_updates": 15.0
+  },
+  "always": {
+   "alive_rate": 0.0,
+   "avg_R": 68.0,
+   "avg_E": -2.5,
+   "avg_hit": 0.983,
+   "avg_updates": 24.0
+  },
+  "surprise": {
+   "alive_rate": 0.77,
+   "avg_R": 72.8,
+   "avg_E": 38.3,
+   "avg_hit": 0.808,
+   "avg_updates": 10.1
+  },
+  "random": {
+   "alive_rate": 0.0,
+   "avg_R": 78.4,
+   "avg_E": -1.1,
+   "avg_hit": 0.883,
+   "avg_updates": 22.5
+  }
+ }
+}

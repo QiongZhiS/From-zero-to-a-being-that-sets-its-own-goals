@@ -1,0 +1,38 @@
+{
+ "p0.0": {
+  "theta_star_mean": 0.3,
+  "theta_star_range": [
+   0.27,
+   0.32
+  ],
+  "best_R": 289.5,
+  "updates_per_episode": 8.2
+ },
+ "p0.002": {
+  "theta_star_mean": 0.26,
+  "theta_star_range": [
+   0.2,
+   0.31
+  ],
+  "best_R": 281.2,
+  "updates_per_episode": 10.9
+ },
+ "p0.01": {
+  "theta_star_mean": 0.23,
+  "theta_star_range": [
+   0.08,
+   0.39
+  ],
+  "best_R": 252.4,
+  "updates_per_episode": 15.6
+ },
+ "p0.05": {
+  "theta_star_mean": 1.43,
+  "theta_star_range": [
+   0.7,
+   2.51
+  ],
+  "best_R": 173.7,
+  "updates_per_episode": 19.3
+ }
+}

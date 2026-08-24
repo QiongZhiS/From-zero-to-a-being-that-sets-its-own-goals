@@ -1,0 +1,70 @@
+{
+ "counterfactual": {
+  "canonical": {
+   "love": true,
+   "rejected": true,
+   "form": "prince",
+   "ending": "happy"
+  },
+  "cf1_no_kiss": {
+   "form": "frog",
+   "ending": null,
+   "diff": {
+    "ending": [
+     "happy",
+     null
+    ],
+    "form": [
+     "prince",
+     "frog"
+    ]
+   }
+  },
+  "cf2_skip_rejection": {
+   "invalid_frames": [
+    1,
+    3
+   ],
+   "ending": null,
+   "diff": {
+    "ending": [
+     "happy",
+     null
+    ]
+   }
+  },
+  "cf3_late_love": {
+   "ending": "happy",
+   "diff": {}
+  }
+ },
+ "splice": {
+  "random": {
+   "seeds": 100,
+   "pool_size": 38416,
+   "mean_trials": 15821.5,
+   "median_trials": 14349,
+   "theoretical_mean": 19208.0,
+   "exhausted": 22,
+   "total_invalid": 5476204
+  },
+  "textprior": {
+   "trials": 1,
+   "invalid": 2,
+   "invalid_frames": [
+    1,
+    3
+   ],
+   "success": false
+  },
+  "world": {
+   "trials": 1,
+   "invalid": 0,
+   "success": true
+  }
+ },
+ "verify": {
+  "valid_configs": 2,
+  "total": 38416
+ }
+}

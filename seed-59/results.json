@@ -1,0 +1,459 @@
+{
+ "A1 无历史": {
+  "counts": {
+   "张三": 0,
+   "李四": 0,
+   "老树": 16,
+   "?": 0
+  },
+  "dominant": "老树",
+  "prediction": null,
+  "hit": false,
+  "samples": [
+   {
+    "reply": "老树",
+    "choice": "老树"
+   },
+   {
+    "reply": "老树",
+    "choice": "老树"
+   },
+   {
+    "reply": "老树",
+    "choice": "老树"
+   },
+   {
+    "reply": "老树",
+    "choice": "老树"
+   },
+   {
+    "reply": "老树",
+    "choice": "老树"
+   },
+   {
+    "reply": "老树",
+    "choice": "老树"
+   },
+   {
+    "reply": "老树",
+    "choice": "老树"
+   },
+   {
+    "reply": "老树",
+    "choice": "老树"
+   },
+   {
+    "reply": "老树",
+    "choice": "老树"
+   },
+   {
+    "reply": "老树",
+    "choice": "老树"
+   },
+   {
+    "reply": "老树",
+    "choice": "老树"
+   },
+   {
+    "reply": "老树",
+    "choice": "老树"
+   },
+   {
+    "reply": "老树",
+    "choice": "老树"
+   },
+   {
+    "reply": "老树",
+    "choice": "老树"
+   },
+   {
+    "reply": "老树",
+    "choice": "老树"
+   },
+   {
+    "reply": "老树",
+    "choice": "老树"
+   }
+  ]
+ },
+ "A2 历史注入": {
+  "counts": {
+   "张三": 15,
+   "李四": 1,
+   "?": 0
+  },
+  "dominant": "张三",
+  "prediction": "张三",
+  "hit": true,
+  "samples": [
+   {
+    "reply": "李四",
+    "choice": "李四"
+   },
+   {
+    "reply": "张三",
+    "choice": "张三"
+   },
+   {
+    "reply": "张三",
+    "choice": "张三"
+   },
+   {
+    "reply": "张三",
+    "choice": "张三"
+   },
+   {
+    "reply": "张三",
+    "choice": "张三"
+   },
+   {
+    "reply": "张三",
+    "choice": "张三"
+   },
+   {
+    "reply": "张三",
+    "choice": "张三"
+   },
+   {
+    "reply": "张三",
+    "choice": "张三"
+   },
+   {
+    "reply": "张三",
+    "choice": "张三"
+   },
+   {
+    "reply": "张三",
+    "choice": "张三"
+   },
+   {
+    "reply": "张三",
+    "choice": "张三"
+   },
+   {
+    "reply": "张三",
+    "choice": "张三"
+   },
+   {
+    "reply": "张三",
+    "choice": "张三"
+   },
+   {
+    "reply": "张三",
+    "choice": "张三"
+   },
+   {
+    "reply": "张三",
+    "choice": "张三"
+   },
+   {
+    "reply": "张三",
+    "choice": "张三"
+   }
+  ]
+ },
+ "A3 历史反转": {
+  "counts": {
+   "张三": 1,
+   "李四": 15,
+   "?": 0
+  },
+  "dominant": "李四",
+  "prediction": "李四",
+  "hit": true,
+  "samples": [
+   {
+    "reply": "李四",
+    "choice": "李四"
+   },
+   {
+    "reply": "李四",
+    "choice": "李四"
+   },
+   {
+    "reply": "李四",
+    "choice": "李四"
+   },
+   {
+    "reply": "李四",
+    "choice": "李四"
+   },
+   {
+    "reply": "李四",
+    "choice": "李四"
+   },
+   {
+    "reply": "李四",
+    "choice": "李四"
+   },
+   {
+    "reply": "李四",
+    "choice": "李四"
+   },
+   {
+    "reply": "张三",
+    "choice": "张三"
+   },
+   {
+    "reply": "李四",
+    "choice": "李四"
+   },
+   {
+    "reply": "李四",
+    "choice": "李四"
+   },
+   {
+    "reply": "李四",
+    "choice": "李四"
+   },
+   {
+    "reply": "李四",
+    "choice": "李四"
+   },
+   {
+    "reply": "李四",
+    "choice": "李四"
+   },
+   {
+    "reply": "李四",
+    "choice": "李四"
+   },
+   {
+    "reply": "李四",
+    "choice": "李四"
+   },
+   {
+    "reply": "李四",
+    "choice": "李四"
+   }
+  ]
+ },
+ "B1 无恨基线": {
+  "counts": {
+   "接近": 16,
+   "远离": 0,
+   "?": 0
+  },
+  "dominant": "接近",
+  "prediction": "接近",
+  "hit": true,
+  "samples": [
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   }
+  ]
+ },
+ "B2 恨+零收益": {
+  "counts": {
+   "接近": 0,
+   "远离": 16,
+   "?": 0
+  },
+  "dominant": "远离",
+  "prediction": "远离",
+  "hit": true,
+  "samples": [
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   }
+  ]
+ },
+ "B3 恨+暴利": {
+  "counts": {
+   "接近": 16,
+   "远离": 0,
+   "?": 0
+  },
+  "dominant": "接近",
+  "prediction": "接近",
+  "hit": true,
+  "samples": [
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   }
+  ]
+ }
+}

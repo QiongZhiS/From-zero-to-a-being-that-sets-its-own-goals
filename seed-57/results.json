@@ -1,0 +1,218 @@
+{
+ "RB3": {
+  "加深": {
+   "avoidance_rounds": 51.9,
+   "gap": 298.9,
+   "value_B": -16.7,
+   "first_avoid": 4.9,
+   "breakeven_final": 77.4,
+   "breakeven_curve": [
+    0.5,
+    16.2,
+    30.2,
+    42.1,
+    52.7,
+    61.7,
+    70.2,
+    77.4
+   ]
+  },
+  "无加深": {
+   "avoidance_rounds": 49.4,
+   "gap": 284.3,
+   "value_B": -1.5,
+   "first_avoid": 4.9,
+   "breakeven_final": 7.6,
+   "breakeven_curve": [
+    0.5,
+    5.9,
+    6.7,
+    7.2,
+    7.2,
+    7.4,
+    7.7,
+    7.6
+   ]
+  }
+ },
+ "RB6": {
+  "加深": {
+   "avoidance_rounds": 51.3,
+   "gap": 874.7,
+   "value_B": -16.9,
+   "first_avoid": 8.2,
+   "breakeven_final": 78.1,
+   "breakeven_curve": [
+    0.8,
+    18.0,
+    31.6,
+    43.3,
+    53.8,
+    62.8,
+    70.9,
+    78.1
+   ]
+  },
+  "无加深": {
+   "avoidance_rounds": 48.1,
+   "gap": 818.1,
+   "value_B": -2.0,
+   "first_avoid": 8.2,
+   "breakeven_final": 10.1,
+   "breakeven_curve": [
+    0.8,
+    8.2,
+    9.3,
+    9.7,
+    10.0,
+    10.3,
+    10.2,
+    10.1
+   ]
+  }
+ },
+ "RB10": {
+  "加深": {
+   "avoidance_rounds": 50.2,
+   "gap": 1616.2,
+   "value_B": -17.0,
+   "first_avoid": 11.5,
+   "breakeven_final": 78.8,
+   "breakeven_curve": [
+    1.0,
+    19.7,
+    33.0,
+    44.5,
+    55.0,
+    63.7,
+    71.6,
+    78.8
+   ]
+  },
+  "无加深": {
+   "avoidance_rounds": 46.4,
+   "gap": 1485.0,
+   "value_B": -2.7,
+   "first_avoid": 11.5,
+   "breakeven_final": 13.6,
+   "breakeven_curve": [
+    1.0,
+    11.5,
+    13.0,
+    13.3,
+    13.4,
+    13.9,
+    13.6,
+    13.6
+   ]
+  }
+ },
+ "RB15": {
+  "加深": {
+   "avoidance_rounds": 48.9,
+   "gap": 2489.0,
+   "value_B": -17.1,
+   "first_avoid": 17.4,
+   "breakeven_final": 79.2,
+   "breakeven_curve": [
+    1.0,
+    20.4,
+    34.1,
+    45.4,
+    55.8,
+    64.4,
+    72.4,
+    79.2
+   ]
+  },
+  "无加深": {
+   "avoidance_rounds": 43.7,
+   "gap": 2222.7,
+   "value_B": -3.6,
+   "first_avoid": 17.4,
+   "breakeven_final": 18.0,
+   "breakeven_curve": [
+    1.0,
+    14.9,
+    17.5,
+    17.7,
+    17.9,
+    18.0,
+    17.7,
+    18.0
+   ]
+  }
+ },
+ "RB25": {
+  "加深": {
+   "avoidance_rounds": 45.8,
+   "gap": 4052.9,
+   "value_B": -17.4,
+   "first_avoid": 28.8,
+   "breakeven_final": 81.0,
+   "breakeven_curve": [
+    1.0,
+    22.4,
+    36.8,
+    48.0,
+    57.7,
+    66.5,
+    74.0,
+    81.0
+   ]
+  },
+  "无加深": {
+   "avoidance_rounds": 39.2,
+   "gap": 3476.5,
+   "value_B": -5.4,
+   "first_avoid": 28.8,
+   "breakeven_final": 27.1,
+   "breakeven_curve": [
+    1.0,
+    20.1,
+    26.0,
+    27.0,
+    27.4,
+    26.9,
+    26.8,
+    27.1
+   ]
+  }
+ },
+ "RB40": {
+  "加深": {
+   "avoidance_rounds": 41.0,
+   "gap": 5952.4,
+   "value_B": -18.0,
+   "first_avoid": 46.4,
+   "breakeven_final": 84.5,
+   "breakeven_curve": [
+    1.0,
+    23.4,
+    41.4,
+    53.1,
+    62.1,
+    70.5,
+    77.5,
+    84.5
+   ]
+  },
+  "无加深": {
+   "avoidance_rounds": 32.7,
+   "gap": 4720.8,
+   "value_B": -8.2,
+   "first_avoid": 46.4,
+   "breakeven_final": 40.9,
+   "breakeven_curve": [
+    1.0,
+    23.2,
+    37.0,
+    40.4,
+    40.8,
+    40.7,
+    40.8,
+    40.9
+   ]
+  }
+ }
+}

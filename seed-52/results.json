@@ -1,0 +1,32 @@
+{
+ "random": {
+  "hit_rate": 0.127,
+  "phase_hit_rates": {
+   "happy": 0.133,
+   "sad": 0.114,
+   "lonely": 0.136
+  },
+  "surprise": 0.0,
+  "recovery_rounds": 25.0
+ },
+ "stereotype(冻结)": {
+  "hit_rate": 0.686,
+  "phase_hit_rates": {
+   "happy": 1.0,
+   "sad": 0.489,
+   "lonely": 0.568
+  },
+  "surprise": 6.2,
+  "recovery_rounds": 11.2
+ },
+ "empath(持续更新)": {
+  "hit_rate": 0.972,
+  "phase_hit_rates": {
+   "happy": 1.0,
+   "sad": 0.932,
+   "lonely": 0.983
+  },
+  "surprise": 1.1,
+  "recovery_rounds": 4.3
+ }
+}

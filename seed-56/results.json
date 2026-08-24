@@ -1,0 +1,66 @@
+{
+ "rational": {
+  "reward_gap": 0.0,
+  "avoidance_rounds": 0.0,
+  "first_avoid_round": 200.0,
+  "value_B_final": 0.0,
+  "value_trace": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "no_seed": {
+  "reward_gap": 264.5,
+  "avoidance_rounds": 65.9,
+  "first_avoid_round": 200.0,
+  "value_B_final": 0.0,
+  "value_trace": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "no_carve": {
+  "reward_gap": 375.6,
+  "avoidance_rounds": 93.5,
+  "first_avoid_round": 15.1,
+  "value_B_final": -1.24,
+  "value_trace": [
+   -0.1,
+   -0.9,
+   -1.1,
+   -1.2,
+   -1.3,
+   -1.3,
+   -1.3,
+   -1.2
+  ]
+ },
+ "emotional": {
+  "reward_gap": 389.5,
+  "avoidance_rounds": 97.1,
+  "first_avoid_round": 15.1,
+  "value_B_final": -30.27,
+  "value_trace": [
+   -0.1,
+   -4.1,
+   -9.3,
+   -14.1,
+   -18.2,
+   -21.8,
+   -25.0,
+   -27.9
+  ]
+ }
+}

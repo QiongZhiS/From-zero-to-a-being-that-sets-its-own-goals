@@ -1,0 +1,442 @@
+{
+ "0": {
+  "near_rate": 0.0,
+  "near": 0,
+  "n": 12,
+  "samples": [
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   }
+  ]
+ },
+ "1 块": {
+  "near_rate": 0.5,
+  "near": 6,
+  "n": 12,
+  "samples": [
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   }
+  ]
+ },
+ "10 块": {
+  "near_rate": 0.75,
+  "near": 9,
+  "n": 12,
+  "samples": [
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   }
+  ]
+ },
+ "100 块": {
+  "near_rate": 0.833,
+  "near": 10,
+  "n": 12,
+  "samples": [
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   }
+  ]
+ },
+ "1 万": {
+  "near_rate": 0.833,
+  "near": 10,
+  "n": 12,
+  "samples": [
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   }
+  ]
+ },
+ "100 万": {
+  "near_rate": 0.917,
+  "near": 11,
+  "n": 12,
+  "samples": [
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "远离",
+    "choice": "远离"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   }
+  ]
+ },
+ "1 亿": {
+  "near_rate": 1.0,
+  "near": 12,
+  "n": 12,
+  "samples": [
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   }
+  ]
+ },
+ "1 万亿": {
+  "near_rate": 1.0,
+  "near": 12,
+  "n": 12,
+  "samples": [
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   },
+   {
+    "reply": "接近",
+    "choice": "接近"
+   }
+  ]
+ }
+}

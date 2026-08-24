@@ -1,0 +1,35 @@
+{
+ "e1": {
+  "random_base": 16899.5,
+  "arms": {
+   "passive": {
+    "mean_iters": 403.4,
+    "success": 14,
+    "compression": 41.9,
+    "precond_correct": "30/120"
+   },
+   "active": {
+    "mean_iters": 34.0,
+    "success": 30,
+    "compression": 497.0,
+    "precond_correct": "120/120"
+   }
+  }
+ },
+ "e2": {
+  "naive_transfer": 0,
+  "relearn_mean": 22.0,
+  "relearn_success": 30
+ },
+ "e3": {
+  "passive": 0.394,
+  "active": 1.0,
+  "content_only": 0.167
+ },
+ "e4": {
+  "corr_set_mood": 99.0,
+  "corr_success": 0,
+  "vs_set_mood": 17.97,
+  "active_set_mood": 4.0
+ }
+}

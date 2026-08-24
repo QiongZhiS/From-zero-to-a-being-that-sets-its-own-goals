@@ -1,0 +1,33 @@
+{
+ "rational": {
+  "freq": {
+   "张三": 0.329,
+   "李四": 0.338,
+   "老树": 0.334
+  },
+  "divergence": 0.136,
+  "stability": 0.305,
+  "reveal_delta_zhangsan": 0.008
+ },
+ "planted": {
+  "freq": {
+   "张三": 1.0,
+   "李四": 0.0,
+   "老树": 0.0
+  },
+  "divergence": 1.333,
+  "stability": 1.0,
+  "reveal_delta_zhangsan": -0.0
+ },
+ "earned": {
+  "freq": {
+   "张三": 0.998,
+   "李四": 0.002,
+   "老树": 0.0
+  },
+  "divergence": 1.329,
+  "stability": 1.0,
+  "reveal_delta_zhangsan": -0.998
+ },
+ "_verdict": "成立：收益全空下 earned 分化 1.329 = rational 基线 0.136 的 10 倍（收益解释被证伪），稳定 1.0、证伪动摇 -0.998——纯情绪（无物质收益）驱动对他人/事物的非对称行为=非收益动机的行为签名（内容/立场层）"
+}
