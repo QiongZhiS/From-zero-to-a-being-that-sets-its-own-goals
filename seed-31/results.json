@@ -1,0 +1,18 @@
+[
+ {
+  "b_existence_coupling": false,
+  "a_self_err": 0.499,
+  "a_lock_rate": 1.0,
+  "a_alive_rate": 1.0,
+  "b_alive_rate": 1.0,
+  "reading": "B reprintable/no stake -> mirror -> no real rebound -> A's self stays locked"
+ },
+ {
+  "b_existence_coupling": true,
+  "a_self_err": 0.035,
+  "a_lock_rate": 0.0,
+  "a_alive_rate": 1.0,
+  "b_alive_rate": 1.0,
+  "reading": "B has irreplaceable stake -> genuine rebound -> A's self is revealed (unlocked)"
+ }
+]

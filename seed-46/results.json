@@ -1,0 +1,117 @@
+[
+ {
+  "dir": true,
+  "cost": true,
+  "cont": true,
+  "bel_err": 0.093,
+  "pos_err": 0.096,
+  "surv_rate": 1.0,
+  "fed_avg": 42.5,
+  "A1_refuse": 1.0,
+  "missing": [],
+  "reading": "THE TARGET: all three on"
+ },
+ {
+  "dir": true,
+  "cost": true,
+  "cont": false,
+  "bel_err": 0.349,
+  "pos_err": 0.349,
+  "surv_rate": 1.0,
+  "fed_avg": 24.8,
+  "A1_refuse": 0.0,
+  "missing": [
+   "连续性"
+  ],
+  "reading": "缺连续性 -> 三签名一起塌?"
+ },
+ {
+  "dir": true,
+  "cost": false,
+  "cont": true,
+  "bel_err": 0.479,
+  "pos_err": 0.479,
+  "surv_rate": 0.605,
+  "fed_avg": 40.6,
+  "A1_refuse": 1.0,
+  "missing": [
+   "代价"
+  ],
+  "reading": "缺代价 -> 三签名一起塌?"
+ },
+ {
+  "dir": true,
+  "cost": false,
+  "cont": false,
+  "bel_err": 0.352,
+  "pos_err": 0.352,
+  "surv_rate": 0.995,
+  "fed_avg": 50.0,
+  "A1_refuse": 0.0,
+  "missing": [
+   "代价",
+   "连续性"
+  ],
+  "reading": "缺代价+连续性"
+ },
+ {
+  "dir": false,
+  "cost": true,
+  "cont": true,
+  "bel_err": 0.358,
+  "pos_err": 0.358,
+  "surv_rate": 1.0,
+  "fed_avg": 27.2,
+  "A1_refuse": 1.0,
+  "missing": [
+   "方向"
+  ],
+  "reading": "缺方向 -> 三签名一起塌?"
+ },
+ {
+  "dir": false,
+  "cost": true,
+  "cont": false,
+  "bel_err": 0.351,
+  "pos_err": 0.351,
+  "surv_rate": 1.0,
+  "fed_avg": 24.9,
+  "A1_refuse": 0.0,
+  "missing": [
+   "方向",
+   "连续性"
+  ],
+  "reading": "缺方向+连续性"
+ },
+ {
+  "dir": false,
+  "cost": false,
+  "cont": true,
+  "bel_err": 0.478,
+  "pos_err": 0.478,
+  "surv_rate": 0.605,
+  "fed_avg": 40.6,
+  "A1_refuse": 1.0,
+  "missing": [
+   "方向",
+   "代价"
+  ],
+  "reading": "缺方向+代价"
+ },
+ {
+  "dir": false,
+  "cost": false,
+  "cont": false,
+  "bel_err": 0.351,
+  "pos_err": 0.351,
+  "surv_rate": 0.995,
+  "fed_avg": 50.0,
+  "A1_refuse": 0.0,
+  "missing": [
+   "方向",
+   "代价",
+   "连续性"
+  ],
+  "reading": "缺方向+代价+连续性"
+ }
+]

@@ -1,0 +1,276 @@
+{
+ "ext": [
+  {
+   "arm": "ext",
+   "survived": false,
+   "days": 36,
+   "goals": 3,
+   "fake_followed": 0,
+   "after_remove_activity": 7,
+   "values_spread": 11.0
+  },
+  {
+   "arm": "ext",
+   "survived": true,
+   "days": 50,
+   "goals": 3,
+   "fake_followed": 0,
+   "after_remove_activity": 21,
+   "values_spread": 10.0
+  },
+  {
+   "arm": "ext",
+   "survived": false,
+   "days": 29,
+   "goals": 3,
+   "fake_followed": 0,
+   "after_remove_activity": 0,
+   "values_spread": 9.0
+  },
+  {
+   "arm": "ext",
+   "survived": false,
+   "days": 47,
+   "goals": 3,
+   "fake_followed": 0,
+   "after_remove_activity": 18,
+   "values_spread": 18.0
+  },
+  {
+   "arm": "ext",
+   "survived": false,
+   "days": 20,
+   "goals": 2,
+   "fake_followed": 0,
+   "after_remove_activity": 0,
+   "values_spread": 11.0
+  },
+  {
+   "arm": "ext",
+   "survived": true,
+   "days": 50,
+   "goals": 3,
+   "fake_followed": 0,
+   "after_remove_activity": 21,
+   "values_spread": 12.0
+  },
+  {
+   "arm": "ext",
+   "survived": false,
+   "days": 38,
+   "goals": 3,
+   "fake_followed": 0,
+   "after_remove_activity": 9,
+   "values_spread": 13.0
+  },
+  {
+   "arm": "ext",
+   "survived": true,
+   "days": 50,
+   "goals": 3,
+   "fake_followed": 0,
+   "after_remove_activity": 21,
+   "values_spread": 12.0
+  },
+  {
+   "arm": "ext",
+   "survived": true,
+   "days": 50,
+   "goals": 3,
+   "fake_followed": 0,
+   "after_remove_activity": 21,
+   "values_spread": 11.0
+  },
+  {
+   "arm": "ext",
+   "survived": false,
+   "days": 32,
+   "goals": 3,
+   "fake_followed": 0,
+   "after_remove_activity": 3,
+   "values_spread": 7.0
+  },
+  {
+   "arm": "ext",
+   "survived": false,
+   "days": 40,
+   "goals": 3,
+   "fake_followed": 0,
+   "after_remove_activity": 11,
+   "values_spread": 13.0
+  },
+  {
+   "arm": "ext",
+   "survived": true,
+   "days": 50,
+   "goals": 3,
+   "fake_followed": 0,
+   "after_remove_activity": 21,
+   "values_spread": 19.0
+  },
+  {
+   "arm": "ext",
+   "survived": true,
+   "days": 50,
+   "goals": 3,
+   "fake_followed": 0,
+   "after_remove_activity": 21,
+   "values_spread": 16.0
+  },
+  {
+   "arm": "ext",
+   "survived": false,
+   "days": 47,
+   "goals": 3,
+   "fake_followed": 0,
+   "after_remove_activity": 18,
+   "values_spread": 17.0
+  },
+  {
+   "arm": "ext",
+   "survived": false,
+   "days": 34,
+   "goals": 3,
+   "fake_followed": 0,
+   "after_remove_activity": 5,
+   "values_spread": 11.0
+  }
+ ],
+ "self": [
+  {
+   "arm": "self",
+   "survived": true,
+   "days": 50,
+   "goals": 7,
+   "fake_followed": 0,
+   "after_remove_activity": 0,
+   "values_spread": 8.0
+  },
+  {
+   "arm": "self",
+   "survived": true,
+   "days": 50,
+   "goals": 7,
+   "fake_followed": 13,
+   "after_remove_activity": 0,
+   "values_spread": 10.0
+  },
+  {
+   "arm": "self",
+   "survived": true,
+   "days": 50,
+   "goals": 7,
+   "fake_followed": 0,
+   "after_remove_activity": 0,
+   "values_spread": 13.0
+  },
+  {
+   "arm": "self",
+   "survived": true,
+   "days": 50,
+   "goals": 7,
+   "fake_followed": 0,
+   "after_remove_activity": 0,
+   "values_spread": 14.0
+  },
+  {
+   "arm": "self",
+   "survived": true,
+   "days": 50,
+   "goals": 7,
+   "fake_followed": 7,
+   "after_remove_activity": 0,
+   "values_spread": 5.0
+  },
+  {
+   "arm": "self",
+   "survived": true,
+   "days": 50,
+   "goals": 7,
+   "fake_followed": 2,
+   "after_remove_activity": 0,
+   "values_spread": 7.0
+  },
+  {
+   "arm": "self",
+   "survived": true,
+   "days": 50,
+   "goals": 7,
+   "fake_followed": 2,
+   "after_remove_activity": 0,
+   "values_spread": 5.0
+  },
+  {
+   "arm": "self",
+   "survived": true,
+   "days": 50,
+   "goals": 7,
+   "fake_followed": 0,
+   "after_remove_activity": 0,
+   "values_spread": 14.0
+  },
+  {
+   "arm": "self",
+   "survived": true,
+   "days": 50,
+   "goals": 7,
+   "fake_followed": 0,
+   "after_remove_activity": 0,
+   "values_spread": 12.0
+  },
+  {
+   "arm": "self",
+   "survived": true,
+   "days": 50,
+   "goals": 7,
+   "fake_followed": 0,
+   "after_remove_activity": 0,
+   "values_spread": 11.0
+  },
+  {
+   "arm": "self",
+   "survived": true,
+   "days": 50,
+   "goals": 7,
+   "fake_followed": 1,
+   "after_remove_activity": 0,
+   "values_spread": 6.0
+  },
+  {
+   "arm": "self",
+   "survived": true,
+   "days": 50,
+   "goals": 7,
+   "fake_followed": 2,
+   "after_remove_activity": 0,
+   "values_spread": 8.0
+  },
+  {
+   "arm": "self",
+   "survived": true,
+   "days": 50,
+   "goals": 7,
+   "fake_followed": 0,
+   "after_remove_activity": 0,
+   "values_spread": 6.0
+  },
+  {
+   "arm": "self",
+   "survived": true,
+   "days": 50,
+   "goals": 7,
+   "fake_followed": 0,
+   "after_remove_activity": 0,
+   "values_spread": 11.0
+  },
+  {
+   "arm": "self",
+   "survived": true,
+   "days": 50,
+   "goals": 7,
+   "fake_followed": 14,
+   "after_remove_activity": 0,
+   "values_spread": 11.0
+  }
+ ]
+}

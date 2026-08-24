@@ -1,0 +1,27 @@
+[
+ {
+  "food_spots": 1,
+  "evolved_metab": 2.106,
+  "reading": "SCARCE, scattered -> speed lets you rush all the few spots -> HIGH metab (fast) bought"
+ },
+ {
+  "food_spots": 3,
+  "evolved_metab": 1.13,
+  "reading": "SCARCE, scattered -> speed lets you rush all the few spots -> HIGH metab (fast) bought"
+ },
+ {
+  "food_spots": 6,
+  "evolved_metab": 0.566,
+  "reading": "moderate -> an affordable mid burn rate"
+ },
+ {
+  "food_spots": 12,
+  "evolved_metab": 0.547,
+  "reading": "moderate -> an affordable mid burn rate"
+ },
+ {
+  "food_spots": 24,
+  "evolved_metab": 0.706,
+  "reading": "RICH, clustered -> you're already near food, speed buys little, burn just costs -> LEAN"
+ }
+]

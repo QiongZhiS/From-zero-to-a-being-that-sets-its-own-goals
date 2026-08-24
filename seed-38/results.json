@@ -1,0 +1,16 @@
+[
+ {
+  "with_other": false,
+  "evolved_give": 0.446,
+  "A_alive_rate": 1.0,
+  "B_alive_rate": 0.0,
+  "reading": "no other -> nothing to give to -> give is irrelevant/settles ~0 (no purpose)"
+ },
+ {
+  "with_other": true,
+  "evolved_give": 0.412,
+  "A_alive_rate": 1.0,
+  "B_alive_rate": 0.0,
+  "reading": "REAL interlock: the other's survival gates MY food -> give GROWS out of the encounter"
+ }
+]

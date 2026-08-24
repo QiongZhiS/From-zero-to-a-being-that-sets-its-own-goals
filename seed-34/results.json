@@ -1,0 +1,35 @@
+[
+ {
+  "sigma": 0.1,
+  "resource": 0.0,
+  "competence": 6.85,
+  "identity": 6.05,
+  "identity_history_surviv": 28.85
+ },
+ {
+  "sigma": 0.3,
+  "resource": 0.0,
+  "competence": 5.62,
+  "identity": 6.52,
+  "identity_history_surviv": 25.141666666666666
+ },
+ {
+  "sigma": 0.5,
+  "resource": 0.0,
+  "competence": 5.43,
+  "identity": 7.4,
+  "identity_history_surviv": 21.75
+ },
+ {
+  "mode": "resource",
+  "evolved_boldness": 0.303
+ },
+ {
+  "mode": "competence",
+  "evolved_boldness": 0.318
+ },
+ {
+  "mode": "identity",
+  "evolved_boldness": 0.302
+ }
+]

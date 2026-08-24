@@ -1,0 +1,38 @@
+{
+ "prior@sigma0.1": {
+  "mean_d": 0.121,
+  "mean_v": 0.524,
+  "born_with_history": 0.0,
+  "distinct_roots": 1.0
+ },
+ "prior@sigma0.3": {
+  "mean_d": 0.79,
+  "mean_v": 0.611,
+  "born_with_history": 0.0,
+  "distinct_roots": 1.0
+ },
+ "prior@sigma0.5": {
+  "mean_d": 0.641,
+  "mean_v": 0.637,
+  "born_with_history": 0.0,
+  "distinct_roots": 1.0
+ },
+ "copy-history@sigma0.1": {
+  "mean_d": 0.121,
+  "mean_v": 0.524,
+  "born_with_history": 1.0,
+  "distinct_roots": 1.0
+ },
+ "copy-history@sigma0.3": {
+  "mean_d": 0.79,
+  "mean_v": 0.611,
+  "born_with_history": 1.0,
+  "distinct_roots": 1.0
+ },
+ "copy-history@sigma0.5": {
+  "mean_d": 0.641,
+  "mean_v": 0.637,
+  "born_with_history": 1.0,
+  "distinct_roots": 1.0
+ }
+}

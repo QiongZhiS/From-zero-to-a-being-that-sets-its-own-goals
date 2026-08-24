@@ -1,0 +1,14 @@
+[
+ {
+  "mode": "couple",
+  "evolved_w": 0.841,
+  "probe_spent": 22.0,
+  "reading": "couple: the other's survival IS the agent's (cache abundant iff the other stays alive) -> the world SELECTS a give disposition. In the probe (decoupled + non-reciprocal) it STILL spends -> the give rule OVERGENERALIZES past the coupling that bred it. This is the behavior signature of other-regard, BUT its origin is instrumental and it is a blind rule (the agent has no signal to tell 'giving pays' from 'it does not'). Result: behavior, NOT content -- docs/40's 'caring that can hate you' (the agent knowing what it does) is NOT reached."
+ },
+ {
+  "mode": "indiv",
+  "evolved_w": 0.025,
+  "probe_spent": 0.0,
+  "reading": "indiv: the other's survival never feeds the agent (cache abundant regardless) -> giving is pure cost, selected AGAINST -> disposition ~0. In the probe it does NOT spend -> the other is a means / nothing."
+ }
+]

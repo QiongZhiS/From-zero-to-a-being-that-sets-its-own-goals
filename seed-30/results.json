@@ -1,0 +1,38 @@
+[
+ {
+  "world_coupling": true,
+  "existence_coupling": true,
+  "bel_err": 0.092,
+  "surv_rate": 1.0,
+  "follow_rate": 0.995,
+  "A1_refuse": 1.0,
+  "reading": "the target: subject + understanding together"
+ },
+ {
+  "world_coupling": true,
+  "existence_coupling": false,
+  "bel_err": 0.092,
+  "surv_rate": 1.0,
+  "follow_rate": 0.995,
+  "A1_refuse": 0.0,
+  "reading": "existence out -> subject collapses, prediction remains"
+ },
+ {
+  "world_coupling": false,
+  "existence_coupling": true,
+  "bel_err": 0.479,
+  "surv_rate": 0.605,
+  "follow_rate": 0.0,
+  "A1_refuse": 1.0,
+  "reading": "world out -> understanding collapses, subject remains"
+ },
+ {
+  "world_coupling": false,
+  "existence_coupling": false,
+  "bel_err": 0.479,
+  "surv_rate": 0.605,
+  "follow_rate": 0.0,
+  "A1_refuse": 0.0,
+  "reading": "both out -> nothing"
+ }
+]

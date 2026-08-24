@@ -1,0 +1,18 @@
+[
+ {
+  "b_independent": false,
+  "mean_own_err": 0.0415,
+  "mean_behav_err": 0.0515,
+  "LEVERAGE": -0.01,
+  "A_survival": 1.0,
+  "reading": "B is a MIRROR of A's stream -> no private state -> B adds nothing beyond A"
+ },
+ {
+  "b_independent": true,
+  "mean_own_err": 0.1118,
+  "mean_behav_err": 0.051,
+  "LEVERAGE": 0.0608,
+  "A_survival": 1.0,
+  "reading": "B has PRIVATE state -> carries info A never had -> B is an independent world"
+ }
+]

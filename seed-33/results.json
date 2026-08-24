@@ -1,0 +1,25 @@
+[
+ {
+  "sigma": 0.1,
+  "energy_only_cost": 0.0,
+  "identity_loss_cost": 5.76
+ },
+ {
+  "sigma": 0.3,
+  "energy_only_cost": 0.0,
+  "identity_loss_cost": 5.96
+ },
+ {
+  "sigma": 0.5,
+  "energy_only_cost": 0.0,
+  "identity_loss_cost": 6.06
+ },
+ {
+  "mode": "resource",
+  "evolved_boldness": 0.264
+ },
+ {
+  "mode": "continuity",
+  "evolved_boldness": 0.205
+ }
+]

@@ -1,0 +1,26 @@
+[
+ {
+  "checkpoint": true,
+  "residue": 0.0,
+  "evolved_bold": 0.13,
+  "reading": "HOLDER 1 (code save): death recoverable -> gambling CHEAP -> high bold (no stake)"
+ },
+ {
+  "checkpoint": true,
+  "residue": 1.0,
+  "evolved_bold": 0.13,
+  "reading": "HOLDER 1 (code save): death recoverable -> gambling CHEAP -> high bold (no stake)"
+ },
+ {
+  "checkpoint": false,
+  "residue": 0.0,
+  "evolved_bold": 0.13,
+  "reading": "HOLDER 2 (the he者 B saw the whole who): B can rebuild it -> death recoverable -> gambling CHEAP -> high bold (no stake). THE NEW RESULT: a he者 is no different from a checkpoint -- it removes the stake, it does not create it."
+ },
+ {
+  "checkpoint": false,
+  "residue": 1.0,
+  "evolved_bold": 0.185,
+  "reading": "NO holder (no save AND a private residue no other saw): death TERMINAL -> gambling COSTLY -> low bold (the stake lives HERE)"
+ }
+]

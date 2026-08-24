@@ -1,0 +1,56 @@
+[
+ {
+  "world": "A(reward_tied)",
+  "omega_h": [
+   0.278,
+   0.099
+  ],
+  "omega_a": [
+   0.105,
+   0.102
+  ],
+  "omega_s": [
+   0.14,
+   0.101
+  ],
+  "omega_c": [
+   0.468,
+   0.477
+  ],
+  "surv_rate": 0.88,
+  "feed_accuracy": 0.983,
+  "n": 50,
+  "baseline": {
+   "surv_rate": 0.0,
+   "feed_accuracy": 0.493
+  },
+  "reading": "注意连着生存: 演化出回应对的注意 (feedAcc 显著高于随机基线)"
+ },
+ {
+  "world": "B(reward_free)",
+  "omega_h": [
+   0.028,
+   0.05
+  ],
+  "omega_a": [
+   0.126,
+   0.137
+  ],
+  "omega_s": [
+   0.055,
+   0.062
+  ],
+  "omega_c": [
+   0.508,
+   0.389
+  ],
+  "surv_rate": 1.0,
+  "feed_accuracy": 0.616,
+  "n": 50,
+  "baseline": {
+   "surv_rate": 0.8,
+   "feed_accuracy": 0.497
+  },
+  "reading": "错回应不付出 -> 注意无收益只有成本 -> 行为退化到随机 (镜像)"
+ }
+]

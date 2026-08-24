@@ -1,0 +1,44 @@
+[
+ {
+  "dynamic": false,
+  "sigma": 0.1,
+  "evolved_d": 0.473,
+  "evolved_v": 0.326,
+  "reading": "static: HIGH d + LOW v -> lock is safe, no need to doubt"
+ },
+ {
+  "dynamic": false,
+  "sigma": 0.3,
+  "evolved_d": 0.882,
+  "evolved_v": 0.002,
+  "reading": "static: HIGH d + LOW v -> lock is safe, no need to doubt"
+ },
+ {
+  "dynamic": false,
+  "sigma": 0.5,
+  "evolved_d": 0.831,
+  "evolved_v": 0.042,
+  "reading": "static: HIGH d + LOW v -> lock is safe, no need to doubt"
+ },
+ {
+  "dynamic": true,
+  "sigma": 0.1,
+  "evolved_d": 0.009,
+  "evolved_v": 0.647,
+  "reading": "dynamic: LOW d + HIGH v -> don't over-lock, do doubt yourself"
+ },
+ {
+  "dynamic": true,
+  "sigma": 0.3,
+  "evolved_d": 0.787,
+  "evolved_v": 0.749,
+  "reading": "dynamic: LOW d + HIGH v -> don't over-lock, do doubt yourself"
+ },
+ {
+  "dynamic": true,
+  "sigma": 0.5,
+  "evolved_d": 0.683,
+  "evolved_v": 0.694,
+  "reading": "dynamic: LOW d + HIGH v -> don't over-lock, do doubt yourself"
+ }
+]
