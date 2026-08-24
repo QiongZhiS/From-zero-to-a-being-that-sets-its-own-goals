@@ -4,3 +4,7 @@ __pycache__/
 .DS_Store
 Thumbs.db
 *.log
+
+# companion runtime state (private, never share)
+companion/live_state.json
+companion/config.json

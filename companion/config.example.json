@@ -1,0 +1,17 @@
+{
+  "_readme": "复制本文件为 config.json 并按需修改。键名 = companion/live.py 顶部的常量名（docs/96 的本性参数们，docs/103 配置化）。不改代码就能调。删除本文件 = 用默认值。",
+  "_本性参数_docs96": "以下是 docs/96 标记'仍属设计者标的'的本性参数，此处至少可配置（再谈演化）。",
+  "DARE_THETA": 6.0,
+  "RESENT_REFUSE": 4.0,
+  "RESENT_TURN": 7.0,
+  "LET_GO_BOND": 3.0,
+  "HUNGRY_LINE": 8.0,
+  "OFFER_WORTH_TIE": 0.8,
+  "_世界与身体": "以下为世界物理参数（docs/38 可接受标的）。",
+  "START_E": 30.0,
+  "START_BOND": 12.0,
+  "OTHER_START_BOND": 6.0,
+  "METAB_PER_TURN": 0.3,
+  "OFFLINE_BOND_DECAY": 0.6,
+  "OFFLINE_ENERGY_DECAY": 1.2
+}
